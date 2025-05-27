@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolvivo - Personal Evolution</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="https://img.icons8.com/ios-filled/50/4CAF50/leaf.png" alt="Evolvivo Leaf Icon" class="logo-icon"/>
+                Evolvivo
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="nav-link active" data-target="home-page"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#" class="nav-link" data-target="articles-page"><i class="fas fa-newspaper"></i> Articles</a></li>
+                    <li><a href="#" class="nav-link" data-target="goals-page"><i class="fas fa-bullseye"></i> Goals</a></li>
+                    <li><a href="#" class="nav-link" data-target="ai-tips-page"><i class="fas fa-lightbulb"></i> AI Tips</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="settings-btn">S</div>
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Page Section -->
+        <section id="home-page" class="page-section">
+            <div class="hero-section">
+                <div class="container">
+                    <h1>Welcome to Evolvivo</h1>
+                    <p>Your companion in cultivating essential skills, building lasting habits, and achieving your most ambitious personal goals.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary nav-link" data-target="articles-page">Explore Articles</button>
+                        <button class="btn btn-secondary nav-link" data-target="goals-page">Set Your Goals <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="daily-inspiration-section">
+                <div class="container">
+                    <div class="inspiration-card">
+                        <h2><i class="fas fa-quote-left"></i> Daily Inspiration</h2>
+                        <p class="quote">"Success doesn't just find you. You have to go out and get it."</p>
+                        <p class="attribution">— Unknown</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="featured-articles-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Featured Articles</h2>
+                        <a href="#" class="view-all-link nav-link" data-target="articles-page">View All <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="articles-grid" id="featured-articles-grid">
+                        <!-- Featured articles will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <div class="container">
+                    <h2>Ready to Elevate Yourself?</h2>
+                    <p>Dive into personalized AI-driven tips or start structuring your path to success with our goal-setting tools.</p>
+                    <div class="cta-buttons">
+                        <button class="btn btn-accent nav-link" data-target="ai-tips-page">Get AI Tips</button>
+                        <button class="btn btn-outline nav-link" data-target="goals-page">Manage Goals</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Articles Page Section -->
+        <section id="articles-page" class="page-section hidden">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Explore Our Articles</h1>
+                    <p>Find insights on personal development, habit building, and goal achievement.</p>
+                </div>
+                <div class="search-bar-container">
+                    <input type="text" id="article-search-input" placeholder="Search for articles, topics, tags...">
+                    <button id="article-search-btn" class="btn btn-primary"><i class="fas fa-search"></i> Search</button>
+                </div>
+                <div class="articles-grid" id="all-articles-grid">
+                    <!-- All articles will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Goals Page Section -->
+        <section id="goals-page" class="page-section hidden">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Your Personal Goals</h1>
+                    <p>Define, track, and achieve your aspirations.</p>
+                </div>
+                <div class="add-goal-form">
+                    <input type="text" id="new-goal-input" placeholder="Enter a new personal goal...">
+                    <input type="date" id="new-goal-date">
+                    <button id="add-goal-btn" class="btn btn-primary"><i class="fas fa-plus"></i> Add Goal</button>
+                </div>
+                <div class="active-goals-container">
+                    <h2>Active Goals (<span id="active-goals-count">0</span>)</h2>
+                    <ul id="goals-list">
+                        <!-- Goals will be dynamically inserted here -->
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Tips Page Section -->
+        <section id="ai-tips-page" class="page-section hidden">
+            <div class="container ai-tips-content">
+                <i class="fas fa-magic ai-tips-icon"></i>
+                <h1>Personalized AI Tips</h1>
+                <p>Enter your personal goal, and our AI will provide tailored tips to help you achieve it.</p>
+                <form id="ai-tips-form">
+                    <label for="ai-goal-input">Your Goal:</label>
+                    <textarea id="ai-goal-input" rows="4" placeholder="e.g., 'I want to learn a new language' or 'Improve my public speaking skills'"></textarea>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-wand-magic-sparkles"></i> Get AI Tips</button>
+                </form>
+                <div id="ai-response-area" class="hidden">
+                    <h3>Here are your AI Tips:</h3>
+                    <p id="ai-response-text"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Evolvivo. All rights reserved.</p>
+        <p>Empowering your journey to personal evolution.</p>
+    </footer>
+
+    <div id="toast-notification" class="toast hidden">
+        <span id="toast-message"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
