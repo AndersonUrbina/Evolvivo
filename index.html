@@ -27,8 +27,11 @@
                 </ul>
             </nav>
             <div class="header-actions">
-                <div class="settings-btn">S</div>
-                <button class="search-btn"><i class="fas fa-search"></i></button>
+                <!-- Auth buttons will be shown/hidden by JS -->
+                <button id="login-nav-btn" class="btn btn-outline">Login</button>
+                <button id="signup-nav-btn" class="btn btn-primary">Sign Up</button>
+                <span id="user-greeting" class="hidden"></span>
+                <button id="logout-btn" class="btn btn-secondary hidden">Logout</button>
             </div>
         </div>
     </header>
