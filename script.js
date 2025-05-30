@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const pageSections = document.querySelectorAll('.page-section');
     const toastNotification = document.getElementById('toast-notification');
     const toastMessage = document.getElementById('toast-message');
-
+    
     // Dummy Article Data
     const articlesData = [
         {
@@ -12,9 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
             description: 'Discover how focusing on one key habit can transform multiple areas of your life.',
             author: 'Jane Doe',
             date: 'March 14, 2024',
-            readTime: '6 min read',
+            readTime: '5 min read',
             imagePlaceholder: '600 x 400',
-            imageUrl: 'https://images.pexels.com/photos/4964985/pexels-photo-4964985.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+            imageUrl: 'https://images.pexels.com/photos/4964985/pexels-photo-4964985.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1'
         },
         {
             category: 'Goal Setting',
@@ -23,7 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
             author: 'John Smith',
             date: 'February 19, 2024',
             readTime: '7 min read',
-            imagePlaceholder: '600 x 400'
+            imagePlaceholder: '600 x 400',
+            imageUrl: 'https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1'
         },
         {
             category: 'Personal Development',
@@ -32,7 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
             author: 'Alice Green',
             date: 'March 31, 2024',
             readTime: '6 min read',
-            imagePlaceholder: '600 x 400'
+            imagePlaceholder: '600 x 400',
+            imageUrl: 'https://images.pexels.com/photos/3771089/pexels-photo-3771089.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1'
         },
         {
             category: 'Personal Skills',
@@ -41,7 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
             author: 'David Lee',
             date: 'January 9, 2024',
             readTime: '8 min read',
-            imagePlaceholder: '600 x 400'
+            imagePlaceholder: '600 x 400',
+            imageUrl: 'https://images.pexels.com/photos/3184430/pexels-photo-3184430.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1'
         }
     ];
 
