@@ -493,7 +493,7 @@ main {
     background: none;
     border: none;
     color: #E57373; /* Light red */
-    font-size: 1.1em;
+    font-size: 2em;
     cursor: pointer;
 }
 .delete-goal-btn:hover {
