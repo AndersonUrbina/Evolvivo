@@ -406,6 +406,13 @@ main {
     padding-top: 15px;
     border-top: 1px solid var(--border-color);
 }
+.article-card .article-image {
+    width: 100%; /* Make image take full width of its container */
+    height: 200px; /* Or your desired height */
+    object-fit: cover; /* This will cover the area, cropping if aspect ratio differs */
+    display: block; /* Removes any extra space below the image if it's inline */
+    border-bottom: 1px solid #eee; /* Optional: a separator line */
+}
 .read-more-link {
     font-weight: 500;
 }
