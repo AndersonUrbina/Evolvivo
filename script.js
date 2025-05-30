@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             description: 'Discover how focusing on one key habit can transform multiple areas of your life.',
             author: 'Jane Doe',
             date: 'March 14, 2024',
-            readTime: '5 min read',
+            readTime: '6 min read',
             imagePlaceholder: '600 x 400',
             imageUrl: 'https://images.pexels.com/photos/4964985/pexels-photo-4964985.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
         },
