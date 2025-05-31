@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
             date: 'March 14, 2024',
             readTime: '5 min read',
             imagePlaceholder: '600 x 400',
-            imageUrl: 'https://images.pexels.com/photos/4964985/pexels-photo-4964985.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1'
+            imageUrl: 'https://images.pexels.com/photos/4964985/pexels-photo-4964985.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1',
+            url:''
         },
         {
             category: 'Goal Setting',
@@ -82,25 +83,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const articleSearchBtn = document.getElementById('article-search-btn');
 
     function createArticleCard(article) {
-        return `
-            <div class="article-card">
-                <img class="article-image" src="${article.imageUrl}" alt="${article.title}">
-                <div class="article-card-content">
-                    <span class="article-category">${article.category}</span>
-                    <h3>${article.title}</h3>
-                    <p class="description">${article.description}</p>
-                    <div class="article-meta">
-                        <span><i class="fas fa-user"></i> ${article.author}</span>
-                        <span><i class="fas fa-calendar-alt"></i> ${article.date}</span>
-                        <span><i class="fas fa-clock"></i> ${article.readTime}</span>
-                    </div>
-                    <div class="article-footer">
-                        <a href="#" class="read-more-link">Read More <i class="fas fa-arrow-right"></i></a>
-                        <i class="far fa-bookmark bookmark-icon"></i>
-                    </div>
+    return `
+        <div class="article-card">
+            <img class="article-image" src="${article.imageUrl}" alt="${article.title}">
+            <div class="article-card-content">
+                <span class="article-category">${article.category}</span>
+                <h3>${article.title}</h3>
+                <p class="description">${article.description}</p>
+                <div class="article-meta">
+                    <span><i class="fas fa-user"></i> ${article.author}</span>
+                    <span><i class="fas fa-calendar-alt"></i> ${article.date}</span>
+                    <span><i class="fas fa-clock"></i> ${article.readTime}</span>
+                </div>
+                <div class="article-footer">
+                    <a href="${article.url}" target="_blank" rel="noopener noreferrer" class="read-more-link">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <i class="far fa-bookmark bookmark-icon"></i>
                 </div>
             </div>
-        `;
+        </div>
+    `;
+}
     }
 
     function displayArticles(articles, gridElement) {
