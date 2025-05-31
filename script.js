@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const toastNotification = document.getElementById('toast-notification');
     const toastMessage = document.getElementById('toast-message');
     
-    // Dummy Article Data
     const articlesData = [
         {
             category: 'Habit Building',
@@ -48,31 +47,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
-    // --- Navigation ---
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const targetId = link.dataset.target;
             
-            pageSections.forEach(section => {
-                section.classList.add('hidden');
-            });
-            
+            pageSections.forEach(section => section.classList.add('hidden'));
             const targetSection = document.getElementById(targetId);
-            if (targetSection) {
-                targetSection.classList.remove('hidden');
-            }
+            if (targetSection) targetSection.classList.remove('hidden');
 
             navLinks.forEach(nav => nav.classList.remove('active'));
-            // Highlight active link in main nav only
-            if (link.closest('nav')) {
-                 link.classList.add('active');
-            }
-            window.scrollTo(0,0); // Scroll to top on page change
+            if (link.closest('nav')) link.classList.add('active');
+
+            window.scrollTo(0, 0);
         });
     });
 
-    // --- Toast Notification ---
     let toastTimeout;
     function showToast(message, duration = 3000) {
         toastMessage.textContent = message;
@@ -82,12 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
         clearTimeout(toastTimeout);
         toastTimeout = setTimeout(() => {
             toastNotification.classList.remove('show');
-            // Wait for animation to finish before hiding
             setTimeout(() => toastNotification.classList.add('hidden'), 500);
         }, duration);
     }
 
-    // --- Articles Page ---
     const allArticlesGrid = document.getElementById('all-articles-grid');
     const featuredArticlesGrid = document.getElementById('featured-articles-grid');
     const articleSearchInput = document.getElementById('article-search-input');
@@ -96,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function createArticleCard(article) {
         return `
             <div class="article-card">
-                <div class="placeholder-img">${article.imagePlaceholder}</div>
+                <img class="article-image" src="${article.imageUrl}" alt="${article.title}">
                 <div class="article-card-content">
                     <span class="article-category">${article.category}</span>
                     <h3>${article.title}</h3>
@@ -118,15 +106,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function displayArticles(articles, gridElement) {
         gridElement.innerHTML = articles.map(article => createArticleCard(article)).join('');
     }
-    
-    // Populate articles
+
     if (allArticlesGrid) displayArticles(articlesData, allArticlesGrid);
-    if (featuredArticlesGrid) displayArticles(articlesData.slice(0, 2), featuredArticlesGrid); // Show 2 featured
+    if (featuredArticlesGrid) displayArticles(articlesData.slice(0, 2), featuredArticlesGrid);
 
     if (articleSearchBtn) {
         articleSearchBtn.addEventListener('click', () => {
             const searchTerm = articleSearchInput.value.toLowerCase();
-            const filteredArticles = articlesData.filter(article => 
+            const filteredArticles = articlesData.filter(article =>
                 article.title.toLowerCase().includes(searchTerm) ||
                 article.description.toLowerCase().includes(searchTerm) ||
                 article.category.toLowerCase().includes(searchTerm)
@@ -137,16 +124,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-     if (articleSearchInput) {
+
+    if (articleSearchInput) {
         articleSearchInput.addEventListener('keyup', (event) => {
             if (event.key === "Enter") {
-                 articleSearchBtn.click();
+                articleSearchBtn.click();
             }
         });
     }
 
-
-    // --- Goals Page ---
     const newGoalInput = document.getElementById('new-goal-input');
     const newGoalDateInput = document.getElementById('new-goal-date');
     const addGoalBtn = document.getElementById('add-goal-btn');
@@ -170,14 +156,12 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             goalsList.appendChild(li);
         });
-        activeGoalsCount.textContent = goals.filter(g => !g.completed).length; // Count only non-completed for "active"
-    }
-    
-    // Set default date for goal to today
-    if(newGoalDateInput) {
-        newGoalDateInput.valueAsDate = new Date();
+        activeGoalsCount.textContent = goals.filter(g => !g.completed).length;
     }
 
+    if (newGoalDateInput) {
+        newGoalDateInput.valueAsDate = new Date();
+    }
 
     if (addGoalBtn) {
         addGoalBtn.addEventListener('click', () => {
@@ -186,16 +170,16 @@ document.addEventListener('DOMContentLoaded', () => {
             if (goalText) {
                 goals.push({ text: goalText, date: goalDate, completed: false });
                 newGoalInput.value = '';
-                // newGoalDateInput.value = ''; // Optionally reset date or keep it
                 renderGoals();
                 showToast(`Goal Added! "${goalText.substring(0,20)}..." has been added to your goals.`);
             }
         });
     }
+
     if (newGoalInput) {
         newGoalInput.addEventListener('keyup', (event) => {
             if (event.key === "Enter") {
-                 addGoalBtn.click();
+                addGoalBtn.click();
             }
         });
     }
@@ -204,7 +188,6 @@ document.addEventListener('DOMContentLoaded', () => {
         goalsList.addEventListener('click', (e) => {
             const target = e.target;
             const index = target.dataset.index;
-
             if (target.type === 'checkbox') {
                 goals[index].completed = target.checked;
                 renderGoals();
@@ -216,13 +199,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    
-    // Example initial goal
+
     goals.push({ text: 'Run 5km', date: '2025-05-25', completed: false });
     if (goalsList) renderGoals();
 
-
-    // --- AI Tips Page ---
     const aiTipsForm = document.getElementById('ai-tips-form');
     const aiGoalInput = document.getElementById('ai-goal-input');
     const aiResponseArea = document.getElementById('ai-response-area');
@@ -233,7 +213,6 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const userGoal = aiGoalInput.value.trim();
             if (userGoal) {
-                // Simulate AI response
                 aiResponseText.innerHTML = `
                     <p>Okay, for your goal: "<strong>${userGoal}</strong>", here are some tailored tips:</p>
                     <ul>
@@ -255,13 +234,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
-    // --- Initialize: Show Home Page by default ---
     const initialPage = document.getElementById('home-page');
     if (initialPage) {
         pageSections.forEach(section => section.classList.add('hidden'));
         initialPage.classList.remove('hidden');
-        // Ensure home nav link is active
         document.querySelector('nav ul li a[data-target="home-page"]').classList.add('active');
     }
 });
