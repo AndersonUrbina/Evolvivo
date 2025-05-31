@@ -242,3 +242,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('nav ul li a[data-target="home-page"]').classList.add('active');
     }
 });
+// Add this to the end of your script.js file
+window.addEventListener('beforeunload', () => {
+    document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+    document.getElementById('home-page').classList.remove('hidden');
+});
