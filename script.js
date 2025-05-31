@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
             date: 'March 14, 2024',
             readTime: '5 min read',
             imagePlaceholder: '600 x 400',
-            imageUrl: 'https://images.pexels.com/photos/4964985/pexels-photo-4964985.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1'
+            imageUrl: 'https://images.pexels.com/photos/4964985/pexels-photo-4964985.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1',
+            url:'https://example.com/keystone-habits'
         },
         {
             category: 'Goal Setting',
