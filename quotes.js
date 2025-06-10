@@ -287,28 +287,49 @@ const quotes = [
         { quote: "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.", author: "Albert Einstein" }
 ];
 
-// Calcular el día del año para seleccionar la frase
-const today = new Date();
-const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 86400000);
-const daily = quotes[dayOfYear % quotes.length];
-
-// Construir la frase completa
-const fullQuote = `"${daily.quote}" – ${daily.author}`;
-
-// Mostrar en pantalla
+// Elementos donde se mostrará la frase
 const quoteElement = document.getElementById("daily-quote");
-quoteElement.innerText = fullQuote;
+const attributionElement = document.getElementById("quote-author"); // <-- Asegúrate de tener este ID en tu HTML
 
-// Codificar para compartir
-const encodedQuote = encodeURIComponent(fullQuote);
-const siteURL = encodeURIComponent("https://evolvivo.com");
+// Función para obtener el día del año
+function getDayOfYear(date = new Date()) {
+    const start = new Date(date.getFullYear(), 0, 0);
+    const diff = (date - start) + ((start.getTimezoneOffset() - date.getTimezoneOffset()) * 60 * 1000);
+    const oneDay = 1000 * 60 * 60 * 24;
+    return Math.floor(diff / oneDay);
+}
 
-// Asignar enlaces de redes sociales
-document.getElementById("share-twitter").href =
-    `https://twitter.com/intent/tweet?text=${encodedQuote}`;
-document.getElementById("share-facebook").href =
-    `https://www.facebook.com/sharer/sharer.php?u=${siteURL}`;
-document.getElementById("share-linkedin").href =
-    `https://www.linkedin.com/sharing/share-offsite/?url=${siteURL}`;
-document.getElementById("share-whatsapp").href =
-    `https://api.whatsapp.com/send?text=${encodedQuote}%20${siteURL}`;
+// Mostrar frase del día
+function setDailyInspiration() {
+    if (!quoteElement || !attributionElement) return;
+
+    if (inspirationalQuotes.length === 0) {
+        quoteElement.textContent = "No inspirational quotes available today.";
+        attributionElement.textContent = "";
+        return;
+    }
+
+    const dayOfYear = getDayOfYear();
+    const quoteIndex = (dayOfYear - 1) % inspirationalQuotes.length;
+    const selectedQuote = inspirationalQuotes[quoteIndex];
+
+    quoteElement.textContent = `"${selectedQuote.quote}"`;
+    attributionElement.textContent = `— ${selectedQuote.author}`;
+
+    // Preparar enlaces de compartir
+    const fullQuote = `"${selectedQuote.quote}" — ${selectedQuote.author}`;
+    const encodedQuote = encodeURIComponent(fullQuote);
+    const siteURL = encodeURIComponent("https://evolvivo.com");
+
+    document.getElementById("share-twitter").href =
+        `https://twitter.com/intent/tweet?text=${encodedQuote}`;
+    document.getElementById("share-facebook").href =
+        `https://www.facebook.com/sharer/sharer.php?u=${siteURL}`;
+    document.getElementById("share-linkedin").href =
+        `https://www.linkedin.com/sharing/share-offsite/?url=${siteURL}`;
+    document.getElementById("share-whatsapp").href =
+        `https://api.whatsapp.com/send?text=${encodedQuote}%20${siteURL}`;
+}
+
+// Ejecutar función cuando cargue el documento
+document.addEventListener("DOMContentLoaded", setDailyInspiration);
