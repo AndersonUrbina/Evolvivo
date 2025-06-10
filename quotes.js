@@ -289,9 +289,10 @@ const inspirationalQuotes = [
 
 // Elementos donde se mostrará la frase
 const quoteElement = document.getElementById("daily-quote");
-const attributionElement = document.getElementById("quote-author"); // <-- Asegúrate de tener este ID en tu HTML
+const attributionElement = document.getElementById("quote-author");
 
-// Función para obtener el día del año
+// Función para obtener el día del año (1-366)
+// Esta función es robusta y tiene en cuenta los cambios de zona horaria (DST).
 function getDayOfYear(date = new Date()) {
     const start = new Date(date.getFullYear(), 0, 0);
     const diff = (date - start) + ((start.getTimezoneOffset() - date.getTimezoneOffset()) * 60 * 1000);
@@ -299,9 +300,13 @@ function getDayOfYear(date = new Date()) {
     return Math.floor(diff / oneDay);
 }
 
-// Mostrar frase del día
+// Muestra la frase del día y configura los enlaces para compartir.
 function setDailyInspiration() {
-    if (!quoteElement || !attributionElement) return;
+    // --- FIX: Se verifica si los elementos existen para evitar errores si no están en el HTML. ---
+    if (!quoteElement || !attributionElement) {
+        console.error("Quote elements not found in the DOM.");
+        return;
+    }
 
     if (inspirationalQuotes.length === 0) {
         quoteElement.textContent = "No inspirational quotes available today.";
@@ -310,26 +315,46 @@ function setDailyInspiration() {
     }
 
     const dayOfYear = getDayOfYear();
+    // Se usa el operador de módulo (%) para que el índice se reinicie si hay más días que frases.
+    // Se resta 1 al día del año porque los arrays en JS son de índice 0.
     const quoteIndex = (dayOfYear - 1) % inspirationalQuotes.length;
     const selectedQuote = inspirationalQuotes[quoteIndex];
 
+    // Muestra la frase y el autor
     quoteElement.textContent = `"${selectedQuote.quote}"`;
     attributionElement.textContent = `— ${selectedQuote.author}`;
 
-    // Preparar enlaces de compartir
+    // --- Preparar enlaces para compartir (de forma segura) ---
     const fullQuote = `"${selectedQuote.quote}" — ${selectedQuote.author}`;
     const encodedQuote = encodeURIComponent(fullQuote);
-    const siteURL = encodeURIComponent("https://evolvivo.com");
+    const siteURL = encodeURIComponent("https://evolvivo.com"); // URL del sitio a compartir
 
-    document.getElementById("share-twitter").href =
-        `https://twitter.com/intent/tweet?text=${encodedQuote}`;
-    document.getElementById("share-facebook").href =
-        `https://www.facebook.com/sharer/sharer.php?u=${siteURL}`;
-    document.getElementById("share-linkedin").href =
-        `https://www.linkedin.com/sharing/share-offsite/?url=${siteURL}`;
-    document.getElementById("share-whatsapp").href =
-        `https://api.whatsapp.com/send?text=${encodedQuote}%20${siteURL}`;
+    // --- FIX: Se comprueba la existencia de cada botón antes de asignarle el href ---
+
+    // Twitter: Comparte el texto de la frase.
+    const shareTwitter = document.getElementById("share-twitter");
+    if (shareTwitter) {
+        shareTwitter.href = `https://twitter.com/intent/tweet?text=${encodedQuote}`;
+    }
+
+    // Facebook: El sharer estándar se enfoca en compartir una URL, no texto predefinido.
+    const shareFacebook = document.getElementById("share-facebook");
+    if (shareFacebook) {
+        shareFacebook.href = `https://www.facebook.com/sharer/sharer.php?u=${siteURL}`;
+    }
+
+    // LinkedIn: Similar a Facebook, comparte una URL.
+    const shareLinkedin = document.getElementById("share-linkedin");
+    if (shareLinkedin) {
+        shareLinkedin.href = `https://www.linkedin.com/sharing/share-offsite/?url=${siteURL}`;
+    }
+
+    // WhatsApp: Comparte el texto de la frase y la URL del sitio.
+    const shareWhatsapp = document.getElementById("share-whatsapp");
+    if (shareWhatsapp) {
+        shareWhatsapp.href = `https://api.whatsapp.com/send?text=${encodedQuote}%20${siteURL}`;
+    }
 }
 
-// Ejecutar función cuando cargue el documento
+// Ejecuta la función cuando el DOM esté completamente cargado.
 document.addEventListener("DOMContentLoaded", setDailyInspiration);
