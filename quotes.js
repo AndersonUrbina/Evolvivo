@@ -1,7 +1,6 @@
-// Lista de frases
+// Lista de frases con formato { quote, author }
 const quotes = [
-            // Original unique set
-        { quote: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+    { quote: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
         { quote: "Strive not to be a success, but rather to be of value.", author: "Albert Einstein" },
         { quote: "The mind is everything. What you think you become.", author: "Buddha" },
         { quote: "Your time is limited, so don't waste it living someone else's life.", author: "Steve Jobs" },
@@ -288,20 +287,23 @@ const quotes = [
         { quote: "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.", author: "Albert Einstein" }
 ];
 
-// Elegir una frase del día según la fecha
+// Calcular el día del año para seleccionar la frase
 const today = new Date();
 const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 86400000);
-const quoteOfDay = quotes[dayOfYear % quotes.length];
+const daily = quotes[dayOfYear % quotes.length];
 
-// Mostrar frase
+// Construir la frase completa
+const fullQuote = `"${daily.quote}" – ${daily.author}`;
+
+// Mostrar en pantalla
 const quoteElement = document.getElementById("daily-quote");
-quoteElement.innerText = quoteOfDay;
+quoteElement.innerText = fullQuote;
 
-// Preparar texto para compartir
-const encodedQuote = encodeURIComponent(quoteOfDay);
+// Codificar para compartir
+const encodedQuote = encodeURIComponent(fullQuote);
 const siteURL = encodeURIComponent("https://evolvivo.com");
 
-// Generar enlaces de compartir
+// Asignar enlaces de redes sociales
 document.getElementById("share-twitter").href =
     `https://twitter.com/intent/tweet?text=${encodedQuote}`;
 document.getElementById("share-facebook").href =
