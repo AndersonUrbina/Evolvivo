@@ -23,86 +23,47 @@ document.addEventListener('DOMContentLoaded', () => {
     const aiResponseArea = document.getElementById('ai-response-area');
     const aiResponseText = document.getElementById('ai-response-text');
 
-    // --- Elements for Daily Inspiration ---
-    const quoteElement = document.querySelector('.daily-inspiration-section .quote');
-    const attributionElement = document.querySelector('.daily-inspiration-section .attribution');
-
     // --- Data ---
     const articlesData = [
-        {
-            category: 'Habit Building',
-            title: 'The Power of Keystone Habits',
-            description: 'Discover how focusing on one key habit can transform multiple areas of your life.',
-            author: 'Jane Doe',
-            date: 'March 14, 2024',
-            readTime: '5 min read',
-            imagePlaceholder: '600 x 400',
-            imageUrl: 'https://images.pexels.com/photos/4964985/pexels-photo-4964985.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1',
-            url:'https://example.com/keystone-habits'
-        },
-        {
-            category: 'Goal Setting',
-            title: 'SMART Goals: The Secret to Achievement',
-            description: 'Learn how to set Specific, Measurable, Achievable, Relevant, and Time-bound goals.',
-            author: 'John Smith',
-            date: 'February 19, 2024',
-            readTime: '7 min read',
-            imagePlaceholder: '600 x 400',
-            imageUrl: 'https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1'
-        },
-        {
-            category: 'Personal Development',
-            title: 'Mindfulness for a Productive Day',
-            description: 'Incorporate mindfulness techniques to reduce stress and boost focus throughout your day.',
-            author: 'Alice Green',
-            date: 'March 31, 2024',
-            readTime: '6 min read',
-            imagePlaceholder: '600 x 400',
-            imageUrl: 'https://images.pexels.com/photos/3771089/pexels-photo-3771089.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1'
-        },
-        {
-            category: 'Personal Skills',
-            title: 'The Art of Effective Communication',
-            description: 'Improve your interpersonal skills by mastering active listening and clear expression.',
-            author: 'David Lee',
-            date: 'January 9, 2024',
-            readTime: '8 min read',
-            imagePlaceholder: '600 x 400',
-            imageUrl: 'https://images.pexels.com/photos/3184430/pexels-photo-3184430.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1'
-        }
-        // Add more articles if needed
+        { category: 'Habit Building', title: 'The Power of Keystone Habits', description: 'Discover how focusing on one key habit can transform multiple areas of your life.', author: 'Jane Doe', date: 'March 14, 2024', readTime: '5 min read', imageUrl: 'https://images.pexels.com/photos/4964985/pexels-photo-4964985.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1', url: 'https://example.com/keystone-habits' },
+        { category: 'Goal Setting', title: 'SMART Goals: The Secret to Achievement', description: 'Learn how to set Specific, Measurable, Achievable, Relevant, and Time-bound goals.', author: 'John Smith', date: 'February 19, 2024', readTime: '7 min read', imageUrl: 'https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1' },
+        { category: 'Personal Development', title: 'Mindfulness for a Productive Day', description: 'Incorporate mindfulness techniques to reduce stress and boost focus throughout your day.', author: 'Alice Green', date: 'March 31, 2024', readTime: '6 min read', imageUrl: 'https://images.pexels.com/photos/3771089/pexels-photo-3771089.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1' },
+        { category: 'Personal Skills', title: 'The Art of Effective Communication', description: 'Improve your interpersonal skills by mastering active listening and clear expression.', author: 'David Lee', date: 'January 9, 2024', readTime: '8 min read', imageUrl: 'https://images.pexels.com/photos/3184430/pexels-photo-3184430.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1' }
     ];
-    
+
     // --- Functions ---
 
-    // Navigation
+    // --- FIX: Simplified and robust navigation logic ---
+    // This new logic works for both <a> tags and <button> elements.
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            // Check if the link is *not* for an external page or a section switch
-            if (!link.href.endsWith('.html') && link.dataset.target) {
-                e.preventDefault();
-                const targetId = link.dataset.target;
+            const targetId = link.dataset.target;
 
+            // If the clicked element has a 'data-target', it's for internal navigation.
+            if (targetId) {
+                e.preventDefault(); // Prevent default action (like form submission for buttons)
+
+                // Hide all page sections
                 pageSections.forEach(section => section.classList.add('hidden'));
-                const targetSection = document.getElementById(targetId);
-                if (targetSection) targetSection.classList.remove('hidden');
 
+                // Show the target section
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.classList.remove('hidden');
+                } else {
+                    console.warn(`Navigation target section with ID "${targetId}" not found.`);
+                }
+
+                // Update the active state ONLY for links in the main <nav> bar
                 navLinks.forEach(nav => nav.classList.remove('active'));
-                if (link.closest('nav')) link.classList.add('active'); // Only activate main nav links
-
-                window.scrollTo(0, 0);
-            } else if (link.href.endsWith('.html') && !link.dataset.target) {
-                // This is a link to a different page (like SignUp.html), let default behavior happen
-                // No e.preventDefault() here
-            } else if (link.dataset.target) { // Handle buttons styled as nav-links that switch sections
-                 e.preventDefault();
-                const targetId = link.dataset.target;
-
-                pageSections.forEach(section => section.classList.add('hidden'));
-                const targetSection = document.getElementById(targetId);
-                if (targetSection) targetSection.classList.remove('hidden');
+                if (link.closest('nav')) {
+                    link.classList.add('active');
+                }
+                
                 window.scrollTo(0, 0);
             }
+            // If there's no data-target, the script does nothing, allowing default
+            // browser behavior (e.g., following the link to signup.html).
         });
     });
 
@@ -128,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function createArticleCard(article) {
         return `
             <div class="article-card">
-                <img class="article-image" src="${article.imageUrl || 'https://via.placeholder.com/' + article.imagePlaceholder}" alt="${article.title}">
+                <img class="article-image" src="${article.imageUrl}" alt="${article.title}">
                 <div class="article-card-content">
                     <span class="article-category">${article.category}</span>
                     <h3>${article.title}</h3>
@@ -154,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (allArticlesGrid) displayArticles(articlesData, allArticlesGrid);
-    if (featuredArticlesGrid) displayArticles(articlesData.slice(0, 2), featuredArticlesGrid); // Display first 2 as featured
+    if (featuredArticlesGrid) displayArticles(articlesData.slice(0, 2), featuredArticlesGrid);
 
     if (articleSearchBtn && articleSearchInput && allArticlesGrid) {
         articleSearchBtn.addEventListener('click', () => {
@@ -178,10 +139,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Goals (with Local Storage for persistence)
+    function loadGoals() {
+        const savedGoals = localStorage.getItem('evolvivoGoals');
+        goals = savedGoals ? JSON.parse(savedGoals) : [{ text: 'Explore the features of Evolvivo', date: new Date().toISOString().split('T')[0], completed: false }];
+    }
 
-    // Goals
+    function saveGoals() {
+        localStorage.setItem('evolvivoGoals', JSON.stringify(goals));
+    }
+
     function renderGoals() {
-        if (!goalsList || !activeGoalsCount) return; // Guard clause
+        if (!goalsList || !activeGoalsCount) return;
 
         goalsList.innerHTML = '';
         goals.forEach((goal, index) => {
@@ -199,27 +168,26 @@ document.addEventListener('DOMContentLoaded', () => {
             goalsList.appendChild(li);
         });
         activeGoalsCount.textContent = goals.filter(g => !g.completed).length;
+        saveGoals();
     }
 
-    if (newGoalDateInput) { // Set default date for new goals
+    if (newGoalDateInput) {
         newGoalDateInput.valueAsDate = new Date();
     }
 
     if (addGoalBtn && newGoalInput && newGoalDateInput) {
-        addGoalBtn.addEventListener('click', () => {
+        const addNewGoal = () => {
             const goalText = newGoalInput.value.trim();
-            const goalDate = newGoalDateInput.value;
             if (goalText) {
-                goals.push({ text: goalText, date: goalDate, completed: false });
+                goals.push({ text: goalText, date: newGoalDateInput.value, completed: false });
                 newGoalInput.value = '';
-                // Optionally reset date or keep it: newGoalDateInput.valueAsDate = new Date();
                 renderGoals();
-                showToast(`Goal Added! "${goalText.substring(0, 20)}..."`);
+                showToast(`Goal Added!`);
             } else {
-                showToast('Please enter a goal description.', 3000);
+                showToast('Please enter a goal description.');
             }
-        });
-
+        };
+        addGoalBtn.addEventListener('click', addNewGoal);
         newGoalInput.addEventListener('keyup', (event) => {
             if (event.key === "Enter") {
                 addGoalBtn.click();
@@ -229,101 +197,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (goalsList) {
         goalsList.addEventListener('click', (e) => {
-            const target = e.target;
-            const index = target.dataset.index;
-
-            if (target.type === 'checkbox') {
-                goals[index].completed = target.checked;
-                renderGoals();
-                const status = target.checked ? "completed" : "marked as active";
-                showToast(`Goal "${goals[index].text.substring(0,20)}..." ${status}.`);
-            } else if (target.closest('.delete-goal-btn')) {
-                const actualButton = target.closest('.delete-goal-btn');
-                const goalIndexToDelete = actualButton.dataset.index; // Get index from button itself
-                const goalText = goals[goalIndexToDelete].text;
-                goals.splice(goalIndexToDelete, 1);
-                renderGoals();
-                showToast(`Goal Removed: "${goalText.substring(0, 20)}..."`);
+            const checkbox = e.target.closest('input[type="checkbox"]');
+            const deleteBtn = e.target.closest('.delete-goal-btn');
+            
+            if (checkbox) {
+                const index = checkbox.dataset.index;
+                goals[index].completed = checkbox.checked;
+            } else if (deleteBtn) {
+                const index = deleteBtn.dataset.index;
+                goals.splice(index, 1);
+                showToast(`Goal Removed.`);
             }
+            renderGoals();
         });
     }
 
-    // Add a default goal for demonstration if the list is empty
-    if (goals.length === 0) {
-        goals.push({ text: 'Run 5km', date: '2025-05-25', completed: false });
-    }
-    if (goalsList) renderGoals(); // Initial render of goals
-
-
-    // AI Tips
+    // AI Tips (No changes needed here)
     if (aiTipsForm && aiGoalInput && aiResponseArea && aiResponseText) {
         aiTipsForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const userGoal = aiGoalInput.value.trim();
             if (userGoal) {
-                // Simple placeholder AI response
-                aiResponseText.innerHTML = `
-                    <p>Okay, for your goal: "<strong>${userGoal}</strong>", here are some tailored tips:</p>
-                    <ul>
-                        <li><strong>Break it Down:</strong> Divide your goal into smaller, manageable steps. What's the very first small action you can take?</li>
-                        <li><strong>Set Milestones:</strong> Define clear, measurable milestones. How will you know you're making progress?</li>
-                        <li><strong>Seek Knowledge:</strong> Identify books, courses, mentors, or online communities related to your goal.</li>
-                        <li><strong>Practice Consistently:</strong> Schedule dedicated time for your goal. Even 15-30 minutes daily can make a huge difference.</li>
-                        <li><strong>Track Progress:</strong> Use a journal, app, or spreadsheet to monitor your advancements and identify patterns.</li>
-                        <li><strong>Stay Positive & Adapt:</strong> Visualize success, affirm your abilities, and be prepared to adjust your plan if needed. Challenges are part of the process.</li>
-                    </ul>
-                    <p>Remember, consistency and self-compassion are key. Good luck on your journey with "${userGoal}"!</p>
-                `;
+                aiResponseText.innerHTML = `<p>Okay, for your goal: "<strong>${userGoal}</strong>", here are some tailored tips:</p><ul><li><strong>Break it Down:</strong> Divide your goal into smaller, manageable steps. What's the very first small action you can take?</li><li><strong>Set Milestones:</strong> Define clear, measurable milestones. How will you know you're making progress?</li><li><strong>Practice Consistently:</strong> Schedule dedicated time for your goal. Even 15-30 minutes daily can make a huge difference.</li><li><strong>Track Progress:</strong> Use a journal, app, or spreadsheet to monitor your advancements and identify patterns.</li></ul><p>Good luck on your journey with "${userGoal}"!</p>`;
                 aiResponseArea.classList.remove('hidden');
                 showToast('AI tips generated!');
             } else {
                 aiResponseArea.classList.add('hidden');
-                showToast('Please enter a goal to get tips.', 3000);
+                showToast('Please enter a goal to get tips.');
             }
         });
     }
 
-    // Daily Inspiration
-    function getDayOfYear(date = new Date()) {
-        const start = new Date(date.getFullYear(), 0, 0);
-        const diff = (date - start) + ((start.getTimezoneOffset() - date.getTimezoneOffset()) * 60 * 1000);
-        const oneDay = 1000 * 60 * 60 * 24;
-        return Math.floor(diff / oneDay);
-    }
-
-    function setDailyInspiration() {
-        if (!quoteElement || !attributionElement) {
-            // console.warn("Daily inspiration elements not found."); // Optional: for debugging
-            return;
+    // --- Initial Page Setup ---
+    function init() {
+        // Set initial page to show
+        const initialPage = document.getElementById('home-page');
+        if (initialPage) {
+            pageSections.forEach(section => section.classList.add('hidden'));
+            initialPage.classList.remove('hidden');
+            const homeLink = document.querySelector('nav ul li a[data-target="home-page"]');
+            if (homeLink) {
+                homeLink.classList.add('active');
+            }
         }
-
-        if (inspirationalQuotes.length === 0) {
-            quoteElement.textContent = "No inspirational quotes available today.";
-            attributionElement.textContent = "";
-            return;
-        }
-
-        const today = new Date();
-        const dayOfYear = getDayOfYear(today);
-        const quoteIndex = (dayOfYear - 1) % inspirationalQuotes.length;
-        const selectedQuote = inspirationalQuotes[quoteIndex];
-
-        quoteElement.textContent = `"${selectedQuote.quote}"`;
-        attributionElement.textContent = `— ${selectedQuote.author}`;
+        
+        // Load and render goals
+        loadGoals();
+        renderGoals();
     }
-
-    // Initial Page Setup
-    const initialPage = document.getElementById('home-page');
-    if (initialPage) {
-        pageSections.forEach(section => section.classList.add('hidden'));
-        initialPage.classList.remove('hidden');
-        const homeLink = document.querySelector('nav ul li a[data-target="home-page"]');
-        if (homeLink) {
-            homeLink.classList.add('active');
-        }
-    }
-
-    // Call functions that need to run on page load
-    setDailyInspiration(); // Set the daily quote
+    
+    init();
 
 }); // End of DOMContentLoaded
