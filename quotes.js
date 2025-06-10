@@ -1,6 +1,6 @@
 // Lista de frases con formato { quote, author }
-const quotes = [
-    { quote: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+const inspirationalQuotes = [
+        { quote: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
         { quote: "Strive not to be a success, but rather to be of value.", author: "Albert Einstein" },
         { quote: "The mind is everything. What you think you become.", author: "Buddha" },
         { quote: "Your time is limited, so don't waste it living someone else's life.", author: "Steve Jobs" },
