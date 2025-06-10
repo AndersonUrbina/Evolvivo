@@ -38,6 +38,126 @@
 
   gtag('config', 'G-QTB83RBKB6');
 </script>
+        <!-- 
+      STYLES FOR THE NEW "CONTACT US" SECTION 
+      (Normally, you would add these to your style.css file)
+    -->
+    <style>
+        /* --- Contact Section Specifics --- */
+        .contact-layout {
+            display: flex;
+            gap: 2.5rem; /* 40px */
+            align-items: flex-start;
+        }
+
+        .contact-form-wrapper,
+        .contact-info {
+            background: #ffffff;
+            padding: 2.5rem; /* 40px */
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e0e0e0;
+        }
+
+        .contact-form-wrapper {
+            flex: 2; /* Takes up more space */
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-form-wrapper h2,
+        .contact-info h3 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .contact-info h3 {
+            font-size: 1.25rem;
+        }
+
+        /* Form Styling */
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            font-family: inherit; /* Use the site's font */
+            font-size: 1rem;
+            box-sizing: border-box;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #aaa;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+        
+        /* The main button uses your existing .btn.btn-primary style, so no new CSS is needed for it */
+
+        /* Contact Info Item Styling */
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem; /* 16px */
+            margin-bottom: 1.25rem;
+        }
+
+        .info-item i {
+            font-size: 1.1rem;
+            color: #4CAF50; /* Primary Green */
+            margin-top: 4px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .info-item span {
+            color: #6c757d;
+            font-weight: 500;
+        }
+
+        /* --- Responsive Design for Contact Section --- */
+        @media (max-width: 992px) {
+            .contact-layout {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-form-wrapper,
+            .contact-info {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -160,11 +280,74 @@
                 </div>
             </div>
         </section>
+        <!-- 
+          NEWLY INTEGRATED CONTACT PAGE SECTION 
+          Added the "hidden" class to work with your navigation script.
+        -->
+    <section id="contact-page" class="page-section hidden">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Get in Touch</h1>
+                    <p>We'd love to hear from you! Whether you have a question, feedback, or just want to say hello, our team is ready to help.</p>
+                </div>
+                <div class="contact-layout">
+                    <div class="contact-form-wrapper">
+                        <h2>Send us a Message</h2>
+                        <form action="#" method="POST">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" placeholder="Jane Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="jane.doe@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" placeholder="Feedback about..." required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" name="message" placeholder="Your message here..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                            
+                        </form>
+                    </div>
+                    <aside class="contact-info">
+                        <h3>Contact Information</h3>
+                        <div class="info-item">
+                            <i class="fas fa-location-dot"></i>
+                            <span>123 Evolution Way, Growth City, 45678</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>hello@evolvivo.com</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <h3>Follow Us</h3>
+                        <div class="info-item">
+                            <i class="fab fa-twitter"></i>
+                            <span>@EvolvivoApp</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>Evolvivo on LinkedIn</span>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+        
     </main>
 
     <footer>
         <p>© 2025 Evolvivo. All rights reserved.</p>
         <p>Empowering your journey to personal evolution.</p>
+        <a href="#" class="nav-link" data-target="contact-page">Contact Us</a>
     </footer>
 
     <div id="toast-notification" class="toast hidden">
