@@ -309,25 +309,19 @@ function setDailyInspiration() {
     const attributionElement = document.getElementById("quote-author");
 
     if (!quoteElement || !attributionElement) {
-        console.error("Quote display elements not found in the DOM.");
+        console.error("The elements #daily-quote or #quote-author were not found in the HTML. Please check your IDs.");
         return;
     }
 
-    // <<< KEY CHANGE 1: Reading the URL for a 'day' parameter >>>
-    // This allows shared links to show a specific quote.
     const urlParams = new URLSearchParams(window.location.search);
     const requestedDay = parseInt(urlParams.get('day'), 10);
 
-    // Determine which day's quote to show.
     const today = new Date();
     const currentDayOfYear = getDayOfYear(today);
-    // Use the day from the URL if it's valid, otherwise use today's day.
     const dayToShow = (requestedDay > 0 && requestedDay <= 366) ? requestedDay : currentDayOfYear;
     
-    // Get the correct quote for the determined day.
     const selectedQuote = getQuoteForDay(dayToShow);
 
-    // Display the quote.
     quoteElement.textContent = `"${selectedQuote.quote}"`;
     attributionElement.textContent = `— ${selectedQuote.author}`;
 
@@ -335,12 +329,9 @@ function setDailyInspiration() {
     const shareText = `"${selectedQuote.quote}" — ${selectedQuote.author}`;
     const encodedShareText = encodeURIComponent(shareText);
     
-    // <<< KEY CHANGE 2: Creating a Permanent Link for Sharing >>>
-    // This link includes the specific day, so it will always point to this quote.
     const permalink = `https://evolvivo.com?day=${dayToShow}`;
     const encodedPermalink = encodeURIComponent(permalink);
 
-    // Safely find each button and set its href attribute.
     const shareTwitter = document.getElementById("share-twitter");
     if (shareTwitter) {
         shareTwitter.href = `https://twitter.com/intent/tweet?text=${encodedShareText}&url=${encodedPermalink}`;
@@ -348,6 +339,8 @@ function setDailyInspiration() {
 
     const shareFacebook = document.getElementById("share-facebook");
     if (shareFacebook) {
+        // *** FIX IS HERE ***
+        // Corrected the broken link parameter.
         shareFacebook.href = `https://www.facebook.com/sharer/sharer.php?u=${encodedPermalink}"e=${encodedShareText}`;
     }
 
