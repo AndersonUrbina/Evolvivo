@@ -267,6 +267,10 @@ main {
     color: var(--text-light);
 }
 
+.social-icon {
+    font-size: 1em;
+}
+
 .featured-articles-section, .cta-section {
     padding: 40px 0;
 }
