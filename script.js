@@ -72,12 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         // Add more articles if needed
     ];
-
-    const inspirationalQuotes = [
-        // Original unique set
-        { quote: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
-    ];
-
+    
     // --- Functions ---
 
     // Navigation
