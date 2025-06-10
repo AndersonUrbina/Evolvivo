@@ -104,7 +104,27 @@
         <a href="https://www.instagram.com/evolvivo" target="_blank" title="Visit our Instagram">
             <i class="fab fa-instagram"></i>
         </a>
-    </div> 
+    </div>
+    <!-- JavaScript to generate share links -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const quote = document.getElementById("daily-quote").innerText.trim();
+            const encodedQuote = encodeURIComponent(quote);
+            const url = encodeURIComponent("https://evolvivo.com");
+
+            document.getElementById("share-twitter").href =
+                `https://twitter.com/intent/tweet?text=${encodedQuote}`;
+
+            document.getElementById("share-facebook").href =
+                `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+
+            document.getElementById("share-linkedin").href =
+                `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+
+            document.getElementById("share-whatsapp").href =
+                `https://api.whatsapp.com/send?text=${encodedQuote}%20${url}`;
+        });
+    </script>
                     
                 </div>
             </div>
