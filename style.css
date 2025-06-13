@@ -610,3 +610,54 @@ footer p {
         width: 100%;
     }
 }
+
+/* --- About Us Page Styles (NEW) --- */
+.about-intro-text {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    max-width: 800px;
+    margin: -20px auto 40px auto;
+}
+
+.about-content-section {
+    background-color: var(--card-bg);
+    padding: 30px 40px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    box-shadow: var(--box-shadow);
+}
+
+.about-content-section h2 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.6rem;
+}
+
+.about-content-section h2 i {
+    color: var(--primary-color);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.value-item {
+    text-align: center;
+    padding: 20px;
+}
+
+.value-icon {
+    font-size: 2.5em;
+    color: var(--primary-color-dark);
+    margin-bottom: 15px;
+}
+
+.value-item h3 {
+    font-size: 1.3rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
