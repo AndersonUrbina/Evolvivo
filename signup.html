@@ -6,8 +6,37 @@
     <title>SIGNUP</title>
     <link rel="icon" type="image/x-icon" href="https://img.icons8.com/ios-filled/50/4CAF50/leaf.png">
     <link rel="stylesheet" href="Resources/style.css">
+    <style>
+      /* Style for the back arrow and its hover effect */
+      .back-arrow {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 45px; /* Sizing the circular area */
+        height: 45px;
+        border-radius: 50%; /* This makes the background a circle */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease; /* Smooth transition for the hover effect */
+      }
+      
+      .back-arrow:hover {
+        background-color: rgba(0, 0, 0, 0.1); /* A semi-transparent black to 'darken' the area */
+      }
+
+      .back-arrow img {
+        width: 28px; /* Adjust image size to fit well within the circle */
+        height: auto;
+      }
+    </style>
 </head>
 <body>
+<!-- Back Arrow -->
+<a href="javascript:history.back()" class="back-arrow">
+  <img src="https://raw.githubusercontent.com/AndersonUrbina/Evolvivo/93c354d4153bf52910eab52b4ead9022ecd48898/Resources/Arrow-back.svg" alt="Back">
+</a>
+
 <!-- Sign Up Page -->
     <div class="wrapper">
         <div class="page-header">
