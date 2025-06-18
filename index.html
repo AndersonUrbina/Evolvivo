@@ -399,15 +399,16 @@
 <style>
   #cookie-banner {
     /* Layout and Positioning */
-    display: none; /* Initially hidden, controlled by JS */
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     z-index: 9999;
     
-    /* Flexbox for alignment */
-    display: flex;
+    /* Initially hidden, controlled by JS */
+    display: none; 
+    
+    /* Flexbox for alignment (will be enabled by JS) */
     justify-content: center;
     align-items: center;
     gap: 1.5em; /* Spacing between text and button */
