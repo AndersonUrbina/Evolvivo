@@ -3,37 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css">
   <title>Terms of Service - Evolvivo</title>
+  <!-- Link to the main stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-  <h1>Terms of Service</h1>
-  <p><strong>Effective Date:</strong> [Insert Date]</p>
+  <!-- Full header copied from index.html -->
+  <header>
+    <div class="container header-content">
+        <div class="logo">
+            <img src="https://img.icons8.com/ios-filled/50/4CAF50/leaf.png" alt="Evolvivo Leaf Icon" class="logo-icon"/>
+            <a href="index.html">Evolvivo</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html#home-page" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="index.html#articles-page" class="nav-link"><i class="fas fa-newspaper"></i> Articles</a></li>
+                <li><a href="index.html#goals-page" class="nav-link"><i class="fas fa-bullseye"></i> Goals</a></li>
+            </ul>
+        </nav>
+        <div class="hero-actions">
+            <a href="./signup"><button class="btn btn-primary"><i class="fas fa-user-plus"></i> Sign Up</button></a>
+        </div>
+    </div>
+  </header>
 
-  <p>By using the Evolvivo website (<a href="https://evolvivo.com">https://evolvivo.com</a>), you agree to the following Terms of Service.</p>
+  <main>
+    <section class="page-section">
+      <div class="container">
+        <div class="about-content-section">
+          <h1>Terms of Service</h1>
+          <p><strong>Effective Date:</strong> <span id="effective-date"></span></p>
 
-  <h2>1. Website Use</h2>
-  <p>You agree to use our content for lawful and non-commercial purposes. Do not misuse or attempt to disrupt our services.</p>
+          <p>By using the Evolvivo website (<a href="https://evolvivo.com">https://evolvivo.com</a>), you agree to the following Terms of Service.</p>
 
-  <h2>2. Intellectual Property</h2>
-  <p>All content is owned by Evolvivo unless otherwise noted. You may not reproduce or republish our content without written consent.</p>
+          <h2>1. Website Use</h2>
+          <p>You agree to use our content for lawful and non-commercial purposes. Do not misuse or attempt to disrupt our services.</p>
 
-  <h2>3. Email Subscription</h2>
-  <p>By subscribing, you agree to receive emails from us. You may unsubscribe at any time using the link provided in our emails.</p>
+          <h2>2. Intellectual Property</h2>
+          <p>All content is owned by Evolvivo unless otherwise noted. You may not reproduce or republish our content without written consent.</p>
 
-  <h2>4. Limitation of Liability</h2>
-  <p>Evolvivo is not liable for any damages that may arise from the use of this website or its content.</p>
+          <h2>3. Email Subscription</h2>
+          <p>By subscribing, you agree to receive emails from us. You may unsubscribe at any time using the link provided in our emails.</p>
 
-  <h2>5. Third-Party Links</h2>
-  <p>Our website may contain links to third-party websites. We are not responsible for their content or privacy practices.</p>
+          <h2>4. Limitation of Liability</h2>
+          <p>Evolvivo is not liable for any damages that may arise from the use of this website or its content.</p>
 
-  <h2>6. Modifications</h2>
-  <p>We may update these Terms of Service without prior notice. Continued use of the site means you accept the revised terms.</p>
+          <h2>5. Third-Party Links</h2>
+          <p>Our website may contain links to third-party websites. We are not responsible for their content or privacy practices.</p>
 
-  <h2>7. Governing Law</h2>
-  <p>These Terms are governed by the laws of your applicable local jurisdiction.</p>
+          <h2>6. Modifications</h2>
+          <p>We may update these Terms of Service without prior notice. Continued use of the site indicates that you've accepted the revised terms.</p>
 
-  <h2>8. Contact</h2>
-  <p>If you have any questions, contact us at <a href="mailto:evolvivo@evolvivo.com">evolvivo@evolvivo.com</a>.</p>
+          <h2>7. Governing Law</h2>
+          <p>These Terms are governed by the laws of your applicable local jurisdiction.</p>
+
+          <h2>8. Contact</h2>
+          <p>If you have any questions, contact us at <a href="mailto:evolvivo@evolvivo.com">evolvivo@evolvivo.com</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Full footer copied from index.html -->
+  <footer>
+    <p>© 2025 Evolvivo. All rights reserved.</p>
+    <p>Empowering your journey to personal evolution.</p>
+    <a href="index.html#contact-page">Contact</a> |
+    <a href="index.html#about-page">About us</a>
+  </footer>
+
+  <!-- Script to set the current date -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const dateElement = document.getElementById('effective-date');
+      if (dateElement) {
+        const today = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        dateElement.textContent = today.toLocaleDateString('en-US', options);
+      }
+    });
+  </script>
 </body>
 </html>
