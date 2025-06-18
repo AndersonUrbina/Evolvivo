@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Meta Tags for the Article -->
+    <meta name="description" content="Discover how focusing on one key habit, a 'keystone habit,' can create a ripple effect that transforms multiple areas of your life for the better.">
+    <meta name="keywords" content="keystone habits, habit building, personal growth, self-improvement, productivity">
+    <meta property="og:title" content="The Power of Keystone Habits | Evolvivo">
+    <meta property="og:description" content="Learn how to identify and implement keystone habits to unlock a cascade of positive changes in your life.">
+    <meta property="og:image" content="https://images.pexels.com/photos/4964985/pexels-photo-4964985.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <title>The Power of Keystone Habits - Evolvivo</title>
+    
+    <!-- IMPORTANT: The path to the CSS file is updated -->
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/ios-filled/50/4CAF50/leaf.png">
+    <link rel="stylesheet" href="../../style.css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom Styles for this Article Page -->
+    <style>
+        /* Styles for the dynamically generated article content */
+        .article-detail-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .article-detail-header .article-category {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            margin-bottom: 1rem;
+        }
+
+        .article-detail-header h1 {
+            font-size: 3rem;
+            color: var(--text-color);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .article-meta-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .article-meta-info span i {
+            margin-right: 6px;
+            color: var(--primary-color);
+        }
+
+        .article-hero-image {
+            width: 100%;
+            max-height: 450px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
+        
+        /* Using the .content-wrapper class you already have for the text body */
+        .article-body-content {
+            max-width: 800px;
+            margin: 0 auto; /* Center the text content */
+        }
+        
+        .article-body-content blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .back-to-articles-link {
+            display: inline-block;
+            margin-top: 3rem;
+            font-weight: 600;
+        }
+
+        .back-to-articles-link i {
+            margin-right: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .article-detail-header h1 {
+                font-size: 2.2rem;
+            }
+            .article-meta-info {
+                gap: 1rem;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Reusing your existing header for consistency -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="https://img.icons8.com/ios-filled/50/4CAF50/leaf.png" alt="Evolvivo Leaf Icon" class="logo-icon"/>
+                <a href="/">Evolvivo</a> <!-- Links back to the main page -->
+            </div>
+            <nav>
+                 <!-- Simple navigation for the article page -->
+                <ul>
+                    <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="/#articles"><i class="fas fa-newspaper"></i> All Articles</a></li>
+                </ul>
+            </nav>
+            <div class="hero-actions">
+                 <a href="/signup"><button class="btn btn-primary"><i class="fas fa-user-plus"></i> Sign Up</button></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- This container will be filled by JavaScript -->
+        <div id="article-container"></div>
+    </main>
+    
+    <!-- Reusing your existing footer -->
+    <footer>
+        <p>© 2025 Evolvivo. All rights reserved.</p>
+        <p>Empowering your journey to personal evolution.</p>
+        <!-- Updated links to point to the main site -->
+        <a href="/#about-page">About us</a> |
+        <a href="/#contact-page">Contact & Support</a> |
+        <a href="/terms-of-service">Terms of Service</a> |
+        <a href="/privacy-policy">Privacy Policy</a> |
+        <a href="/disclaimer">Disclaimer</a>
+    </footer>
+
+    <!-- JavaScript to Generate and Inject the Article Content -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Article Data Object
+            const articleData = {
+                category: 'Habit Building',
+                title: 'The Power of Keystone Habits',
+                description: 'Discover how focusing on one key habit can transform multiple areas of your life.',
+                author: 'Jane Doe',
+                date: 'March 14, 2024',
+                readTime: '5 min read',
+                imageUrl: 'https://images.pexels.com/photos/4964985/pexels-photo-4964985.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1',
+                // This URL doesn't need to be used here, but is kept for data consistency
+                url: '/articles/the-power-of-keystone-habits/'
+            };
+
+            // 2. Function to generate the article's HTML
+            function generateArticleHtml(article) {
+                // Placeholder content for the article body
+                const articleBody = `
+                    <p>In the world of self-improvement, we often think that massive change requires massive action. We set out to transform our lives overnight, only to find ourselves overwhelmed and back where we started. But what if the secret to widespread change lies not in doing everything at once, but in focusing on just one or two critical habits? This is the power of <strong>keystone habits</strong>.</p>
+                    
+                    <p>Coined by Charles Duhigg in his bestselling book, "The Power of Habit," a keystone habit is a single practice that sparks a chain reaction, creating a cascade of other positive habits and improvements in its wake. They are the small wins that lead to bigger victories.</p>
+                    
+                    <h2>What Makes a Habit a "Keystone"?</h2>
+                    <p>Not all habits are created equal. A keystone habit has a unique ripple effect. Think of exercise. When you start exercising regularly, you might naturally begin to eat better to fuel your workouts. You might sleep more soundly because you're physically tired. Your stress levels might decrease, leading to improved focus at work and more patience with your family. Exercise didn't directly cause these changes, but it created the environment for them to flourish.</p>
+                    
+                    <p>Common examples of keystone habits include:</p>
+                    <ul>
+                        <li><strong>Regular Exercise:</strong> Boosts energy, improves mood, and encourages healthier eating.</li>
+                        <li><strong>Making Your Bed Every Morning:</strong> Instills a sense of order and accomplishment, setting a productive tone for the day.</li>
+                        <li><strong>Tracking Your Food Intake:</strong> Raises awareness about your diet, often leading to healthier choices without a strict "diet plan."</li>
+                        <li><strong>Daily Meditation or Mindfulness:</strong> Reduces stress and increases emotional regulation, impacting how you react to challenges.</li>
+                    </ul>
+                    
+                    <blockquote>"Keystone habits say that success doesn’t depend on getting every single thing right, but instead relies on identifying a few key priorities and fashioning them into powerful levers." — Charles Duhigg</blockquote>
+                    
+                    <h2>How to Find Your Own Keystone Habit</h2>
+                    <p>Identifying a potential keystone habit is a personal journey. Start by looking for areas of your life that create a sense of "small wins." Ask yourself: which single change could create the most positive momentum? It doesn't have to be the biggest or hardest habit. In fact, it's often better to start small.</p>
+                    <p>Focus on one area—be it physical health, morning routine, or financial tracking. Commit to one small, consistent action. By nurturing that one keystone, you're not just building a single habit; you're planting a seed for comprehensive personal evolution.</p>
+                `;
+
+                // Combine all parts into the final HTML structure
+                return `
+                    <section class="page-section">
+                        <div class="container">
+                            <div class="article-detail-header">
+                                <span class="article-category">${article.category}</span>
+                                <h1>${article.title}</h1>
+                                <div class="article-meta-info">
+                                    <span><i class="fas fa-user"></i> By ${article.author}</span>
+                                    <span><i class="fas fa-calendar-alt"></i> ${article.date}</span>
+                                    <span><i class="fas fa-clock"></i> ${article.readTime}</span>
+                                </div>
+                            </div>
+                            
+                            <img class="article-hero-image" src="${article.imageUrl}" alt="${article.title}">
+
+                            <div class="article-body-content content-wrapper">
+                                ${articleBody}
+                                <a href="/#articles" class="back-to-articles-link"><i class="fas fa-arrow-left"></i> Back to All Articles</a>
+                            </div>
+                        </div>
+                    </section>
+                `;
+            }
+
+            // 3. Inject the generated HTML into the placeholder
+            const articleContainer = document.getElementById('article-container');
+            if (articleContainer) {
+                articleContainer.innerHTML = generateArticleHtml(articleData);
+            }
+        });
+    </script>
+
+</body>
+</html>
