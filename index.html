@@ -157,6 +157,20 @@
                 padding: 2rem 1.5rem;
             }
         }
+
+        /* --- Responsive Hero Buttons (NEWLY ADDED) --- */
+        @media (max-width: 768px) {
+            .hero-buttons {
+                display: flex;
+                flex-direction: column; /* Stack buttons vertically */
+                gap: 1rem; /* Add space between the stacked buttons (16px) */
+            }
+
+            .hero-buttons .btn {
+                width: 100%; /* Make each button take the full width */
+                text-align: center; /* Ensure text is centered */
+            }
+        }
     </style>
 </head>
 <body>
