@@ -392,6 +392,85 @@
         <span id="toast-message"></span>
     </div>
 
+    <!-- CSS for the styled Cookie Consent Banner -->
+<style>
+  #cookie-banner {
+    /* Layout and Positioning */
+    display: none; /* Initially hidden, controlled by JS */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    
+    /* Flexbox for alignment */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em; /* Spacing between text and button */
+    flex-wrap: wrap; /* Ensures responsiveness on small screens */
+    
+    /* Appearance matching the website's style */
+    background: #ffffff;
+    color: #3a3a3a; /* Softer dark gray for text */
+    padding: 1.25em 1em;
+    font-family: sans-serif; /* A font that matches the site's clean look */
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08); /* Subtle upward shadow like the cards */
+    text-align: center;
+  }
+
+  #cookie-banner a {
+    color: #4CAF50; /* Main green from site buttons */
+    text-decoration: underline;
+    font-weight: 500;
+  }
+
+  #cookie-banner a:hover {
+    text-decoration: none;
+  }
+
+  #cookie-banner button {
+    /* Styling to match the "Sign Up" button */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    padding: 0.75em 1.75em;
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+
+  #cookie-banner button:hover {
+    background-color: #45a049; /* Slightly darker green for hover state */
+  }
+</style>
+
+<!-- Styled Cookie Consent Banner HTML -->
+<div id="cookie-banner">
+  <span>This website uses cookies to improve your experience and analyze traffic. By using this site, you agree to our <a href="/privacy-policy.html">Privacy Policy</a>.</span>
+  <button onclick="acceptCookies()">Got it</button>
+</div>
+
+<!-- JavaScript to control the banner (updated for flex display) -->
+<script>
+  function acceptCookies() {
+    localStorage.setItem("cookiesAccepted", "true");
+    document.getElementById("cookie-banner").style.display = "none";
+  }
+
+  window.addEventListener("DOMContentLoaded", function () {
+    if (!localStorage.getItem("cookiesAccepted")) {
+      const banner = document.getElementById("cookie-banner");
+      if (banner) {
+        // We use 'flex' to match the modern layout defined in the CSS
+        banner.style.display = "flex";
+      }
+    }
+  });
+</script>
+    
     <script src="script.js" defer></script>
     <script src="quotes.js" defer></script>
 </body>
