@@ -4,26 +4,82 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Disclaimer - Evolvivo</title>
+  <!-- Link to the main stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-  <h1>Disclaimer</h1>
-  <p><strong>Effective Date:</strong> [Insert Date]</p>
+  <!-- Full header copied from index.html -->
+  <header>
+    <div class="container header-content">
+        <div class="logo">
+            <img src="https://img.icons8.com/ios-filled/50/4CAF50/leaf.png" alt="Evolvivo Leaf Icon" class="logo-icon"/>
+            <!-- This link now points back to the main page -->
+            <a href="index.html">Evolvivo</a>
+        </div>
+        <nav>
+            <ul>
+                <!-- Links now point back to index.html to navigate to the SPA sections -->
+                <li><a href="index.html#home-page" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="index.html#articles-page" class="nav-link"><i class="fas fa-newspaper"></i> Articles</a></li>
+                <li><a href="index.html#goals-page" class="nav-link"><i class="fas fa-bullseye"></i> Goals</a></li>
+            </ul>
+        </nav>
+        <div class="hero-actions">
+            <!-- This link to a separate signup page remains the same -->
+            <a href="./signup"><button class="btn btn-primary"><i class="fas fa-user-plus"></i> Sign Up</button></a>
+        </div>
+    </div>
+  </header>
 
-  <p>The information provided by <strong>Evolvivo</strong> on <a href="https://evolvivo.com">https://evolvivo.com</a> is for general informational and inspirational purposes only. All content is provided in good faith, however, we make no warranty of any kind regarding the accuracy or completeness of any information.</p>
+  <main>
+    <section class="page-section">
+      <div class="container">
+        <div class="about-content-section">
+          <h1>Disclaimer</h1>
+          <p><strong>Effective Date:</strong> <span id="effective-date"></span></p>
 
-  <h2>1. Not Professional Advice</h2>
-  <p>The articles and content on Evolvivo are not intended to be a substitute for professional advice. You should always seek the advice of a qualified professional before acting on any information found on this website.</p>
+          <p>The information provided by <strong>Evolvivo</strong> on <a href="https://evolvivo.com">https://evolvivo.com</a> is for general informational and inspirational purposes only. All content is provided in good faith, however, we make no warranty of any kind regarding the accuracy or completeness of any information.</p>
 
-  <h2>2. No Guarantees</h2>
-  <p>While we strive to provide accurate information, we do not guarantee that any information provided will be free of errors or omissions.</p>
+          <h2>1. Not Professional Advice</h2>
+          <p>The articles and content on Evolvivo are not intended to be a substitute for professional advice. You should always seek the advice of a qualified professional before acting on any information found on this website.</p>
 
-  <h2>3. Email Content</h2>
-  <p>Content sent to you via email subscription is for informational purposes only and does not constitute any form of professional advice.</p>
+          <h2>2. No Guarantees</h2>
+          <p>While we strive to provide accurate information, we do not guarantee that any information provided will be free of errors or omissions.</p>
 
-  <h2>4. External Links</h2>
-  <p>The website may contain links to external websites not provided or maintained by Evolvivo. We do not guarantee the accuracy or reliability of any information offered by third-party sites.</p>
+          <h2>3. Email Content</h2>
+          <p>Content sent to you via email subscription is for informational purposes only and does not constitute any form of professional advice.</p>
 
-  <h2>5. Contact</h2>
-  <p>If you have questions about this disclaimer, please contact us at <a href="mailto:evolvivo@evolvivo.com">evolvivo@evolvivo.com</a>.</p>
+          <h2>4. External Links</h2>
+          <p>The website may contain links to external websites not provided or maintained by Evolvivo. We do not guarantee the accuracy or reliability of any information offered by third-party sites.</p>
+
+          <h2>5. Contact</h2>
+          <p>If you have questions about this disclaimer, please contact us at <a href="mailto:evolvivo@evolvivo.com">evolvivo@evolvivo.com</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Full footer copied from index.html -->
+  <footer>
+    <p>© 2025 Evolvivo. All rights reserved.</p>
+    <p>Empowering your journey to personal evolution.</p>
+    <!-- Links now point back to index.html with hashes -->
+    <a href="index.html#contact-page">Contact</a> |
+    <a href="index.html#about-page">About us</a>
+  </footer>
+
+  <!-- Script to set the current date -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const dateElement = document.getElementById('effective-date');
+      if (dateElement) {
+        const today = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        dateElement.textContent = today.toLocaleDateString('en-US', options);
+      }
+    });
+  </script>
 </body>
 </html>
