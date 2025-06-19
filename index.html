@@ -178,12 +178,13 @@
         <div class="container header-content">
             <div class="logo">
                 <img src="https://img.icons8.com/ios-filled/50/4CAF50/leaf.png" alt="Evolvivo Leaf Icon" class="logo-icon"/>
-                <a href="https://evolvivo.com/">Evolvivo</a>
+                <a href="index.html">Evolvivo</a>
             </div>
             <nav>
                 <ul>
                     <li><a href="#" class="nav-link active" data-target="home-page"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="#" class="nav-link" data-target="articles-page"><i class="fas fa-newspaper"></i> Articles</a></li>
+                    <!-- UPDATED: Link to the new articles.html page -->
+                    <li><a href="articles.html" class="nav-link"><i class="fas fa-newspaper"></i> Articles</a></li>
                     <li><a href="#" class="nav-link" data-target="goals-page"><i class="fas fa-bullseye"></i> Goals</a></li>
                 </ul>
             </nav>
@@ -201,7 +202,8 @@
                     <h1>Welcome to Evolvivo</h1>
                     <p>Your companion in cultivating essential skills, building lasting habits, and achieving your most ambitious personal goals.</p>
                     <div class="hero-buttons">
-                        <button class="btn btn-primary nav-link" data-target="articles-page">Explore Articles</button>
+                        <!-- UPDATED: This is now a link to the new articles page -->
+                        <a href="articles.html" class="btn btn-primary">Explore Articles</a>
                         <button class="btn btn-secondary nav-link" data-target="goals-page">Set Your Goals <i class="fas fa-arrow-right"></i></button>
                     </div>
                 </div>
@@ -215,21 +217,21 @@
                         <p class="attribution" id="quote-author">— Sparrow, Barclay</p>
                     </div>
 
-        <!--Icons to share the daily quote-->
+                    <!--Icons to share the daily quote-->
                     <div class="share-icons">
-         <a href="#" id="share-twitter" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Share on Twitter">
-            <i class="fab fa-twitter"></i>
-         </a>
-        <a href="#" id="share-facebook" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook">
-             <i class="fab fa-facebook"></i>
-         </a>
-          <a href="#" id="share-linkedin" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn">
-              <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="#" id="share-whatsapp" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Share on WhatsApp">
-                <i class="fab fa-whatsapp"></i>
-           </a>
-    </div>       
+                        <a href="#" id="share-twitter" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Share on Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" id="share-facebook" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" id="share-linkedin" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" id="share-whatsapp" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Share on WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>       
                 </div>
             </div>
 
@@ -237,7 +239,8 @@
                 <div class="container">
                     <div class="section-header">
                         <h2>Featured Articles</h2>
-                        <a href="#" class="view-all-link nav-link" data-target="articles-page">View All <i class="fas fa-arrow-right"></i></a>
+                        <!-- UPDATED: Link to the new articles.html page -->
+                        <a href="articles.html" class="view-all-link">View All <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <div class="articles-grid" id="featured-articles-grid">
                         <!-- Featured articles will be dynamically inserted here -->
@@ -292,25 +295,6 @@
                         </div>
                     </div>
                 </div>
-
-            </div>
-        </section>
-        
-        <!-- Articles Page Section -->
-        <a name="Articles" id="Articles"></a>
-        <section id="articles-page" class="page-section hidden">
-            <div class="container" >
-                <div class="page-header">
-                    <h1>Explore Our Articles</h1>
-                    <p>Find insights on personal development, habit building, and goal achievement.</p>
-                </div>
-                <div class="search-bar-container">
-                    <input type="text" id="article-search-input" placeholder="Search for articles, topics, tags...">
-                    <button id="article-search-btn" class="btn btn-primary"><i class="fas fa-search"></i> Search</button>
-                </div>
-                <div class="articles-grid" id="all-articles-grid">
-                    <!-- All articles will be dynamically inserted here -->
-                </div>
             </div>
         </section>
 
@@ -334,11 +318,9 @@
                 </div>
             </div>
         </section>
-        <!-- 
-          NEWLY INTEGRATED CONTACT PAGE SECTION 
-          Added the "hidden" class to work with your navigation script.
-        -->
-    <section id="contact-page" class="page-section hidden">
+
+        <!-- Contact Page Section -->
+        <section id="contact-page" class="page-section hidden">
             <div class="container">
                 <div class="page-header">
                     <h1>Get in Touch</h1>
@@ -365,7 +347,6 @@
                                 <textarea id="message" name="message" placeholder="Your message here..." required></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Send Message</button>
-                            
                         </form>
                     </div>
                     <aside class="contact-info">
@@ -412,56 +393,44 @@
     <!-- CSS for the styled Cookie Consent Banner -->
 <style>
   #cookie-banner {
-    /* Layout and Positioning */
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     z-index: 9999;
-    
-    /* Initially hidden, controlled by JS */
     display: none; 
-    
-    /* Flexbox for alignment (will be enabled by JS) */
     justify-content: center;
     align-items: center;
-    gap: 1.5em; /* Spacing between text and button */
-    flex-wrap: wrap; /* Ensures responsiveness on small screens */
-    
-    /* Appearance matching the website's style */
+    gap: 1.5em; 
+    flex-wrap: wrap; 
     background: #ffffff;
-    color: #3a3a3a; /* Softer dark gray for text */
+    color: #3a3a3a; 
     padding: 1.25em 1em;
-    font-family: sans-serif; /* A font that matches the site's clean look */
-    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08); /* Subtle upward shadow like the cards */
+    font-family: sans-serif; 
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08); 
     text-align: center;
   }
-
   #cookie-banner a {
-    color: #4CAF50; /* Main green from site buttons */
+    color: #4CAF50; 
     text-decoration: underline;
     font-weight: 500;
   }
-
   #cookie-banner a:hover {
     text-decoration: none;
   }
-
   #cookie-banner button {
-    /* Styling to match the "Sign Up" button */
     background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 8px; /* Rounded corners */
+    border-radius: 8px; 
     padding: 0.75em 1.75em;
     cursor: pointer;
     font-size: 0.95em;
     font-weight: 600;
     transition: background-color 0.3s ease;
   }
-
   #cookie-banner button:hover {
-    background-color: #45a049; /* Slightly darker green for hover state */
+    background-color: #45a049; 
   }
 </style>
 
@@ -471,35 +440,17 @@
   <button onclick="acceptCookies()">Got it</button>
 </div>
 
-<!-- JavaScript to control the banner (updated for flex display) -->
+<!-- JavaScript to control the banner -->
 <script>
   function acceptCookies() {
     localStorage.setItem("cookiesAccepted", "true");
     document.getElementById("cookie-banner").style.display = "none";
   }
-
   window.addEventListener("DOMContentLoaded", function () {
     if (!localStorage.getItem("cookiesAccepted")) {
       const banner = document.getElementById("cookie-banner");
       if (banner) {
-        // We use 'flex' to match the modern layout defined in the CSS
         banner.style.display = "flex";
-      }
-    }
-  });
-</script>
-    <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const hash = window.location.hash;
-    if (hash) {
-      const section = document.querySelector(hash);
-      if (section && section.classList.contains("hidden")) {
-        section.classList.remove("hidden");
-
-        // Optional: delay to ensure layout updates before scroll
-        setTimeout(() => {
-          section.scrollIntoView({ behavior: "smooth" });
-        }, 100);
       }
     }
   });
