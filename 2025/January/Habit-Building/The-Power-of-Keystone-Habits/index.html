@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO Meta Tags for the Article -->
+    <!-- SEO Meta Tags -->
     <meta name="description" content="Discover how focusing on one key habit, a 'keystone habit,' can create a ripple effect that transforms multiple areas of your life for the better.">
     <meta name="keywords" content="keystone habits, habit building, personal growth, self-improvement, productivity">
     <meta property="og:title" content="The Power of Keystone Habits | Evolvivo">
@@ -13,21 +13,19 @@
 
     <title>The Power of Keystone Habits - Evolvivo</title>
     
-    <!-- IMPORTANT: The path to the CSS file is updated -->
+    <!-- Link to your MAIN stylesheet. This is required. -->
     <link rel="icon" type="image/x-icon" href="https://img.icons8.com/ios-filled/50/4CAF50/leaf.png">
     <link rel="stylesheet" href="../../../../style.css" media="all">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Custom Styles for this Article Page -->
+    <!-- Article-specific styles are now embedded here -->
     <style>
-        /* Styles for the dynamically generated article content */
         .article-detail-header {
             text-align: center;
             margin-bottom: 2rem;
             padding-bottom: 2rem;
             border-bottom: 1px solid var(--border-color);
         }
-
         .article-detail-header .article-category {
             display: inline-block;
             background-color: var(--primary-color);
@@ -37,14 +35,12 @@
             font-size: 0.9em;
             margin-bottom: 1rem;
         }
-
         .article-detail-header h1 {
             font-size: 3rem;
             color: var(--text-color);
             line-height: 1.2;
             margin-bottom: 1rem;
         }
-
         .article-meta-info {
             display: flex;
             justify-content: center;
@@ -54,12 +50,10 @@
             color: var(--text-light);
             font-size: 0.95rem;
         }
-
         .article-meta-info span i {
             margin-right: 6px;
             color: var(--primary-color);
         }
-
         .article-hero-image {
             width: 100%;
             max-height: 450px;
@@ -67,13 +61,10 @@
             border-radius: 8px;
             margin-bottom: 3rem;
         }
-        
-        /* Using the .content-wrapper class you already have for the text body */
         .article-body-content {
             max-width: 800px;
-            margin: 0 auto; /* Center the text content */
+            margin: 0 auto;
         }
-        
         .article-body-content blockquote {
             border-left: 4px solid var(--primary-color);
             padding-left: 1.5rem;
@@ -82,17 +73,14 @@
             color: var(--text-light);
             font-size: 1.1rem;
         }
-
         .back-to-articles-link {
             display: inline-block;
             margin-top: 3rem;
             font-weight: 600;
         }
-
         .back-to-articles-link i {
             margin-right: 8px;
         }
-
         @media (max-width: 768px) {
             .article-detail-header h1 {
                 font-size: 2.2rem;
@@ -106,19 +94,17 @@
     </style>
 </head>
 <body>
-    <!-- Reusing your existing header for consistency -->
+    <!-- Header remains the same for consistency -->
     <header>
         <div class="container header-content">
             <div class="logo">
                 <img src="https://img.icons8.com/ios-filled/50/4CAF50/leaf.png" alt="Evolvivo Leaf Icon" class="logo-icon"/>
-                <a href="/">Evolvivo</a> <!-- Links back to the main page -->
+                <a href="/">Evolvivo</a>
             </div>
             <nav>
-                 <!-- Simple navigation for the article page -->
                 <ul>
-                    <li><a href="https://evolvivo.com/" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="../../../../#Articles" class="nav-link" ><i class="fas fa-newspaper"></i> Articles</a></li>
-                    <li><a href="#" class="nav-link" data-target="goals-page"><i class="fas fa-bullseye"></i> Goals</a></li>
+                    <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="/?view=articles#articles-page"><i class="fas fa-newspaper"></i> All Articles</a></li>
                 </ul>
             </nav>
             <div class="hero-actions">
@@ -128,42 +114,22 @@
     </header>
 
     <main>
-        <!-- This container will be filled by JavaScript -->
-        <div id="article-container"></div>
-    </main>
-    
-    <!-- Reusing your existing footer -->
-    <footer>
-        <p>© 2025 Evolvivo. All rights reserved.</p>
-        <p>Empowering your journey to personal evolution.</p>
-        <!-- Updated links to point to the main site -->
-        <a href="/#about-page">About us</a> |
-        <a href="/#contact-page">Contact & Support</a> |
-        <a href="/terms-of-service">Terms of Service</a> |
-        <a href="/privacy-policy">Privacy Policy</a> |
-        <a href="/disclaimer">Disclaimer</a>
-    </footer>
+        <!-- The article content is now static HTML, not generated by JavaScript -->
+        <section class="page-section">
+            <div class="container">
+                <div class="article-detail-header">
+                    <span class="article-category">Habit Building</span>
+                    <h1>The Power of Keystone Habits</h1>
+                    <div class="article-meta-info">
+                        <span><i class="fas fa-user"></i> By Jane Doe</span>
+                        <span><i class="fas fa-calendar-alt"></i> March 14, 2024</span>
+                        <span><i class="fas fa-clock"></i> 5 min read</span>
+                    </div>
+                </div>
+                
+                <img class="article-hero-image" src="https://images.pexels.com/photos/4964985/pexels-photo-4964985.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="A person marking a calendar, symbolizing habit formation.">
 
-    <!-- JavaScript to Generate and Inject the Article Content -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // 1. Article Data Object
-            const articleData = {
-                category: 'Habit Building',
-                title: 'The Power of Keystone Habits',
-                description: 'Discover how focusing on one key habit can transform multiple areas of your life.',
-                author: 'Jane Doe',
-                date: 'March 14, 2024',
-                readTime: '5 min read',
-                imageUrl: 'https://images.pexels.com/photos/4964985/pexels-photo-4964985.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1',
-                // This URL doesn't need to be used here, but is kept for data consistency
-                url: '/articles/the-power-of-keystone-habits/'
-            };
-
-            // 2. Function to generate the article's HTML
-            function generateArticleHtml(article) {
-                // Placeholder content for the article body
-                const articleBody = `
+                <div class="article-body">
                     <p>In the world of self-improvement, we often think that massive change requires massive action. We set out to transform our lives overnight, only to find ourselves overwhelmed and back where we started. But what if the secret to widespread change lies not in doing everything at once, but in focusing on just one or two critical habits? This is the power of <strong>keystone habits</strong>.</p>
                     
                     <p>Coined by Charles Duhigg in his bestselling book, "The Power of Habit," a keystone habit is a single practice that sparks a chain reaction, creating a cascade of other positive habits and improvements in its wake. They are the small wins that lead to bigger victories.</p>
@@ -184,40 +150,82 @@
                     <h2>How to Find Your Own Keystone Habit</h2>
                     <p>Identifying a potential keystone habit is a personal journey. Start by looking for areas of your life that create a sense of "small wins." Ask yourself: which single change could create the most positive momentum? It doesn't have to be the biggest or hardest habit. In fact, it's often better to start small.</p>
                     <p>Focus on one area—be it physical health, morning routine, or financial tracking. Commit to one small, consistent action. By nurturing that one keystone, you're not just building a single habit; you're planting a seed for comprehensive personal evolution.</p>
-                `;
 
-                // Combine all parts into the final HTML structure
-                return `
-                    <section class="page-section">
-                        <div class="container">
-                            <div class="article-detail-header">
-                                <span class="article-category">${article.category}</span>
-                                <h1>${article.title}</h1>
-                                <div class="article-meta-info">
-                                    <span><i class="fas fa-user"></i> By ${article.author}</span>
-                                    <span><i class="fas fa-calendar-alt"></i> ${article.date}</span>
-                                    <span><i class="fas fa-clock"></i> ${article.readTime}</span>
-                                </div>
-                            </div>
-                            
-                            <img class="article-hero-image" src="${article.imageUrl}" alt="${article.title}">
+                    <a href="/#articles" class="back-to-articles-link"><i class="fas fa-arrow-left"></i> Back to All Articles</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer remains the same for consistency -->
+    <footer>
+        <p>© 2025 Evolvivo. All rights reserved.</p>
+        <p>Empowering your journey to personal evolution.</p>
+        <a href="/#about-page">About us</a> |
+        <a href="/#contact-page">Contact & Support</a> |
+        <a href="/terms-of-service">Terms of Service</a> |
+        <a href="/privacy-policy">Privacy Policy</a> |
+        <a href="/disclaimer">Disclaimer</a>
+    </footer>
 
-                            <div class="article-body">
-                                ${articleBody}
-                                <a href="/#Articles" class="back-to-articles-link"><i class="fas fa-arrow-left"></i> Back to All Articles</a>
+    <!-- No JavaScript is needed to build this page's content, so the script block is gone. -->
+<!-- Inside your <script> tag at the bottom -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // ... (your existing articleData object)
+        const articleData = {
+            category: 'Habit Building',
+            title: 'The Power of Keystone Habits',
+            description: 'Discover how focusing on one key habit can transform multiple areas of your life.',
+            author: 'Jane Doe',
+            date: 'March 14, 2024',
+            readTime: '5 min read',
+            imageUrl: 'https://images.pexels.com/photos/4964985/pexels-photo-4964985.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1',
+            url: '/articles/the-power-of-keystone-habits/'
+        };
+
+        function generateArticleHtml(article) {
+            // ... (rest of the function is the same)
+            const articleBody = `
+                <p>In the world of self-improvement... (rest of your article text) ...you're planting a seed for comprehensive personal evolution.</p>
+            `;
+
+            return `
+                <section class="page-section">
+                    <div class="container">
+                        <div class="article-detail-header">
+                            <span class="article-category">${article.category}</span>
+                            <h1>${article.title}</h1>
+                            <div class="article-meta-info">
+                                <span><i class="fas fa-user"></i> By ${article.author}</span>
+                                <span><i class="fas fa-calendar-alt"></i> ${article.date}</span>
+                                <span><i class="fas fa-clock"></i> ${article.readTime}</span>
                             </div>
                         </div>
-                    </section>
-                `;
-            }
+                        
+                        <img class="article-hero-image" src="${article.imageUrl}" alt="${article.title}">
 
-            // 3. Inject the generated HTML into the placeholder
-            const articleContainer = document.getElementById('article-container');
-            if (articleContainer) {
-                articleContainer.innerHTML = generateArticleHtml(articleData);
-            }
-        });
-    </script>
+                        <div class="article-body-content content-wrapper">
+                            ${articleBody}
+                            <!-- 
+                              MODIFIED LINK: 
+                              Instead of /#articles, we use /?view=articles.
+                              The "/" takes you to the root index.html.
+                              The "?view=articles" is a parameter we can read with JavaScript.
+                              The "#articles-page" is a fallback for non-JS users and for screen readers.
+                            -->
+                            <a href="/?view=articles#articles-page" class="back-to-articles-link"><i class="fas fa-arrow-left"></i> Back to All Articles</a>
+                        </div>
+                    </div>
+                </section>
+            `;
+        }
 
+        const articleContainer = document.getElementById('article-container');
+        if (articleContainer) {
+            articleContainer.innerHTML = generateArticleHtml(articleData);
+        }
+    });
+</script>
 </body>
 </html>
