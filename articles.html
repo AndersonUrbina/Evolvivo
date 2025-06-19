@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta Description for SEO -->
+    <meta name="description" content="Explore insightful articles from Evolvivo on personal growth, self-improvement, goal setting, habits, motivation, and productivity.">
+    <!-- Meta Keywords (optional, not heavily used anymore) -->
+    <meta name="keywords" content="personal growth articles, self-improvement blog, goal setting tips, building habits, Evolvivo articles">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.evolvivo.com/articles.html">
+    <meta property="og:title" content="Articles – Evolvivo Personal Growth">
+    <meta property="og:description" content="Explore insightful articles from Evolvivo on personal growth, self-improvement, goal setting, habits, motivation, and productivity.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/AndersonUrbina/Evolvivo/refs/heads/main/Resources/sm-card.png">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.evolvivo.com/articles.html">
+    <meta name="twitter:title" content="Articles – Evolvivo Personal Growth">
+    <meta name="twitter:description" content="Explore insightful articles from Evolvivo on personal growth, self-improvement, goal setting, habits, motivation, and productivity.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/AndersonUrbina/Evolvivo/refs/heads/main/Resources/sm-card.png">
+
+    <title>Articles - Evolvivo</title>
+    <!--Preloaded font to optimize LCP-->
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/ios-filled/50/4CAF50/leaf.png">
+    <link rel="stylesheet" href="style.css" media="all">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5134293853981137"
+     crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QTB83RBKB6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QTB83RBKB6');
+</script>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="https://img.icons8.com/ios-filled/50/4CAF50/leaf.png" alt="Evolvivo Leaf Icon" class="logo-icon"/>
+                <a href="index.html">Evolvivo</a>
+            </div>
+            <nav>
+                <ul>
+                    <!-- UPDATED: Links point back to the main index.html page -->
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                    <!-- UPDATED: This is now the active page -->
+                    <li><a href="articles.html" class="nav-link active"><i class="fas fa-newspaper"></i> Articles</a></li>
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-bullseye"></i> Goals</a></li>
+                </ul>
+            </nav>
+            <div class="hero-actions">
+                <a href="./signup"><button class="btn btn-primary"><i class="fas fa-user-plus"></i> Sign Up</button></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Articles Page Section -->
+        <a name="articles"></a>
+        <!-- UPDATED: Removed the 'hidden' class so it's visible by default -->
+        <section id="articles-page" class="page-section">
+            <div class="container" >
+                <div class="page-header">
+                    <h1>Explore Our Articles</h1>
+                    <p>Find insights on personal development, habit building, and goal achievement.</p>
+                </div>
+                <div class="search-bar-container">
+                    <input type="text" id="article-search-input" placeholder="Search for articles, topics, tags...">
+                    <button id="article-search-btn" class="btn btn-primary"><i class="fas fa-search"></i> Search</button>
+                </div>
+                <div class="articles-grid" id="all-articles-grid">
+                    <!-- All articles will be dynamically inserted here by your script.js -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Evolvivo. All rights reserved.</p>
+        <p>Empowering your journey to personal evolution.</p>
+        <!-- UPDATED: Links point back to the main index.html page -->
+        <a href="index.html" class="nav-link">About us</a> |
+        <a href="index.html" class="nav-link">Contact & Support</a> |
+        <a href="./terms-of-service" class="nav-link">Terms of Service</a> |
+        <a href="./privacy-policy" class="nav-link">Privacy Policy</a> |
+        <a href="./disclaimer" class="nav-link">Disclaimer</a>
+    </footer>
+
+    <div id="toast-notification" class="toast hidden">
+        <span id="toast-message"></span>
+    </div>
+
+    <!-- CSS for the styled Cookie Consent Banner -->
+<style>
+  #cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em; 
+    flex-wrap: wrap; 
+    background: #ffffff;
+    color: #3a3a3a; 
+    padding: 1.25em 1em;
+    font-family: sans-serif; 
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08); 
+    text-align: center;
+  }
+  #cookie-banner a {
+    color: #4CAF50; 
+    text-decoration: underline;
+    font-weight: 500;
+  }
+  #cookie-banner a:hover {
+    text-decoration: none;
+  }
+  #cookie-banner button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px; 
+    padding: 0.75em 1.75em;
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  #cookie-banner button:hover {
+    background-color: #45a049; 
+  }
+</style>
+
+<!-- Styled Cookie Consent Banner HTML -->
+<div id="cookie-banner">
+  <span>This website uses cookies to improve your experience and analyze traffic. By using this site, you agree to our <a href="/privacy-policy.html">Privacy Policy</a>.</span>
+  <button onclick="acceptCookies()">Got it</button>
+</div>
+
+<!-- JavaScript to control the banner -->
+<script>
+  function acceptCookies() {
+    localStorage.setItem("cookiesAccepted", "true");
+    document.getElementById("cookie-banner").style.display = "none";
+  }
+  window.addEventListener("DOMContentLoaded", function () {
+    if (!localStorage.getItem("cookiesAccepted")) {
+      const banner = document.getElementById("cookie-banner");
+      if (banner) {
+        banner.style.display = "flex";
+      }
+    }
+  });
+</script>
+    
+    <!-- NOTE: Your original script files are included here. 
+         script.js will handle the search and dynamic article loading on this page. -->
+    <script src="script.js" defer></script>
+    <script src="quotes.js" defer></script>
+</body>
+</html>
