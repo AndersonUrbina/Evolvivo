@@ -171,29 +171,22 @@
 
     <!-- No JavaScript is needed to build this page's content, so the script block is gone. -->
 <!-- Inside your <script> tag at the bottom -->
+<!-- Inside the <script> tag at the bottom of your article page -->
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // ... (your existing articleData object)
-        const articleData = {
-            category: 'Habit Building',
-            title: 'The Power of Keystone Habits',
-            description: 'Discover how focusing on one key habit can transform multiple areas of your life.',
-            author: 'Jane Doe',
-            date: 'March 14, 2024',
-            readTime: '5 min read',
-            imageUrl: 'https://images.pexels.com/photos/4964985/pexels-photo-4964985.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1',
-            url: '/articles/the-power-of-keystone-habits/'
-        };
+        // 1. Article Data Object (no changes here)
+        const articleData = { /* ... */ };
 
+        // 2. Function to generate the article's HTML
         function generateArticleHtml(article) {
-            // ... (rest of the function is the same)
-            const articleBody = `
-                <p>In the world of self-improvement... (rest of your article text) ...you're planting a seed for comprehensive personal evolution.</p>
-            `;
+            // ... (articleBody is the same)
 
+            // Combine all parts into the final HTML structure
+            // THIS IS THE SECTION TO MODIFY
             return `
                 <section class="page-section">
                     <div class="container">
+                        <!-- THE HEADER IN THE ARTICLE NEEDS TO BE A LINK TOO -->
                         <div class="article-detail-header">
                             <span class="article-category">${article.category}</span>
                             <h1>${article.title}</h1>
@@ -207,14 +200,25 @@
                         <img class="article-hero-image" src="${article.imageUrl}" alt="${article.title}">
 
                         <div class="article-body-content content-wrapper">
-                            ${articleBody}
+                            
+                            <!-- The introductory paragraph from your main page's hero section -->
+                            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">
+                                Your companion in cultivating essential skills, building lasting habits, and achieving your most ambitious personal goals.
+                            </p>
+
                             <!-- 
-                              MODIFIED LINK: 
-                              Instead of /#articles, we use /?view=articles.
-                              The "/" takes you to the root index.html.
-                              The "?view=articles" is a parameter we can read with JavaScript.
-                              The "#articles-page" is a fallback for non-JS users and for screen readers.
+                              *** THE FIX IS HERE ***
+                              Replace the <button> elements with <a> tags styled as buttons.
+                              The href points to the homepage with the correct 'view' parameter.
                             -->
+                            <div class="hero-buttons" style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem;">
+                                <a href="/?view=articles#articles-page" class="btn btn-primary">Explore Articles</a>
+                                <a href="/?view=goals#goals-page" class="btn btn-secondary">Set Your Goals <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                            
+                            <!-- This is your actual article content -->
+                            ${articleBody}
+
                             <a href="/?view=articles#articles-page" class="back-to-articles-link"><i class="fas fa-arrow-left"></i> Back to All Articles</a>
                         </div>
                     </div>
@@ -222,6 +226,7 @@
             `;
         }
 
+        // 3. Inject the generated HTML (no changes here)
         const articleContainer = document.getElementById('article-container');
         if (articleContainer) {
             articleContainer.innerHTML = generateArticleHtml(articleData);
