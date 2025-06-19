@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Personal Goals - Evolvivo</title>
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/ios-filled/50/4CAF50/leaf.png">
+    <link rel="stylesheet" href="style.css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="https://img.icons8.com/ios-filled/50/4CAF50/leaf.png" alt="Evolvivo Leaf Icon" class="logo-icon"/>
+                <a href="/">Evolvivo</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="/#articles"><i class="fas fa-newspaper"></i> Articles</a></li>
+                    <li><a href="goals.html" class="active"><i class="fas fa-bullseye"></i> Goals</a></li>
+                </ul>
+            </nav>
+            <div class="hero-actions">
+                <a href="signup.html"><button class="btn btn-primary"><i class="fas fa-user-plus"></i> Sign Up</button></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-section">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Your Personal Goals</h1>
+                    <p>Define, track, and achieve your aspirations.</p>
+                </div>
+                <div class="add-goal-form">
+                    <input type="text" id="new-goal-input" placeholder="Enter a new personal goal...">
+                    <input type="date" id="new-goal-date">
+                    <button id="add-goal-btn" class="btn btn-primary"><i class="fas fa-plus"></i> Add Goal</button>
+                </div>
+                <div class="active-goals-container">
+                    <h2>Active Goals (<span id="active-goals-count">0</span>)</h2>
+                    <ul id="goals-list"></ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Evolvivo. All rights reserved.</p>
+        <p>Empowering your journey to personal evolution.</p>
+        <a href="/#about-page">About us</a> |
+        <a href="/#contact-page">Contact & Support</a> |
+        <a href="terms-of-service.html">Terms of Service</a> |
+        <a href="privacy-policy.html">Privacy Policy</a> |
+        <a href="disclaimer.html">Disclaimer</a>
+    </footer>
+
+    <div id="toast-notification" class="toast hidden">
+        <span id="toast-message"></span>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toastNotification = document.getElementById('toast-notification');
+            const toastMessage = document.getElementById('toast-message');
+            const newGoalInput = document.getElementById('new-goal-input');
+            const newGoalDateInput = document.getElementById('new-goal-date');
+            const addGoalBtn = document.getElementById('add-goal-btn');
+            const goalsList = document.getElementById('goals-list');
+            const activeGoalsCount = document.getElementById('active-goals-count');
+            let goals = [];
+
+            let toastTimeout;
+            function showToast(message, duration = 3000) {
+                if (toastMessage && toastNotification) {
+                    toastMessage.textContent = message;
+                    toastNotification.classList.add('show');
+                    toastNotification.classList.remove('hidden');
+                    clearTimeout(toastTimeout);
+                    toastTimeout = setTimeout(() => {
+                        toastNotification.classList.remove('show');
+                        setTimeout(() => toastNotification.classList.add('hidden'), 500);
+                    }, duration);
+                }
+            }
+
+            function loadGoals() {
+                const savedGoals = localStorage.getItem('evolvivoGoals');
+                goals = savedGoals ? JSON.parse(savedGoals) : [{ text: 'Add your first goal!', date: new Date().toISOString().split('T')[0], completed: false }];
+            }
+
+            function saveGoals() {
+                localStorage.setItem('evolvivoGoals', JSON.stringify(goals));
+            }
+
+            function renderGoals() {
+                if (!goalsList || !activeGoalsCount) return;
+                goalsList.innerHTML = '';
+                goals.forEach((goal, index) => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `
+                        <div class="goal-item-content">
+                            <input type="checkbox" id="goal-${index}" data-index="${index}" ${goal.completed ? 'checked' : ''}>
+                            <label for="goal-${index}" class="goal-text ${goal.completed ? 'completed' : ''}">${goal.text}</label>
+                        </div>
+                        <div class="goal-meta">
+                            ${goal.date ? `<span class="goal-date"><i class="fas fa-calendar-alt"></i> ${goal.date}</span>` : ''}
+                            <button class="delete-goal-btn" data-index="${index}" aria-label="Delete goal"><i class="fas fa-trash-alt"></i></button>
+                        </div>`;
+                    goalsList.appendChild(li);
+                });
+                activeGoalsCount.textContent = goals.filter(g => !g.completed).length;
+                saveGoals();
+            }
+
+            if (newGoalDateInput) {
+                newGoalDateInput.valueAsDate = new Date();
+            }
+
+            if (addGoalBtn) {
+                const addNewGoal = () => {
+                    const goalText = newGoalInput.value.trim();
+                    if (goalText) {
+                        goals.push({ text: goalText, date: newGoalDateInput.value, completed: false });
+                        newGoalInput.value = '';
+                        renderGoals();
+                        showToast(`Goal Added!`);
+                    } else {
+                        showToast('Please enter a goal description.');
+                    }
+                };
+                addGoalBtn.addEventListener('click', addNewGoal);
+                newGoalInput.addEventListener('keyup', (event) => {
+                    if (event.key === "Enter") addGoalBtn.click();
+                });
+            }
+
+            if (goalsList) {
+                goalsList.addEventListener('click', (e) => {
+                    const checkbox = e.target.closest('input[type="checkbox"]');
+                    const deleteBtn = e.target.closest('.delete-goal-btn');
+                    if (checkbox) {
+                        goals[checkbox.dataset.index].completed = checkbox.checked;
+                    } else if (deleteBtn) {
+                        goals.splice(deleteBtn.dataset.index, 1);
+                        showToast(`Goal Removed.`);
+                    }
+                    renderGoals();
+                });
+            }
+
+            function init() {
+                loadGoals();
+                renderGoals();
+            }
+            init();
+        });
+    </script>
+</body>
+</html>
