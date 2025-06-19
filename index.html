@@ -488,6 +488,23 @@
     }
   });
 </script>
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hash = window.location.hash;
+    if (hash) {
+      const section = document.querySelector(hash);
+      if (section && section.classList.contains("hidden")) {
+        section.classList.remove("hidden");
+
+        // Optional: delay to ensure layout updates before scroll
+        setTimeout(() => {
+          section.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  });
+</script>
+
     
     <script src="script.js" defer></script>
     <script src="quotes.js" defer></script>
