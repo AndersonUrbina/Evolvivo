@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (allArticlesGrid) displayArticles(articlesData, allArticlesGrid);
-    if (featuredArticlesGrid) displayArticles(articlesData.slice(-8), featuredArticlesGrid);
+    if (featuredArticlesGrid) displayArticles(articlesData.slice(-10), featuredArticlesGrid);
     
     if (articleSearchBtn && articleSearchInput && allArticlesGrid) {
         articleSearchBtn.addEventListener('click', () => {
