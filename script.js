@@ -17,12 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const activeGoalsCount = document.getElementById('active-goals-count');
     let goals = []; // Initialize goals array
 
-    // --- Elements for AI Tips ---
-    const aiTipsForm = document.getElementById('ai-tips-form');
-    const aiGoalInput = document.getElementById('ai-goal-input');
-    const aiResponseArea = document.getElementById('ai-response-area');
-    const aiResponseText = document.getElementById('ai-response-text');
-
     // --- Data ---
     const articlesData = [
         // --- Existing Articles ---
@@ -129,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (allArticlesGrid) displayArticles(articlesData, allArticlesGrid);
-    if (featuredArticlesGrid) displayArticles(articlesData.slice(0, 6), featuredArticlesGrid);
+    if (featuredArticlesGrid) displayArticles(articlesData.slice(0, 4), featuredArticlesGrid);
 
     if (articleSearchBtn && articleSearchInput && allArticlesGrid) {
         articleSearchBtn.addEventListener('click', () => {
@@ -223,22 +217,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 showToast(`Goal Removed.`);
             }
             renderGoals();
-        });
-    }
-
-    // AI Tips (No changes needed here)
-    if (aiTipsForm && aiGoalInput && aiResponseArea && aiResponseText) {
-        aiTipsForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const userGoal = aiGoalInput.value.trim();
-            if (userGoal) {
-                aiResponseText.innerHTML = `<p>Okay, for your goal: "<strong>${userGoal}</strong>", here are some tailored tips:</p><ul><li><strong>Break it Down:</strong> Divide your goal into smaller, manageable steps. What's the very first small action you can take?</li><li><strong>Set Milestones:</strong> Define clear, measurable milestones. How will you know you're making progress?</li><li><strong>Practice Consistently:</strong> Schedule dedicated time for your goal. Even 15-30 minutes daily can make a huge difference.</li><li><strong>Track Progress:</strong> Use a journal, app, or spreadsheet to monitor your advancements and identify patterns.</li></ul><p>Good luck on your journey with "${userGoal}"!</p>`;
-                aiResponseArea.classList.remove('hidden');
-                showToast('AI tips generated!');
-            } else {
-                aiResponseArea.classList.add('hidden');
-                showToast('Please enter a goal to get tips.');
-            }
         });
     }
 
