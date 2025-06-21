@@ -340,10 +340,16 @@ main {
     font-size: 1em;
 }
 
+/* Default, flexible grid for all article grids (like on articles.html) */
 .articles-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
+}
+
+/* Specific override for the Featured Articles grid on the main page ONLY */
+#featured-articles-grid {
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .article-card {
@@ -600,8 +606,8 @@ footer p {
     }
     .hero-section h1 { font-size: 2.2rem; }
     .page-header h1 { font-size: 2rem; }
-    .articles-grid {
-        grid-template-columns: 1fr; /* Stack cards on smaller screens */
+    .articles-grid, #featured-articles-grid {
+        grid-template-columns: 1fr; /* Stack cards on smaller screens for both grids */
     }
     .add-goal-form {
         flex-direction: column;
