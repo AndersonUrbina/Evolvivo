@@ -94,9 +94,12 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('evolvivoSavedArticles', JSON.stringify(savedArticleTitles));
     }
 
-    // MODIFIED: createArticleCard now checks if an article is saved
+    // MODIFIED: createArticleCard now swaps between 'far' and 'fas' for a true filled icon
     function createArticleCard(article) {
         const isBookmarked = savedArticleTitles.includes(article.title);
+        
+        // NEW: Determine which icon class to use (far for regular, fas for solid/filled)
+        const iconStyleClass = isBookmarked ? 'fas' : 'far';
         const bookmarkedClass = isBookmarked ? 'bookmarked' : '';
 
         return `
@@ -113,7 +116,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <div class="article-footer">
                         <a href="${article.url || '#'}" target="_blank" rel="noopener noreferrer" class="read-more-link"> Read More <i class="fas fa-arrow-right"></i></a>
-                        <i class="far fa-bookmark bookmark-icon ${bookmarkedClass}" data-title="${article.title}"></i>
+                        
+                        <!-- The icon now uses the dynamic style class to be either 'far' or 'fas' -->
+                        <i class="${iconStyleClass} fa-bookmark bookmark-icon ${bookmarkedClass}" data-title="${article.title}"></i>
                     </div>
                 </div>
             </div>
