@@ -76,6 +76,72 @@
         <span id="toast-message"></span>
     </div>
 
+<!-- CSS for the styled Cookie Consent Banner -->
+<style>
+  #cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em; 
+    flex-wrap: wrap; 
+    background: #ffffff;
+    color: #3a3a3a; 
+    padding: 1.25em 1em;
+    font-family: sans-serif; 
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08); 
+    text-align: center;
+  }
+  #cookie-banner a {
+    color: #4CAF50; 
+    text-decoration: underline;
+    font-weight: 500;
+  }
+  #cookie-banner a:hover {
+    text-decoration: none;
+  }
+  #cookie-banner button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px; 
+    padding: 0.75em 1.75em;
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  #cookie-banner button:hover {
+    background-color: #45a049; 
+  }
+</style>
+
+<!-- Styled Cookie Consent Banner HTML -->
+<div id="cookie-banner">
+  <span>This website uses cookies to improve your experience and analyze traffic. By using this site, you agree to our <a href="/privacy-policy.html">Privacy Policy</a>.</span>
+  <button onclick="acceptCookies()">Got it</button>
+</div>
+
+<!-- JavaScript to control the banner -->
+<script>
+  function acceptCookies() {
+    localStorage.setItem("cookiesAccepted", "true");
+    document.getElementById("cookie-banner").style.display = "none";
+  }
+  window.addEventListener("DOMContentLoaded", function () {
+    if (!localStorage.getItem("cookiesAccepted")) {
+      const banner = document.getElementById("cookie-banner");
+      if (banner) {
+        banner.style.display = "flex";
+      }
+    }
+  });
+</script>
+    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const toastNotification = document.getElementById('toast-notification');
