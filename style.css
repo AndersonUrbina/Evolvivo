@@ -435,6 +435,10 @@ main {
 .bookmark-icon:hover {
     color: var(--primary-color);
 }
+/* SIMPLIFIED RULE */
+.bookmark-icon.bookmarked {
+    color: var(--primary-color);
+}
 
 
 /* Goals Page */
