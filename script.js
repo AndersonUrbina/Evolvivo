@@ -164,7 +164,8 @@ document.addEventListener('DOMContentLoaded', () => {
             saveArticlesState(); // Save the new state
             // Re-render all article grids to reflect the change everywhere
             displayArticles(articlesData, allArticlesGrid);
-            displayArticles(articlesData.slice(0, 2), featuredArticlesGrid);
+            // MODIFIED: Show the last 10 articles
+            displayArticles(articlesData.slice(-10), featuredArticlesGrid);
             displaySavedArticles();
         }
     });
@@ -281,7 +282,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // NEW: Load saved articles state and render all article sections on startup
         loadSavedArticles();
         if (allArticlesGrid) displayArticles(articlesData, allArticlesGrid);
-        if (featuredArticlesGrid) displayArticles(articlesData.slice(0, 2), featuredArticlesGrid);
+        // MODIFIED: Show the last 10 articles
+        if (featuredArticlesGrid) displayArticles(articlesData.slice(-10), featuredArticlesGrid);
         displaySavedArticles();
     }
     
