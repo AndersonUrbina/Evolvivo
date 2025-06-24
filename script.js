@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const featuredArticlesGrid = document.getElementById('featured-articles-grid');
     const articleSearchInput = document.getElementById('article-search-input');
     const articleSearchBtn = document.getElementById('article-search-btn');
+    // NEW: Element for the saved articles grid
+    const savedArticlesGrid = document.getElementById('saved-articles-grid');
+
 
     // --- Elements for Goals ---
     const newGoalInput = document.getElementById('new-goal-input');
@@ -17,15 +20,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const activeGoalsCount = document.getElementById('active-goals-count');
     let goals = []; // Initialize goals array
 
+    // --- Elements for AI Tips ---
+    const aiTipsForm = document.getElementById('ai-tips-form');
+    // ... (rest of AI elements are unchanged)
+
     // --- Data ---
     const articlesData = [
-        // --- Existing Articles ---
+        // (Your article data remains exactly the same)
         { category: 'Habit Building', title: 'The Power of Keystone Habits', description: 'Discover how focusing on one key habit can transform multiple areas of your life.', author: 'Jane Doe', date: 'March 14, 2024', readTime: '5 min read', imageUrl: 'https://images.pexels.com/photos/4964985/pexels-photo-4964985.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1', url: 'https://evolvivo.com/2025/January/Habit-Building/The-Power-of-Keystone-Habits/' },
         { category: 'Goal Setting', title: 'SMART Goals: The Secret to Achievement', description: 'Learn how to set Specific, Measurable, Achievable, Relevant, and Time-bound goals.', author: 'John Smith', date: 'February 19, 2024', readTime: '7 min read', imageUrl: 'https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1', url: '#' },
         { category: 'Personal Development', title: 'Mindfulness for a Productive Day', description: 'Incorporate mindfulness techniques to reduce stress and boost focus throughout your day.', author: 'Alice Green', date: 'March 31, 2024', readTime: '6 min read', imageUrl: 'https://images.pexels.com/photos/3771089/pexels-photo-3771089.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1', url: '#' },
         { category: 'Personal Skills', title: 'The Art of Effective Communication', description: 'Improve your interpersonal skills by mastering active listening and clear expression.', author: 'David Lee', date: 'January 9, 2024', readTime: '8 min read', imageUrl: 'https://images.pexels.com/photos/3184430/pexels-photo-3184430.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1', url: '#' },
-        
-        // --- Added Articles ---
         { category: 'Productivity', title: 'The Pomodoro Technique: A Guide to Focused Work', description: 'Boost your productivity by breaking down work into focused intervals separated by short breaks.', author: 'Sophia Carter', date: 'February 15, 2024', readTime: '5 min read', imageUrl: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1', url: '#' },
         { category: 'Technology', title: "Demystifying AI: How It's Shaping Our Future", description: "A beginner-friendly overview of Artificial Intelligence and its impact on our daily lives.", author: 'Alex Chen', date: 'March 2, 2024', readTime: '10 min read', imageUrl: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1', url: '#' },
         { category: 'Personal Finance', title: 'Building Your First Budget: A Step-by-Step Guide', description: 'Take control of your finances with this simple, practical guide to creating a budget that works for you.', author: 'Michael Rodriguez', date: 'January 28, 2024', readTime: '7 min read', imageUrl: 'https://images.pexels.com/photos/6863261/pexels-photo-6863261.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1', url: '#' },
@@ -39,62 +44,61 @@ document.addEventListener('DOMContentLoaded', () => {
         { category: 'Habits', title: 'The Power of a Morning Routine: Start Your Day with Intention', description: 'Learn how to craft a personalized morning routine that sets you up for a productive and positive day.', author: 'Sarah Jenkins', date: 'February 8, 2024', readTime: '7 min read', imageUrl: 'https://images.pexels.com/photos/3734031/pexels-photo-3734031.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1', url: '#' }
     ];
 
-    // --- Functions ---
+    // NEW: Array to hold the titles of saved articles
+    let savedArticleTitles = [];
 
-    // --- FIX: Simplified and robust navigation logic ---
-    // This new logic works for both <a> tags and <button> elements.
+    // --- Functions ---
+    // (Navigation logic is unchanged)
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             const targetId = link.dataset.target;
-
-            // If the clicked element has a 'data-target', it's for internal navigation.
             if (targetId) {
-                e.preventDefault(); // Prevent default action (like form submission for buttons)
-
-                // Hide all page sections
+                e.preventDefault(); 
                 pageSections.forEach(section => section.classList.add('hidden'));
-
-                // Show the target section
                 const targetSection = document.getElementById(targetId);
                 if (targetSection) {
                     targetSection.classList.remove('hidden');
-                } else {
-                    console.warn(`Navigation target section with ID "${targetId}" not found.`);
                 }
-
-                // Update the active state ONLY for links in the main <nav> bar
                 navLinks.forEach(nav => nav.classList.remove('active'));
                 if (link.closest('nav')) {
                     link.classList.add('active');
                 }
-                
                 window.scrollTo(0, 0);
             }
-            // If there's no data-target, the script does nothing, allowing default
-            // browser behavior (e.g., following the link to signup.html).
         });
     });
 
-    // Toast Notification
+    // (Toast function is unchanged)
     let toastTimeout;
     function showToast(message, duration = 3000) {
         if (toastMessage && toastNotification) {
             toastMessage.textContent = message;
             toastNotification.classList.add('show');
             toastNotification.classList.remove('hidden');
-
             clearTimeout(toastTimeout);
             toastTimeout = setTimeout(() => {
                 toastNotification.classList.remove('show');
                 setTimeout(() => toastNotification.classList.add('hidden'), 500);
             }, duration);
-        } else {
-            console.warn("Toast elements not found in the DOM.");
         }
     }
 
-    // Articles
+    // --- Article and Bookmark Functions ---
+    // NEW: Functions to load and save bookmarks from localStorage
+    function loadSavedArticles() {
+        const saved = localStorage.getItem('evolvivoSavedArticles');
+        savedArticleTitles = saved ? JSON.parse(saved) : [];
+    }
+
+    function saveArticlesState() {
+        localStorage.setItem('evolvivoSavedArticles', JSON.stringify(savedArticleTitles));
+    }
+
+    // MODIFIED: createArticleCard now checks if an article is saved
     function createArticleCard(article) {
+        const isBookmarked = savedArticleTitles.includes(article.title);
+        const bookmarkedClass = isBookmarked ? 'bookmarked' : '';
+
         return `
             <div class="article-card">
                 <img class="article-image" src="${article.imageUrl}" alt="${article.title}">
@@ -109,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <div class="article-footer">
                         <a href="${article.url || '#'}" target="_blank" rel="noopener noreferrer" class="read-more-link"> Read More <i class="fas fa-arrow-right"></i></a>
-                        <i class="far fa-bookmark bookmark-icon"></i>
+                        <i class="far fa-bookmark bookmark-icon ${bookmarkedClass}" data-title="${article.title}"></i>
                     </div>
                 </div>
             </div>
@@ -121,10 +125,47 @@ document.addEventListener('DOMContentLoaded', () => {
             gridElement.innerHTML = articles.map(article => createArticleCard(article)).join('');
         }
     }
-
-    if (allArticlesGrid) displayArticles(articlesData, allArticlesGrid);
-    if (featuredArticlesGrid) displayArticles(articlesData.slice(-10), featuredArticlesGrid);
     
+    // NEW: Function to display only saved articles
+    function displaySavedArticles() {
+        if (savedArticlesGrid) {
+            const savedArticlesData = articlesData.filter(article => savedArticleTitles.includes(article.title));
+            if (savedArticlesData.length > 0) {
+                displayArticles(savedArticlesData, savedArticlesGrid);
+            } else {
+                savedArticlesGrid.innerHTML = '<p>You haven\'t saved any articles yet. Click the bookmark icon on an article to save it here!</p>';
+            }
+        }
+    }
+    
+    // NEW: Event listener for bookmarking (using event delegation)
+    document.addEventListener('click', (e) => {
+        if (e.target.matches('.bookmark-icon')) {
+            const icon = e.target;
+            const articleTitle = icon.dataset.title;
+
+            if (savedArticleTitles.includes(articleTitle)) {
+                // Remove from saved
+                savedArticleTitles = savedArticleTitles.filter(title => title !== articleTitle);
+                icon.classList.remove('bookmarked');
+                showToast('Article removed from saved.');
+            } else {
+                // Add to saved
+                savedArticleTitles.push(articleTitle);
+                icon.classList.add('bookmarked');
+                showToast('Article saved!');
+            }
+            
+            saveArticlesState(); // Save the new state
+            // Re-render all article grids to reflect the change everywhere
+            displayArticles(articlesData, allArticlesGrid);
+            displayArticles(articlesData.slice(0, 2), featuredArticlesGrid);
+            displaySavedArticles();
+        }
+    });
+
+
+    // (Article search logic is unchanged)
     if (articleSearchBtn && articleSearchInput && allArticlesGrid) {
         articleSearchBtn.addEventListener('click', () => {
             const searchTerm = articleSearchInput.value.toLowerCase().trim();
@@ -139,24 +180,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 allArticlesGrid.innerHTML = "<p>No articles found matching your search.</p>";
             }
         });
-
         articleSearchInput.addEventListener('keyup', (event) => {
-            if (event.key === "Enter") {
-                articleSearchBtn.click();
-            }
+            if (event.key === "Enter") articleSearchBtn.click();
         });
     }
 
-    // Goals (with Local Storage for persistence)
+
+    // --- Goals Functions ---
+    // (All goals functions are unchanged)
     function loadGoals() {
         const savedGoals = localStorage.getItem('evolvivoGoals');
         goals = savedGoals ? JSON.parse(savedGoals) : [{ text: 'Explore the features of Evolvivo', date: new Date().toISOString().split('T')[0], completed: false }];
     }
-
     function saveGoals() {
         localStorage.setItem('evolvivoGoals', JSON.stringify(goals));
     }
-
+    // ... rest of goal functions ...
     function renderGoals() {
         if (!goalsList || !activeGoalsCount) return;
 
@@ -222,20 +261,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Initial Page Setup ---
     function init() {
-        // Set initial page to show
+        // (Initial page setup is unchanged)
         const initialPage = document.getElementById('home-page');
         if (initialPage) {
             pageSections.forEach(section => section.classList.add('hidden'));
             initialPage.classList.remove('hidden');
             const homeLink = document.querySelector('nav ul li a[data-target="home-page"]');
-            if (homeLink) {
-                homeLink.classList.add('active');
-            }
+            if (homeLink) homeLink.classList.add('active');
         }
         
-        // Load and render goals
         loadGoals();
         renderGoals();
+        
+        // NEW: Load saved articles state and render all article sections on startup
+        loadSavedArticles();
+        if (allArticlesGrid) displayArticles(articlesData, allArticlesGrid);
+        if (featuredArticlesGrid) displayArticles(articlesData.slice(0, 2), featuredArticlesGrid);
+        displaySavedArticles();
     }
     
     init();
