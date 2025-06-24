@@ -143,7 +143,6 @@ document.addEventListener('DOMContentLoaded', () => {
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 100vh;
 ">You haven't saved any articles yet. Click the bookmark icon on an article to save it here!</p>`;
             }
         }
