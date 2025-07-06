@@ -287,8 +287,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // NEW: Load saved articles state and render all article sections on startup
         loadSavedArticles();
         if (allArticlesGrid) displayArticles(articlesData, allArticlesGrid);
-        // MODIFIED: Show the last 10 articles
-        if (featuredArticlesGrid) displayArticles(articlesData.slice(-10), featuredArticlesGrid);
+        // MODIFIED: Show the last 10 articles, with the newest ones first
+        if (featuredArticlesGrid) displayArticles(articlesData.slice(-10).reverse(), featuredArticlesGrid);
+        
         displaySavedArticles();
     }
     
