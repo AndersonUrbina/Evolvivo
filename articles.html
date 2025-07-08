@@ -56,8 +56,16 @@
                 </ul>
             </nav>
             <div class="hero-actions">
-                <a href="./signup"><button class="btn btn-primary"><i class="fas fa-user-plus"></i> Sign Up</button></a>
-            </div>
+    <!-- Este se mostrará si el usuario NO ha iniciado sesión -->
+    <a href="./signup.html" id="signup-button"><button class="btn btn-primary"><i class="fas fa-user-plus"></i> Sign Up</button></a>
+    
+    <!-- Este se mostrará si el usuario SÍ ha iniciado sesión (inicialmente oculto) -->
+    <div id="user-info" style="display: none; align-items: center; gap: 15px;">
+        <span id="user-name" style="font-weight: bold;"></span>
+        <img id="user-picture" src="" alt="User" style="width: 40px; height: 40px; border-radius: 50%;">
+        <button id="logout-button" class="btn btn-secondary" style="border-width: 1px; padding: 8px 12px;">Logout</button>
+    </div>
+</div>
         </div>
     </header>
 
@@ -180,5 +188,6 @@
          script.js will handle the search and dynamic article loading on this page. -->
     <script src="script.js" defer></script>
     <script src="quotes.js" defer></script>
+    <script src="auth.js" defer></script>
 </body>
 </html>

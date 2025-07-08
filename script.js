@@ -296,3 +296,8 @@ document.addEventListener('DOMContentLoaded', () => {
     init();
 
 }); // End of DOMContentLoaded
+
+function showForm(formId) {
+    document.querySelectorAll('.wrapper').forEach(wrapper => formId.classList.remove('active'));
+    document.getElementById(formId).classList.add('active');
+}
