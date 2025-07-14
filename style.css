@@ -604,7 +604,7 @@ footer p {
 }
 
 /* Responsive adjustments (basic example) */
-@media (max-width: 768px) {
+@media (max-width: 301px) {
     .header-content nav {
         display: none; /* Simple hide for mobile, could be a burger menu */
     }
