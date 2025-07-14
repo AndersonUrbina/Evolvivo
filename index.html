@@ -50,33 +50,41 @@
     <style>
         /* --- Styles for Desktop Header (FIXED) --- */
         .header-content {
+            position: relative; /* Set positioning context for the nav */
             display: flex;
-            justify-content: space-between; /* Pushes logo to the left and nav to the right */
+            justify-content: space-between; /* Pushes logo to left and wrapper to right */
             align-items: center;
+        }
+        
+        /* Center the navigation links on desktop */
+        header nav {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .nav-links-wrapper {
             display: flex;
             align-items: center;
-            gap: 2rem; /* Adds space between the nav links and the subscribe button */
+            gap: 2rem;
         }
 
         nav ul {
-            display: flex; /* Makes nav items horizontal */
+            display: flex;
             align-items: center;
-            gap: 1.5rem; /* Adds space between each nav link */
-            list-style: none; /* Removes default bullet points */
+            gap: 1.5rem;
+            list-style: none;
             margin: 0;
             padding: 0;
         }
 
         .hero-actions {
-            margin-top: 0; /* Resets the margin for desktop view */
+            margin-top: 0;
         }
 
         /* --- Hamburger Menu Styles --- */
         .nav-toggle {
-            display: none; /* Hidden by default on large screens */
+            display: none;
             background: none;
             border: none;
             cursor: pointer;
@@ -97,35 +105,42 @@
         /* --- Responsive Design for Mobile Header --- */
         @media (max-width: 768px) {
             .header-content {
+                position: static; /* Revert positioning context for mobile */
                 justify-content: space-between;
             }
             
+            /* Revert nav styling for the mobile menu */
+            header nav {
+                position: static;
+                transform: none;
+            }
+            
             .nav-toggle {
-                display: block; /* Show hamburger on small screens */
+                display: block;
             }
 
             .nav-links-wrapper {
                 position: fixed;
                 top: 0;
-                right: -100%; /* Start off-screen */
+                right: -100%;
                 width: 80%;
                 max-width: 300px;
                 height: 100vh;
                 background-color: #f8f9fa;
-                flex-direction: column; /* Stack items vertically */
+                flex-direction: column;
                 align-items: flex-start;
                 padding: 6rem 2rem 2rem;
                 box-shadow: -5px 0 15px rgba(0,0,0,0.1);
                 transition: right 0.3s ease-in-out;
-                gap: 0; /* Reset gap for mobile menu */
+                gap: 0;
             }
 
             .nav-links-wrapper.active {
-                right: 0; /* Slide in when active */
+                right: 0;
             }
             
             nav ul {
-                flex-direction: column; /* Stack nav links vertically */
+                flex-direction: column;
                 align-items: flex-start;
                 width: 100%;
                 gap: 1.5rem;
@@ -136,7 +151,7 @@
             }
 
             .hero-actions {
-                margin-top: 2rem; /* Add space above subscribe button in mobile menu */
+                margin-top: 2rem;
             }
         }
     </style>
