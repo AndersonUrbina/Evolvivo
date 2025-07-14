@@ -3,15 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Evolvivo - Personal Evolution</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- SEO Meta Tags -->
+    <title>About Evolvivo | Your Companion for Personal Growth and Evolution</title>
+    <meta name="description" content="Learn about Evolvivo's mission to empower your personal evolution. Discover our core values of growth, empowerment, and community, and join us on the journey to purposeful living.">
+    <meta name="keywords" content="personal evolution, personal growth, self-improvement, goal setting, life skills, habit building, Evolvivo, Anderson U.">
+    <link rel="canonical" href="https://www.evolvivo.com/about.html" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://img.icons8.com/ios-filled/50/036600/leaf.png" type="image/png">
+
+    <!-- Open Graph Meta Tags for Social Media Sharing -->
+    <meta property="og:title" content="About Evolvivo | Your Companion for Personal Growth" />
+    <meta property="og:description" content="Discover the mission and values behind Evolvivo. We are dedicated to empowering your journey of personal evolution with insightful articles and goal-setting tools." />
+    <meta property="og:image" content="https://img.icons8.com/ios-filled/50/036600/leaf.png" />
+    <meta property="og:url" content="https://www.evolvivo.com/about.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Evolvivo" />
+
+    <!-- X (formerly Twitter) Card Meta Tags -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="About Evolvivo | Your Companion for Personal Growth" />
+    <meta name="twitter:description" content="Discover the mission and values behind Evolvivo. We are dedicated to empowering your journey of personal evolution." />
+    <meta name="twitter:image" content="https://img.icons8.com/ios-filled/50/036600/leaf.png" />
+
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Add other necessary header elements from your original file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JSON-LD Schema Markup for Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Evolvivo",
+      "url": "https://www.evolvivo.com",
+      "logo": "https://img.icons8.com/ios-filled/50/036600/leaf.png",
+      "founder": {
+        "@type": "Person",
+        "name": "Anderson U."
+      },
+      "description": "Evolvivo is your dedicated personal growth companion, empowering you with insightful articles, customizable goal-setting tools, and daily inspiration to help you evolve with purpose."
+    }
+    </script>
 </head>
 <body>
     <header>
-        <!-- Replicate your standard header here -->
         <div class="container header-content">
             <div class="logo">
                 <img src="https://img.icons8.com/ios-filled/50/036600/leaf.png" alt="Evolvivo Leaf Icon" class="logo-icon"/>
@@ -24,6 +61,10 @@
                     <li><a href="#" class="nav-link" data-target="saved-articles-page"><i class="fas fa-bookmark"></i> Saved</a></li>
                 </ul>
             </nav>
+        <div class="hero-actions">
+    <button class="btn btn-primary" class="pf-form-modal-btn"  onclick="Plato.openFormModal('frnpwajq697')"><i class="fas fa-user-plus"></i> Subscribe</button><div class="plato-form-widget" data-pf-id="frnpwajq697" data-pf-host="form.formcan.com/" data-pf-display-mode="modal"></div><script src="//static.formcan.com/assets/dist/formbuilder.js?v=20"></script>
+    </div>
+</div>
         </div>
     </header>
 
@@ -38,26 +79,26 @@
 
                 <!-- Our Mission Section -->
                 <div class="about-content-section">
-                    <h2><i class="fas fa-rocket"></i> Our Mission</h2>
+                    <h2><i class="fas fa-rocket" aria-hidden="true"></i> Our Mission</h2>
                     <p>Our mission is to be your dedicated personal growth companion. We aim to empower you with insightful articles, customizable goal-setting tools, and daily inspiration to help you evolve with purpose. Whether you're striving to develop essential life skills, build powerful habits, or reach your most ambitious goals, Evolvivo provides the guidance and motivation to turn your aspirations into achievements.</p>
                 </div>
 
                 <!-- Our Values Section -->
                 <div class="about-content-section">
-                    <h2><i class="fas fa-gem"></i> Our Core Values</h2>
+                    <h2><i class="fas fa-gem" aria-hidden="true"></i> Our Core Values</h2>
                     <div class="values-grid">
                         <div class="value-item">
-                            <i class="fas fa-seedling value-icon"></i>
+                            <i class="fas fa-seedling value-icon" aria-hidden="true"></i>
                             <h3>Growth</h3>
                             <p>We champion continuous learning and self-improvement as the foundation of a fulfilling life.</p>
                         </div>
                         <div class="value-item">
-                            <i class="fas fa-lightbulb value-icon"></i>
+                            <i class="fas fa-lightbulb value-icon" aria-hidden="true"></i>
                             <h3>Empowerment</h3>
                             <p>We provide the tools and knowledge to give you control over your personal development journey.</p>
                         </div>
                         <div class="value-item">
-                            <i class="fas fa-users value-icon"></i>
+                            <i class="fas fa-users value-icon" aria-hidden="true"></i>
                             <h3>Community</h3>
                             <p>We foster a supportive environment where users can share their progress and inspire one another.</p>
                         </div>
@@ -68,14 +109,13 @@
     </main>
 
     <footer>
-        <!-- Replicate your standard footer here, and update the links -->
         <p>© 2025 Evolvivo. All rights reserved.</p>
         <p>Empowering your journey to personal evolution.</p>
-        <a href="/about.html" style="text-decoration: underline;">About us</a> |
-        <a href="/contact.html" style="text-decoration: underline;">Contact & Support</a> |
-        <a href="/terms-of-service" style="text-decoration: underline;">Terms of Service</a> |
-        <a href="/privacy-policy" style="text-decoration: underline;">Privacy Policy</a> |
-        <a href="/disclaimer" style="text-decoration: underline;">Disclaimer</a>
+        <a href="./about-us" class="nav-link" style="text-decoration: underline;" >About Us</a> |
+        <a href="./contact-&-support" class="nav-link" style="text-decoration: underline;" >Contact & Support</a> |
+        <a href="./terms-of-service" class="nav-link" style="text-decoration: underline;" >Terms of Service</a> |
+        <a href="./privacy-policy" class="nav-link" style="text-decoration: underline;" >Privacy Policy</a> |
+        <a href="./disclaimer" class="nav-link" style="text-decoration: underline;" >Disclaimer</a>
     </footer>
 </body>
 </html>
