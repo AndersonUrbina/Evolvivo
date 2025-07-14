@@ -113,7 +113,7 @@ nav ul li a i {
 }
 
 nav ul li a:hover, nav ul li a.active {
-    background-color: var(--primary-color-dark);
+    background-color: #036600;
     color: white;
 }
 
