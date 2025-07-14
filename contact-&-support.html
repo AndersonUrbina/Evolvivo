@@ -14,50 +14,33 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.evolvivo.com/contact-support">
+    <meta property="og:url" content="https://www.evolvivo.com/contact-support"> <!-- Assuming this is the final URL -->
     <meta property="og:title" content="Contact & Support - Evolvivo">
     <meta property="og:description" content="Have questions or feedback? Contact the Evolvivo team for support on your personal growth journey.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/AndersonUrbina/Evolvivo/refs/heads/main/Resources/sm-card.png">
+    <meta property="og:image" content="https://raw.githubusercontent.com/AndersonUrbina/Evolvivo/refs/heads/main/Resources/sm-card.png"> <!-- Using your main brand image -->
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.evolvivo.com/contact-support">
+    <meta name="twitter:url" content="https://www.evolvivo.com/contact-support"> <!-- Assuming this is the final URL -->
     <meta name="twitter:title" content="Contact & Support - Evolvivo">
     <meta name="twitter:description" content="Reach out to the Evolvivo team for help, feedback, or inquiries. We're here to support your personal evolution.">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/AndersonUrbina/Evolvivo/refs/heads/main/Resources/sm-card.png">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/AndersonUrbina/Evolvivo/refs/heads/main/Resources/sm-card.png"> <!-- Using your main brand image -->
 
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* --- Styles for Desktop Header --- */
+        /* --- Styles for Header & Navigation --- */
         .header-content {
-            position: relative;
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-        
-        header nav {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
         }
 
         .nav-links-wrapper {
             display: flex;
             align-items: center;
             gap: 2rem;
-        }
-        
-        .header-content .nav-links-wrapper {
-             /* This ensures the wrapper on the right takes only the space it needs */
-            width: auto;
-            position: static;
-            background: none;
-            box-shadow: none;
-            padding: 0;
-            flex-direction: row;
         }
 
         nav ul {
@@ -68,11 +51,12 @@
             margin: 0;
             padding: 0;
         }
-
+        
         .hero-actions {
-            margin-top: 0;
+             margin-top: 0;
         }
 
+        /* --- Hamburger Menu Styles --- */
         .nav-toggle {
             display: none;
             background: none;
@@ -93,16 +77,7 @@
         }
 
         /* --- Responsive Design for Header --- */
-        @media (max-width: 843px) {
-            .header-content {
-                position: static;
-            }
-            
-            header nav {
-                position: static;
-                transform: none;
-            }
-            
+        @media (max-width: 768px) {
             .nav-toggle {
                 display: block;
             }
@@ -121,7 +96,6 @@
                 box-shadow: -5px 0 15px rgba(0,0,0,0.1);
                 transition: right 0.3s ease-in-out;
                 gap: 0;
-                z-index: 1000; /* Ensure it's above other content */
             }
 
             .nav-links-wrapper.active {
@@ -135,33 +109,33 @@
                 gap: 1.5rem;
             }
 
-            nav .nav-link {
+            .nav-link {
                 font-size: 1.2rem;
             }
-
+            
             .hero-actions {
                 margin-top: 2rem;
             }
         }
-
+    
         /* --- Contact Section Specifics --- */
         .contact-layout {
             display: flex;
-            gap: 2.5rem;
+            gap: 2.5rem; /* 40px */
             align-items: flex-start;
         }
 
         .contact-form-wrapper,
         .contact-info {
             background: #ffffff;
-            padding: 2.5rem;
+            padding: 2.5rem; /* 40px */
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             border: 1px solid #e0e0e0;
         }
 
         .contact-form-wrapper {
-            flex: 2;
+            flex: 2; /* Takes up more space */
         }
 
         .contact-info {
@@ -181,6 +155,7 @@
             font-size: 1.25rem;
         }
 
+        /* Form Styling */
         .form-group {
             margin-bottom: 1.25rem;
         }
@@ -198,7 +173,7 @@
             padding: 12px 15px;
             border: 1px solid #e0e0e0;
             border-radius: 6px;
-            font-family: inherit;
+            font-family: inherit; /* Use the site's font */
             font-size: 1rem;
             box-sizing: border-box;
             transition: all 0.2s ease-in-out;
@@ -221,16 +196,17 @@
             min-height: 140px;
         }
 
+        /* Contact Info Item Styling */
         .info-item {
             display: flex;
             align-items: flex-start;
-            gap: 1rem;
+            gap: 1rem; /* 16px */
             margin-bottom: 1.25rem;
         }
 
         .info-item i {
             font-size: 1.1rem;
-            color: #4CAF50;
+            color: #4CAF50; /* Primary Green */
             margin-top: 4px;
             width: 20px;
             text-align: center;
@@ -241,15 +217,16 @@
             font-weight: 500;
         }
 
+        /* --- Responsive Design for Contact Section --- */
         @media (max-width: 992px) {
             .contact-layout {
                 flex-direction: column;
-                align-items: center;
+                align-items: center; /* This will center the items */
             }
             .contact-form-wrapper,
             .contact-info {
-                width: 90%;
-                max-width: 600px;
+                width: 90%; /* Adjust width for smaller screens */
+                max-width: 600px; /* Optional: set a max-width */
             }
         }
     </style>
@@ -353,7 +330,7 @@
         <a href="./disclaimer" class="nav-link" style="text-decoration: underline;" >Disclaimer</a>
     </footer>
 
-    <!-- JavaScript for Hamburger Menu -->
+    <!-- Hamburger Menu Script -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const navToggle = document.getElementById('nav-toggle');
@@ -364,7 +341,6 @@
             navToggle.addEventListener('click', () => {
                 navLinksWrapper.classList.toggle('active');
                 
-                // Toggle icon visibility
                 const isActive = navLinksWrapper.classList.contains('active');
                 openIcon.style.display = isActive ? 'none' : 'block';
                 closeIcon.style.display = isActive ? 'block' : 'none';
