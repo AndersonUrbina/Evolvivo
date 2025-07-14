@@ -43,137 +43,73 @@
 
   gtag('config', 'G-QTB83RBKB6');
 </script>
-        <!-- 
-      STYLES FOR THE NEW "CONTACT US" SECTION 
+        <!--
+      STYLES FOR THE NEW "CONTACT US" SECTION
       (Normally, you would add these to your style.css file)
     -->
     <style>
-        /* --- Contact Section Specifics --- */
-        .contact-layout {
-            display: flex;
-            gap: 2.5rem; /* 40px */
-            align-items: flex-start;
+        /* --- Hamburger Menu Styles (NEW) --- */
+        .nav-toggle {
+            display: none; /* Hidden by default on large screens */
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001; /* Ensure it's on top of other elements */
         }
 
-        .contact-form-wrapper,
-        .contact-info {
-            background: #ffffff;
-            padding: 2.5rem; /* 40px */
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            border: 1px solid #e0e0e0;
-        }
-
-        .contact-form-wrapper {
-            flex: 2; /* Takes up more space */
-        }
-
-        .contact-info {
-            flex: 1;
-        }
-
-        .contact-form-wrapper h2,
-        .contact-info h3 {
-            margin-top: 0;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-            font-weight: 600;
+        .nav-toggle .fa-bars,
+        .nav-toggle .fa-times {
+            font-size: 1.75rem;
             color: #333;
         }
 
-        .contact-info h3 {
-            font-size: 1.25rem;
+        .nav-toggle .fa-times {
+            display: none;
         }
 
-        /* Form Styling */
-        .form-group {
-            margin-bottom: 1.25rem;
-        }
+        /* --- Responsive Design for Header and Nav --- */
+        @media (max-width: 768px) {
+            .header-content {
+                justify-content: space-between;
+            }
+            
+            .nav-toggle {
+                display: block; /* Show hamburger on small screens */
+            }
 
-        .form-group label {
-            display: block;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-            color: #333;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #e0e0e0;
-            border-radius: 6px;
-            font-family: inherit; /* Use the site's font */
-            font-size: 1rem;
-            box-sizing: border-box;
-            transition: all 0.2s ease-in-out;
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: #aaa;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #4CAF50;
-            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 140px;
-        }
-        
-        /* The main button uses your existing .btn.btn-primary style, so no new CSS is needed for it */
-
-        /* Contact Info Item Styling */
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem; /* 16px */
-            margin-bottom: 1.25rem;
-        }
-
-        .info-item i {
-            font-size: 1.1rem;
-            color: #4CAF50; /* Primary Green */
-            margin-top: 4px;
-            width: 20px;
-            text-align: center;
-        }
-
-        .info-item span {
-            color: #6c757d;
-            font-weight: 500;
-        }
-
-        /* --- Responsive Design for Contact Section --- */
-        @media (max-width: 992px) {
-            .contact-layout {
+            .nav-links-wrapper {
+                position: fixed;
+                top: 0;
+                right: -100%; /* Start off-screen */
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: #f8f9fa;
                 flex-direction: column;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .contact-form-wrapper,
-            .contact-info {
-                padding: 2rem 1.5rem;
-            }
-        }
-
-        /* --- Responsive Hero Buttons (NEWLY ADDED) --- */
-        @media (max-width: 768px) {
-            .hero-buttons {
-                display: flex;
-                flex-direction: column; /* Stack buttons vertically */
-                gap: 1rem; /* Add space between the stacked buttons (16px) */
+                align-items: flex-start;
+                padding: 6rem 2rem 2rem;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                transition: right 0.3s ease-in-out;
             }
 
-            .hero-buttons .btn {
-                width: 100%; /* Make each button take the full width */
-                text-align: center; /* Ensure text is centered */
+            .nav-links-wrapper.active {
+                right: 0; /* Slide in when active */
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+                gap: 1.5rem;
+            }
+
+            nav .nav-link {
+                font-size: 1.2rem;
+            }
+
+            .hero-actions {
+                margin-top: 2rem;
             }
         }
     </style>
@@ -185,17 +121,28 @@
                 <img src="https://img.icons8.com/ios-filled/50/036600/leaf.png" alt="Evolvivo Leaf Icon" class="logo-icon"/>
                 <a href="https://evolvivo.com/">Evolvivo</a>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="./articles" class="nav-link"><i class="fas fa-newspaper"></i> Articles</a></li>
-                    <li><a href="./goals" class="nav-link" ><i class="fas fa-bullseye"></i> Goals</a></li>
-                    <li><a href="./saved-articles" class="nav-link"><i class="fas fa-bookmark"></i> Saved</a></li>
-                </ul>
-            </nav>
-            <div class="hero-actions">
-    <button class="btn btn-primary" class="pf-form-modal-btn"  onclick="Plato.openFormModal('frnpwajq697')"><i class="fas fa-user-plus"></i> Subscribe</button><div class="plato-form-widget" data-pf-id="frnpwajq697" data-pf-host="form.formcan.com/" data-pf-display-mode="modal"></div><script src="//static.formcan.com/assets/dist/formbuilder.js?v=20"></script>
-    </div>
-</div>
+
+            <!-- Wrapper for Nav and Subscribe Button -->
+            <div class="nav-links-wrapper" id="nav-links-wrapper">
+                <nav>
+                    <ul>
+                        <li><a href="./articles" class="nav-link"><i class="fas fa-newspaper"></i> Articles</a></li>
+                        <li><a href="./goals" class="nav-link"><i class="fas fa-bullseye"></i> Goals</a></li>
+                        <li><a href="./saved-articles" class="nav-link"><i class="fas fa-bookmark"></i> Saved</a></li>
+                    </ul>
+                </nav>
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="Plato.openFormModal('frnpwajq697')"><i class="fas fa-user-plus"></i> Subscribe</button>
+                    <div class="plato-form-widget" data-pf-id="frnpwajq697" data-pf-host="form.formcan.com/" data-pf-display-mode="modal"></div>
+                    <script src="//static.formcan.com/assets/dist/formbuilder.js?v=20"></script>
+                </div>
+            </div>
+
+            <!-- Hamburger Menu Button -->
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
         </div>
     </header>
 
@@ -366,7 +313,25 @@
     }
   });
 </script>
-    
+
+    <script>
+        // --- Hamburger Menu Script (NEW) ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const navToggle = document.getElementById('nav-toggle');
+            const navLinksWrapper = document.getElementById('nav-links-wrapper');
+            const openIcon = navToggle.querySelector('.fa-bars');
+            const closeIcon = navToggle.querySelector('.fa-times');
+
+            navToggle.addEventListener('click', () => {
+                navLinksWrapper.classList.toggle('active');
+                
+                // Toggle icon visibility
+                const isActive = navLinksWrapper.classList.contains('active');
+                openIcon.style.display = isActive ? 'none' : 'block';
+                closeIcon.style.display = isActive ? 'block' : 'none';
+            });
+        });
+    </script>
     <script src="script.js" defer></script>
     <script src="quotes.js" defer></script>
     <script src="auth.js" defer></script>
