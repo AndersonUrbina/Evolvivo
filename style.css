@@ -286,7 +286,7 @@ main {
 .view-all-link i { margin-left: 5px;}
 
 .cta-section {
-    background-color: var(--primary-color-dark);
+    background-color: #036600;
     color: white;
     text-align: center;
     border-radius: 8px;
