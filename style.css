@@ -316,7 +316,7 @@ main {
 }
 .cta-buttons .btn-outline { /* "Manage Goals" button */
     background-color: white;
-    color: var(--primary-color-dark); /* Text color to match section bg */
+    color: #036600; /* Text color to match section bg */
     border: 2px solid white; /* Border white or none */
 }
 .cta-buttons .btn-outline:hover {
