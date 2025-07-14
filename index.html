@@ -43,19 +43,45 @@
 
   gtag('config', 'G-QTB83RBKB6');
 </script>
-        <!--
-      STYLES FOR THE NEW "CONTACT US" SECTION
+    <!--
+      STYLES FOR THE HEADER AND NAVIGATION
       (Normally, you would add these to your style.css file)
     -->
     <style>
-        /* --- Hamburger Menu Styles (NEW) --- */
+        /* --- Styles for Desktop Header (FIXED) --- */
+        .header-content {
+            display: flex;
+            justify-content: space-between; /* Pushes logo to the left and nav to the right */
+            align-items: center;
+        }
+
+        .nav-links-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 2rem; /* Adds space between the nav links and the subscribe button */
+        }
+
+        nav ul {
+            display: flex; /* Makes nav items horizontal */
+            align-items: center;
+            gap: 1.5rem; /* Adds space between each nav link */
+            list-style: none; /* Removes default bullet points */
+            margin: 0;
+            padding: 0;
+        }
+
+        .hero-actions {
+            margin-top: 0; /* Resets the margin for desktop view */
+        }
+
+        /* --- Hamburger Menu Styles --- */
         .nav-toggle {
             display: none; /* Hidden by default on large screens */
             background: none;
             border: none;
             cursor: pointer;
             padding: 0;
-            z-index: 1001; /* Ensure it's on top of other elements */
+            z-index: 1001;
         }
 
         .nav-toggle .fa-bars,
@@ -68,7 +94,7 @@
             display: none;
         }
 
-        /* --- Responsive Design for Header and Nav --- */
+        /* --- Responsive Design for Mobile Header --- */
         @media (max-width: 768px) {
             .header-content {
                 justify-content: space-between;
@@ -86,11 +112,12 @@
                 max-width: 300px;
                 height: 100vh;
                 background-color: #f8f9fa;
-                flex-direction: column;
+                flex-direction: column; /* Stack items vertically */
                 align-items: flex-start;
                 padding: 6rem 2rem 2rem;
                 box-shadow: -5px 0 15px rgba(0,0,0,0.1);
                 transition: right 0.3s ease-in-out;
+                gap: 0; /* Reset gap for mobile menu */
             }
 
             .nav-links-wrapper.active {
@@ -98,7 +125,7 @@
             }
             
             nav ul {
-                flex-direction: column;
+                flex-direction: column; /* Stack nav links vertically */
                 align-items: flex-start;
                 width: 100%;
                 gap: 1.5rem;
@@ -109,7 +136,7 @@
             }
 
             .hero-actions {
-                margin-top: 2rem;
+                margin-top: 2rem; /* Add space above subscribe button in mobile menu */
             }
         }
     </style>
