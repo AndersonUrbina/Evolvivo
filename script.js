@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <span><i class="fas fa-clock"></i> ${article.readTime}</span>
                     </div>
                     <div class="article-footer">
-                        <a href="${article.url || '#'}" target="_blank" rel="noopener noreferrer" class="read-more-link"> Read More <i class="fas fa-arrow-right"></i></a>
+                        <a href="${article.url || '#'}" target="_blank" rel="noopener noreferrer" class="read-more-link"> Read More<span class="sr-only"> about this article</span> <i class="fas fa-arrow-right"></i></a>
                         
                         <!-- The icon now uses the dynamic style class to be either 'far' or 'fas' -->
                         <i class="${iconStyleClass} fa-bookmark bookmark-icon ${bookmarkedClass}" data-title="${article.title}"></i>
