@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Support - Evolvivo</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* --- Contact Section Specifics --- */
+        .contact-layout {
+            display: flex;
+            gap: 2.5rem; /* 40px */
+            align-items: flex-start;
+        }
+
+        .contact-form-wrapper,
+        .contact-info {
+            background: #ffffff;
+            padding: 2.5rem; /* 40px */
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e0e0e0;
+        }
+
+        .contact-form-wrapper {
+            flex: 2; /* Takes up more space */
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-form-wrapper h2,
+        .contact-info h3 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .contact-info h3 {
+            font-size: 1.25rem;
+        }
+
+        /* Form Styling */
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            font-family: inherit; /* Use the site's font */
+            font-size: 1rem;
+            box-sizing: border-box;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #aaa;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        /* Contact Info Item Styling */
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem; /* 16px */
+            margin-bottom: 1.25rem;
+        }
+
+        .info-item i {
+            font-size: 1.1rem;
+            color: #4CAF50; /* Primary Green */
+            margin-top: 4px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .info-item span {
+            color: #6c757d;
+            font-weight: 500;
+        }
+
+        /* --- Responsive Design for Contact Section --- */
+        @media (max-width: 992px) {
+            .contact-layout {
+                flex-direction: column;
+                align-items: center; /* This will center the items */
+            }
+            .contact-form-wrapper,
+            .contact-info {
+                width: 90%; /* Adjust width for smaller screens */
+                max-width: 600px; /* Optional: set a max-width */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Replicate your standard header here -->
+        <div class="container header-content">
+            <div class="logo">
+                <img src="https://img.icons8.com/ios-filled/50/036600/leaf.png" alt="Evolvivo Leaf Icon" class="logo-icon"/>
+                <a href="/">Evolvivo</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/articles" class="nav-link"><i class="fas fa-newspaper"></i> Articles</a></li>
+                    <li><a href="/goals" class="nav-link"><i class="fas fa-bullseye"></i> Goals</a></li>
+                    <li><a href="#" class="nav-link" data-target="saved-articles-page"><i class="fas fa-bookmark"></i> Saved</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="contact-page" class="page-section">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Get in Touch</h1>
+                    <p>We'd love to hear from you! Whether you have a question, feedback, or just want to say hello, our team is ready to help.</p>
+                </div>
+                <div class="contact-layout">
+                    <div class="contact-form-wrapper">
+                        <h2>Send us a Message</h2>
+                        <form action="https://formcarry.com/s/oRm7cWvwFB5" method="POST">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" placeholder="Jane Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="jane.doe@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" placeholder="Feedback about..." required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" name="message" placeholder="Your message here..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                    <aside class="contact-info">
+                        <h3>Contact Information</h3>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:evolvivo@evolvivo.com" target="_blank"><span>evolvivo@evolvivo.com</span></a>
+                        </div>
+                        <h3>Follow Us</h3>
+                        <div class="info-item">
+                        <a href="https://twitter.com/Evolvivo" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-twitter"></i>
+                            <span>@Evolvivo</span></a>
+                        </div>
+                        <div class="info-item">
+                            <a href="https://www.linkedin.com/in/evolvivo-personal-evolution/" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>Evolvivo on LinkedIn</span></a>
+                        </div>
+                        <div class="info-item">
+                        <i class="fab fa-instagram"></i>
+                            <a href="https://www.instagram.com/evolvivo?igsh=NmRtYXU5aDFyYjE5" target="_blank" ><span>@Evolvivo</span></a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Replicate your standard footer here, and update the links -->
+        <p>© 2025 Evolvivo. All rights reserved.</p>
+        <p>Empowering your journey to personal evolution.</p>
+        <a href="/about.html" style="text-decoration: underline;">About us</a> |
+        <a href="/contact.html" style="text-decoration: underline;">Contact & Support</a> |
+        <a href="/terms-of-service" style="text-decoration: underline;">Terms of Service</a> |
+        <a href="/privacy-policy" style="text-decoration: underline;">Privacy Policy</a> |
+        <a href="/disclaimer" style="text-decoration: underline;">Disclaimer</a>
+    </footer>
+</body>
+</html>
