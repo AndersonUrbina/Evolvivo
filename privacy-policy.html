@@ -9,6 +9,30 @@
   <link rel="icon" type="image/x-icon" href="https://img.icons8.com/ios-filled/50/4CAF50/leaf.png">
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Added styles to fix alignment and spacing issues -->
+  <style>
+    .about-content-section h1,
+    .about-content-section h2 {
+      margin-bottom: 1em;
+    }
+    .about-content-section h2 {
+        margin-top: 1.5em;
+    }
+    .about-content-section p,
+    .about-content-section ul {
+      margin-bottom: 1em;
+      line-height: 1.6;
+    }
+    .about-content-section ul {
+      list-style-position: outside; /* Ensures bullets are outside the text flow */
+      padding-left: 20px;       /* Adds indentation to the entire list */
+    }
+    .about-content-section li {
+      margin-bottom: 0.5em;     /* Adds space between individual list items */
+      padding-left: 5px;        /* Adds a small space between the bullet and the text */
+    }
+  </style>
 </head>
 <body>
   <!-- Full header copied from index.html -->
@@ -46,44 +70,51 @@
           <h1>Privacy Policy</h1>
           <p><strong>Effective Date:</strong> <span id="effective-date"></span></p>
 
-          <p>At <strong>Evolvivo</strong> ("we", "us", or "our"), we value your privacy. This Privacy Policy explains how we collect, use, and protect your information when you visit our website, <a href="https://evolvivo.com">https://evolvivo.com</a>.</p>
+          <p>At <strong>Evolvivo</strong>, we value your privacy. This Privacy Policy explains how we collect, use, and protect your information when you visit our website, <a href="https://evolvivo.com">https://evolvivo.com</a>.</p>
 
           <h2>Information We Collect</h2>
           <ul>
-            <li><strong>Personal Information:</strong> Email addresses collected through subscriptions.</li>
-            <li><strong>Usage Data:</strong> Anonymous analytics data (e.g., IP address, browser type, visit duration).</li>
-            <li><strong>Form Submissions:</strong> Managed via Formcarry and Zapier for automation.</li>
+            <li><strong>Personal Information:</strong> Email addresses collected through subscriptions and contact forms.</li>
+            <li><strong>Usage Data:</strong> Anonymous analytics data such as IP address, browser type, pages visited, and visit duration.</li>
+            <li><strong>Form Submissions:</strong> Data submitted via forms, managed through third-party services Formcarry and Zapier for automation and processing.</li>
           </ul>
 
           <h2>How We Use Your Information</h2>
           <ul>
-            <li>Send subscribed email content.</li>
-            <li>Improve performance and user experience.</li>
-            <li>Analyze traffic (Google Analytics).</li>
-            <li>Display ads (Google AdSense).</li>
+            <li>To send email content to subscribed users.</li>
+            <li>To improve website performance and user experience.</li>
+            <li>To analyze traffic using Google Analytics.</li>
+            <li>To display relevant ads via Google AdSense.</li>
           </ul>
 
           <h2>Cookies and Tracking</h2>
-          <p>We use cookies for analytics and ads. You may disable cookies in your browser settings. Third-party services like Google may use cookies for personalized ads and analytics.</p>
+          <p>We use cookies and similar tracking technologies to collect analytics data and personalize ads. You can disable cookies through your browser settings. Note that third-party services such as Google may use cookies independently for analytics and advertising purposes.</p>
+          <p>Learn more about Google's data practices in the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
 
           <h2>Third-Party Services</h2>
+          <p>We rely on trusted third-party services to help us provide and improve our services. These services have their own privacy policies:</p>
           <ul>
-            <li><a href="https://policies.google.com/privacy">Google Privacy Policy</a></li>
-            <li><a href="https://formcarry.com/privacy">Formcarry Privacy Policy</a></li>
-            <li><a href="https://zapier.com/privacy">Zapier Privacy Policy</a></li>
+            <li><strong>Formcarry:</strong> <a href="https://formcarry.com/legal/privacy-policy/">Formcarry Privacy Policy</a></li>
+            <li><strong>Zapier:</strong> <a href="https://zapier.com/privacy">Zapier Privacy Policy</a></li>
+            <li><strong>Google Analytics & Google AdSense:</strong> See <a href="https://policies.google.com/privacy">Google Privacy Policy</a></li>
           </ul>
 
           <h2>Your Choices</h2>
-          <p>You can unsubscribe from emails at any time. You can also disable cookies through browser settings.</p>
+          <ul>
+            <li>You can unsubscribe from marketing emails at any time using the unsubscribe link provided in each email.</li>
+            <li>You can disable cookies via your browser settings to limit tracking.</li>
+            <li>You can request access to, correction, or deletion of your personal data by contacting us.</li>
+          </ul>
 
-          <h2>Data Protection</h2>
-          <p>We use secure third-party services, but data transmission over the internet is not 100% secure. You use this site at your own risk.</p>
+          <h2>Data Protection and Security</h2>
+          <p>We take reasonable steps to protect your data by using secure third-party services. However, transmission of data over the internet is never completely secure. By using our website, you acknowledge this risk.</p>
 
           <h2>Children’s Privacy</h2>
-          <p>We do not knowingly collect data from children under 13.</p>
+          <p>We do not knowingly collect or solicit personal information from children under the age of 13. If you are a parent or guardian and believe your child has provided us with personal data, please contact us to have it removed.</p>
 
-          <h2>Contact</h2>
-          <p>If you have questions, contact us at <a href="mailto:evolvivo@evolvivo.com">evolvivo@evolvivo.com</a>.</p>
+          <h2>Contact Us</h2>
+          <p>If you have any questions or concerns about this Privacy Policy or your data, please contact us at:</p>
+          <p>Email: <a href="mailto:evolvivo@evolvivo.com">evolvivo@evolvivo.com</a></p>
         </div>
       </div>
     </section>
@@ -106,9 +137,9 @@
   <footer>
         <p>© 2025 Evolvivo. All rights reserved.</p>
         <p>Empowering your journey to personal evolution.</p>
-        <a href="./terms-of-service" class="nav-link">Terms of Service</a> |
-        <a href="./privacy-policy" class="nav-link">Privacy Policy</a> |
-        <a href="./disclaimer" class="nav-link">Disclaimer</a>
+        <a href="./terms-of-service" class="nav-link" style="text-decoration: underline;">Terms of Service</a> |
+        <a href="./privacy-policy" class="nav-link" style="text-decoration: underline;">Privacy Policy</a> |
+        <a href="./disclaimer" class="nav-link" style="text-decoration: underline;">Disclaimer</a>
     </footer>
 
   <!-- Script to set the current date -->
