@@ -35,12 +35,20 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative; /* Set positioning context */
         }
 
         .nav-links-wrapper {
             display: flex;
             align-items: center;
             gap: 2rem;
+        }
+
+        nav {
+            /* This will center the nav on desktop */
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         nav ul {
@@ -78,6 +86,12 @@
 
         /* --- Responsive Design for Header --- */
         @media (max-width: 843px) {
+            nav {
+                /* Reset positioning for mobile view */
+                position: static;
+                transform: none;
+            }
+
             .nav-toggle {
                 display: block;
             }
