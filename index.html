@@ -156,7 +156,7 @@
         }
         
         /* --- [FIX] Styles for Mobile-Friendly Buttons --- */
-        @media (max-width: 843px) {
+        @media (max-width: 768px) {
             .hero-buttons, .cta-buttons {
                 display: flex;
                 flex-direction: column; /* Stack buttons vertically */
@@ -167,6 +167,14 @@
                 width: 100%; /* Make buttons take full width */
                 text-align: center; /* Center text inside buttons */
                 box-sizing: border-box; /* Ensures padding is included in the width */
+            }
+        }
+        
+        /* --- [FIX] Responsive Article Cards --- */
+        @media (max-width: 768px) {
+            .articles-grid {
+                /* Change grid to a single column on smaller screens */
+                grid-template-columns: 1fr;
             }
         }
 
