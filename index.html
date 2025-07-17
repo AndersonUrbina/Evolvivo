@@ -154,6 +154,22 @@
                 margin-top: 2rem;
             }
         }
+        
+        /* --- [FIX] Styles for Mobile-Friendly Buttons --- */
+        @media (max-width: 843px) {
+            .hero-buttons, .cta-buttons {
+                display: flex;
+                flex-direction: column; /* Stack buttons vertically */
+                gap: 1rem; /* Add space between stacked buttons */
+            }
+
+            .hero-buttons .btn, .cta-buttons .btn {
+                width: 100%; /* Make buttons take full width */
+                text-align: center; /* Center text inside buttons */
+                box-sizing: border-box; /* Ensures padding is included in the width */
+            }
+        }
+
     </style>
 </head>
 <body>
