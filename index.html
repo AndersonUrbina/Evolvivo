@@ -48,25 +48,25 @@
       (Normally, you would add these to your style.css file)
     -->
     <style>
-        /* --- Styles for Desktop Header (FIXED) --- */
+        /* --- Styles for Header & Navigation --- */
         .header-content {
-            position: relative; /* Set positioning context for the nav */
             display: flex;
-            justify-content: space-between; /* Pushes logo to left and wrapper to right */
+            justify-content: space-between;
             align-items: center;
-        }
-        
-        /* Center the navigation links on desktop */
-        header nav {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+            position: relative; /* Set positioning context */
         }
 
         .nav-links-wrapper {
             display: flex;
             align-items: center;
             gap: 2rem;
+        }
+
+        nav {
+            /* This will center the nav on desktop */
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         nav ul {
@@ -77,9 +77,9 @@
             margin: 0;
             padding: 0;
         }
-
+        
         .hero-actions {
-            margin-top: 0;
+             margin-top: 0;
         }
 
         /* --- Hamburger Menu Styles --- */
@@ -102,19 +102,14 @@
             display: none;
         }
 
-        /* --- Responsive Design for Mobile Header --- */
-        @media (max-width: 843px) {
-            .header-content {
-                position: static; /* Revert positioning context for mobile */
-                justify-content: space-between;
-            }
-            
-            /* Revert nav styling for the mobile menu */
-            header nav {
+        /* --- Responsive Design for Header --- */
+        @media (max-width: 1145px) {
+            nav {
+                /* Reset positioning for mobile view */
                 position: static;
                 transform: none;
             }
-            
+
             .nav-toggle {
                 display: block;
             }
@@ -123,7 +118,7 @@
                 position: fixed;
                 top: 0;
                 right: -100%;
-                width: 80%;
+                width: 55%;
                 max-width: 300px;
                 height: 100vh;
                 background-color: #f8f9fa;
@@ -146,10 +141,10 @@
                 gap: 1.5rem;
             }
 
-            nav .nav-link {
+            .nav-link {
                 font-size: 1.2rem;
             }
-
+            
             .hero-actions {
                 margin-top: 2rem;
             }
@@ -426,8 +421,8 @@
   });
 </script>
 
+    <!-- Hamburger Menu Script -->
     <script>
-        // --- Hamburger Menu Script (NEW) ---
         document.addEventListener('DOMContentLoaded', () => {
             const navToggle = document.getElementById('nav-toggle');
             const navLinksWrapper = document.getElementById('nav-links-wrapper');
@@ -437,7 +432,6 @@
             navToggle.addEventListener('click', () => {
                 navLinksWrapper.classList.toggle('active');
                 
-                // Toggle icon visibility
                 const isActive = navLinksWrapper.classList.contains('active');
                 openIcon.style.display = isActive ? 'none' : 'block';
                 closeIcon.style.display = isActive ? 'block' : 'none';
