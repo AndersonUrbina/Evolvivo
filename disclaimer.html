@@ -9,41 +9,45 @@
   <link rel="icon" type="image/x-icon" href="https://img.icons8.com/ios-filled/50/036600/leaf.png">
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  
-  <!--
-    STYLES FOR THE RESPONSIVE HEADER
-    (Normally, you would add these to your style.css file)
-  -->
+
   <style>
-      /* --- Styles for Desktop Header --- */
+      /* --- Styles for Header & Navigation --- */
       .header-content {
           display: flex;
-          justify-content: space-between; /* Pushes logo to the left and nav to the right */
+          justify-content: space-between;
           align-items: center;
+          position: relative; /* Set positioning context */
       }
 
       .nav-links-wrapper {
           display: flex;
           align-items: center;
-          gap: 2rem; /* Adds space between the nav links and the subscribe button */
+          gap: 2rem;
       }
 
-      header nav ul {
-          display: flex; /* Makes nav items horizontal */
+      nav {
+          /* This will center the nav on desktop */
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+      }
+
+      nav ul {
+          display: flex;
           align-items: center;
-          gap: 1.5rem; /* Adds space between each nav link */
-          list-style: none; /* Removes default bullet points */
+          gap: 1.5rem;
+          list-style: none;
           margin: 0;
           padding: 0;
       }
 
       .hero-actions {
-          margin-top: 0; /* Resets the margin for desktop view */
+           margin-top: 0;
       }
 
       /* --- Hamburger Menu Styles --- */
       .nav-toggle {
-          display: none; /* Hidden by default on large screens */
+          display: none;
           background: none;
           border: none;
           cursor: pointer;
@@ -61,49 +65,51 @@
           display: none;
       }
 
-      /* --- Responsive Design for Mobile Header --- */
-      @media (max-width: 843px) {
-          .header-content {
-              justify-content: space-between;
+      /* --- Responsive Design for Header --- */
+      @media (max-width: 1145px) {
+          nav {
+              /* Reset positioning for mobile view */
+              position: static;
+              transform: none;
           }
-          
+
           .nav-toggle {
-              display: block; /* Show hamburger on small screens */
+              display: block;
           }
 
           .nav-links-wrapper {
               position: fixed;
               top: 0;
-              right: -100%; /* Start off-screen */
+              right: -100%;
               width: 55%;
               max-width: 300px;
               height: 100vh;
               background-color: #f8f9fa;
-              flex-direction: column; /* Stack items vertically */
+              flex-direction: column;
               align-items: flex-start;
               padding: 6rem 2rem 2rem;
               box-shadow: -5px 0 15px rgba(0,0,0,0.1);
               transition: right 0.3s ease-in-out;
-              gap: 0; /* Reset gap for mobile menu */
+              gap: 0;
           }
 
           .nav-links-wrapper.active {
-              right: 0; /* Slide in when active */
+              right: 0;
           }
-          
-          header nav ul {
-              flex-direction: column; /* Stack nav links vertically */
+
+          nav ul {
+              flex-direction: column;
               align-items: flex-start;
               width: 100%;
               gap: 1.5rem;
           }
 
-          nav .nav-link {
+          .nav-link {
               font-size: 1.2rem;
           }
 
           .hero-actions {
-              margin-top: 2rem; /* Add space above subscribe button in mobile menu */
+              margin-top: 2rem;
           }
       }
   </style>
@@ -259,8 +265,7 @@
 
           navToggle.addEventListener('click', () => {
               navLinksWrapper.classList.toggle('active');
-              
-              // Toggle icon visibility
+
               const isActive = navLinksWrapper.classList.contains('active');
               openIcon.style.display = isActive ? 'none' : 'block';
               closeIcon.style.display = isActive ? 'block' : 'none';
