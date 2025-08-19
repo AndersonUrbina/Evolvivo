@@ -39,6 +39,54 @@
         .back-to-articles-link { display: inline-block; margin-top: 3rem; font-weight: 600; }
         .back-to-articles-link i { margin-right: 8px; }
         @media (max-width: 768px) { .article-detail-header h1 { font-size: 2.2rem; } .article-meta-info { gap: 1rem; flex-direction: column; align-items: center; } .article-body { font-size: 1rem; } }
+        
+        /* --- Styles for Hamburger Menu Functionality --- */
+        .nav-toggle {
+            display: none; /* Hidden by default on large screens */
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .nav-toggle .fa-times {
+            display: none; /* Hide the 'X' icon by default */
+        }
+
+        @media (max-width: 992px) {
+            .nav-toggle {
+                display: block; /* Show hamburger icon on smaller screens */
+            }
+            .nav-links-wrapper {
+                position: fixed;
+                top: 0;
+                right: -100%; /* Start off-screen to the right */
+                width: 100%;
+                height: 100vh;
+                background-color: #fff;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: right 0.3s ease-in-out;
+                z-index: 1000;
+            }
+            .nav-links-wrapper.active {
+                right: 0; /* Slide in from the right when active */
+            }
+            .nav-links-wrapper nav ul {
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
+            }
+            .nav-links-wrapper .hero-actions {
+                margin-top: 2rem;
+            }
+            .nav-links-wrapper .nav-link {
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
