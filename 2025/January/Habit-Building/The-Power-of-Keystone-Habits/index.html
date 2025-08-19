@@ -4,141 +4,184 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Discover how focusing on one key habit, a 'keystone habit,' can create a ripple effect that transforms multiple areas of your life for the better.">
-    <meta name="keywords" content="keystone habits, habit building, personal growth, self-improvement, productivity">
-    <meta property="og:title" content="The Power of Keystone Habits | Evolvivo">
-    <meta property="og:description" content="Learn how to identify and implement keystone habits to unlock a cascade of positive changes in your life.">
-    <meta property="og:image" content="https://images.pexels.com/photos/4964985/pexels-photo-4964985.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1">
+    <meta name="description" content="Learn how to craft a personalized morning routine that sets you up for a productive and positive day.">
+    <meta name="keywords" content="morning routine, habits, productivity, self-care, personal development">
+    <meta property="og:title" content="The Power of a Morning Routine: Start Your Day with Intention | Evolvivo">
+    <meta property="og:description" content="Learn how to craft a personalized morning routine that sets you up for a productive and positive day.">
+    <meta property="og:image" content="https://images.pexels.com/photos/3734031/pexels-photo-3734031.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1">
     <meta name="twitter:card" content="summary_large_image">
 
-    <title>The Power of Keystone Habits - Evolvivo</title>
+    <title>The Power of a Morning Routine: Start Your Day with Intention - Evolvivo</title>
+    
+    <link rel="icon" type="image/png" href="../../../../Resources/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../../../../Resources/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../../../../Resources/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../../Resources/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Evolvivo" />
+    <link rel="manifest" href="../../../../Resources/favicon/site.webmanifest" />
+    <link rel="stylesheet" href="../../../../style.css" media="all">
     
     <!-- Link to your MAIN stylesheet. This is required. -->
-    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/ios-filled/50/4CAF50/leaf.png">
-    <link rel="stylesheet" href="../../../../style.css" media="all">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Article-specific styles are now embedded here -->
     <style>
-        /* --- FONT & READABILITY ENHANCEMENTS (NEW) --- */
-        .article-body {
-            /* We apply the core readability styles to the parent container */
-            font-family: Georgia, 'Times New Roman', Times, serif; /* Classic, highly-readable serif font for body text */
-            font-size: 1.1rem; /* Slightly larger base font size for comfort (around 17-18px) */
-            line-height: 1.7;  /* Generous line spacing is key for readability */
-            color: #333; /* A slightly softer black is easier on the eyes than pure #000 */
-        }
-
-        .article-body h2 {
-            /* Style for subheadings within the article */
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* Use a clean sans-serif for headings for contrast */
-            font-size: 1.8rem;
-            line-height: 1.3;
-            color: var(--text-color); /* Use the site's main text color */
-            margin-top: 2.5rem;   /* Add space above subheadings */
-            margin-bottom: 1.25rem; /* Add space below subheadings */
-        }
-        /* --- END OF NEW STYLES --- */
-
-
-        .article-detail-header {
-            text-align: center;
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-        .article-detail-header .article-category {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 5px;
-            font-size: 0.9em;
-            margin-bottom: 1rem;
-        }
-        .article-detail-header h1 {
-            /* MODIFIED: Changed font to match the article body for a cohesive, literary feel */
-            font-family: Georgia, 'Times New Roman', Times, serif; 
-            font-size: 3rem;
-            color: var(--text-color);
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-        .article-meta-info {
+        /* --- Styles for Single-Row Header --- */
+        .header-content {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            color: var(--text-light);
-            font-size: 0.95rem;
         }
-        .article-meta-info span i {
-            margin-right: 6px;
-            color: var(--primary-color);
+        .nav-links-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 2rem; /* Adjusts space between nav links and subscribe button */
         }
-        .article-hero-image {
-            width: 100%;
-            max-height: 450px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 3rem;
+        .nav-links-wrapper nav ul {
+            display: flex;
+            align-items: center;
+            gap: 2rem; /* Adjusts space between each menu item */
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
-        .article-body-content {
-            max-width: 800px;
-            margin: 0 auto;
+
+        .article-body { font-family: Georgia, 'Times New Roman', Times, serif; font-size: 1.1rem; line-height: 1.7; color: #333; }
+        .article-body h2 { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 1.8rem; line-height: 1.3; color: var(--text-color); margin-top: 2.5rem; margin-bottom: 1.25rem; }
+        .article-detail-header { text-align: center; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-color); }
+        .article-detail-header .article-category { display: inline-block; background-color: var(--primary-color); color: white; padding: 5px 12px; border-radius: 5px; font-size: 0.9em; margin-bottom: 1rem; }
+        .article-detail-header h1 { font-family: Georgia, 'Times New Roman', Times, serif; font-size: 3rem; color: var(--text-color); line-height: 1.2; margin-bottom: 1rem; }
+        .article-meta-info { display: flex; justify-content: center; align-items: center; gap: 1.5rem; flex-wrap: wrap; color: var(--text-light); font-size: 0.95rem; }
+        .article-meta-info span i { margin-right: 6px; color: var(--primary-color); }
+        .article-hero-image { width: 100%; max-height: 450px; object-fit: cover; border-radius: 8px; margin-bottom: 3rem; }
+        .article-body-content { max-width: 800px; margin: 0 auto; }
+        .article-body-content blockquote { border-left: 4px solid var(--primary-color); padding-left: 1.5rem; margin: 2rem 1rem; font-style: italic; color: var(--text-light); font-size: 1.2rem; line-height: 1.6; }
+        .back-to-articles-link { display: inline-block; margin-top: 3rem; font-weight: 600; }
+        .back-to-articles-link i { margin-right: 8px; }
+        
+        /* --- Styles for Hamburger Menu Functionality --- */
+        .nav-toggle {
+            display: none; /* Hidden by default on large screens */
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
         }
-        .article-body-content blockquote {
-            border-left: 4px solid var(--primary-color);
-            padding-left: 1.5rem;
-            margin: 2rem 1rem; /* Added horizontal margin */
-            font-style: italic;
-            color: var(--text-light);
-            /* MODIFIED: Increased font size to be slightly larger than body text */
-            font-size: 1.2rem; 
-            line-height: 1.6; /* Ensure good line height here too */
-        }
-        .back-to-articles-link {
-            display: inline-block;
-            margin-top: 3rem;
-            font-weight: 600;
-        }
-        .back-to-articles-link i {
-            margin-right: 8px;
-        }
-        @media (max-width: 768px) {
-            .article-detail-header h1 {
-                font-size: 2.2rem;
+        
+        /* --- Styles for Centered Navigation (Desktop) --- */
+        @media (min-width: 993px) {
+            .header-content {
+                position: relative; /* Context for absolute positioning */
             }
-            .article-meta-info {
-                gap: 1rem;
+            .nav-links-wrapper nav {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%); /* Center the element precisely */
+            }
+            .nav-links-wrapper {
+                width: 100%;
+                justify-content: flex-end; /* Pushes subscribe button to the far right */
+            }
+        }
+
+        /* --- Mobile Styles --- */
+        @media (max-width: 992px) {
+            .nav-toggle {
+                display: block; /* Show hamburger icon on smaller screens */
+            }
+            .close-menu-btn {
+                position: absolute;
+                top: 20px;
+                right: 25px;
+                background: none;
+                border: none;
+                font-size: 2rem;
+                color: #555;
+                cursor: pointer;
+            }
+            .nav-links-wrapper {
+                position: fixed;
+                top: 0;
+                right: -100%; /* Start off-screen */
+                width: 320px; /* Panel width */
+                max-width: 90%;
+                height: 100vh;
+                background-color: #fff;
+                box-shadow: -3px 0 15px rgba(0,0,0,0.1);
                 flex-direction: column;
-                align-items: center;
+                justify-content: flex-start; /* Align items to the top */
+                align-items: flex-start; /* Align text to the left */
+                padding-top: 80px; /* Space for close button */
+                transition: right 0.3s ease-in-out;
+                z-index: 1000;
             }
-            .article-body {
-                font-size: 1rem; /* Slightly smaller font on mobile for balance */
+            .nav-links-wrapper.active {
+                right: 0; /* Slide in */
             }
+            .nav-links-wrapper nav {
+                width: 100%;
+            }
+            .nav-links-wrapper nav ul {
+                flex-direction: column;
+                width: 100%;
+                gap: 0;
+                align-items: flex-start;
+            }
+             .nav-links-wrapper nav ul li {
+                width: 100%;
+            }
+            .nav-links-wrapper .nav-link {
+                display: block;
+                font-size: 1.2rem;
+                padding: 1rem 2rem;
+                width: 100%;
+            }
+            .nav-links-wrapper .hero-actions {
+                margin-top: 1.5rem;
+                padding: 0 2rem;
+            }
+        }
+
+        @media (max-width: 768px) { 
+            .article-detail-header h1 { font-size: 2.2rem; } 
+            .article-meta-info { gap: 1rem; flex-direction: column; align-items: center; } 
+            .article-body { font-size: 1rem; } 
         }
     </style>
 </head>
 <body>
-    <!-- Header remains the same for consistency -->
     <header>
         <div class="container header-content">
             <div class="logo">
-                <img src="https://img.icons8.com/ios-filled/50/4CAF50/leaf.png" alt="Evolvivo Leaf Icon" class="logo-icon"/>
-                <a href="/">Evolvivo</a>
+                <img src="https://img.icons8.com/ios-filled/50/036600/leaf.png" alt="Evolvivo Leaf Icon" class="logo-icon"/>
+                <a href="https://evolvivo.com/">Evolvivo</a>
             </div>
-            <nav>
+
+            <!-- Wrapper for Nav and Subscribe Button -->
+            <div class="nav-links-wrapper" id="nav-links-wrapper">
+                <button class="close-menu-btn" id="close-menu-btn" aria-label="Close Menu"><i class="fas fa-times"></i></button>
+                <nav>
                 <ul>
-                    <li><a href="https://evolvivo.com/" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="https://evolvivo.com/articles" class="nav-link"><i class="fas fa-newspaper"></i> Articles</a></li>
-                    <li><a href="https://evolvivo.com/goals" class="nav-link"><i class="fas fa-bullseye"></i> Goals</a></li>
+                    <li><a href="/articles" class="nav-link"><i class="fas fa-newspaper"></i> Articles</a></li>
+                    <li><a href="/goals" class="nav-link"><i class="fas fa-bullseye"></i> Goals</a></li>
+                    <li><a href="./about-us" class="nav-link"><i class="fas fa-users"></i> About Us</a></li>
+                    <li><a href="./saved-articles" class="nav-link"><i class="fas fa-bookmark"></i> Saved</a></li>
                 </ul>
-            </nav>
-            <div class="hero-actions">
-                 <a href="/signup"><button class="btn btn-primary"><i class="fas fa-user-plus"></i> Sign Up</button></a>
+                </nav>
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="Plato.openFormModal('frnpwajq697')"><i class="fas fa-user-plus"></i> Subscribe</button>
+                    <div class="plato-form-widget" data-pf-id="frnpwajq697" data-pf-host="form.formcan.com/" data-pf-display-mode="modal"></div>
+                    <script src="//static.formcan.com/assets/dist/formbuilder.js?v=20"></script>
+                </div>
             </div>
+
+            <!-- Hamburger Menu Button -->
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
         </div>
     </header>
 
@@ -146,85 +189,215 @@
         <section class="page-section">
             <div class="container">
                 <div class="article-detail-header">
-                    <span class="article-category">Habit Building</span>
-                    <h1>The Power of Keystone Habits</h1>
+                    <span class="article-category">Habits</span>
+                    <h1>The Power of a Morning Routine: Start Your Day with Intention</h1>
                     <div class="article-meta-info">
-                        <span><i class="fas fa-user"></i> By Jane Doe</span>
-                        <span><i class="fas fa-calendar-alt"></i> January 14, 2025</span>
-                        <span><i class="fas fa-clock"></i> 5 min read</span>
+                        <span><i class="fas fa-user"></i> By Sarah Jenkins</span>
+                        <span><i class="fas fa-calendar-alt"></i> February 3, 2025</span>
+                        <span><i class="fas fa-clock"></i> 7 min read</span>
                     </div>
                 </div>
                 
-                <img class="article-hero-image" src="https://images.pexels.com/photos/4964985/pexels-photo-4964985.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="A person marking a calendar, symbolizing habit formation.">
+                <img class="article-hero-image" src="https://images.pexels.com/photos/3734031/pexels-photo-3734031.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="A person watching the sunrise with a cup of coffee, starting their day with intention.">
 
                 <div class="article-body">
-    <div class="article-body-content">
-        <p>In the world of self-improvement, we often think that massive change requires massive action. We set out to transform our lives overnight, only to find ourselves overwhelmed and back where we started. But what if the secret to widespread change lies not in doing everything at once, but in focusing on just one or two critical habits? This is the power of <strong>keystone habits</strong>.</p>
-        
-        <p>Coined by Charles Duhigg in his bestselling book, "The Power of Habit," a keystone habit is a single practice that sparks a chain reaction, creating a cascade of other positive habits and improvements in its wake. They are the small wins that lead to bigger victories.</p>
-        
-        <h2>What Makes a Habit a "Keystone"?</h2>
-        <p>Not all habits are created equal. A keystone habit has a unique ripple effect. Think of exercise. When you start exercising regularly, you might naturally begin to eat better to fuel your workouts. You might sleep more soundly because you're physically tired. Your stress levels might decrease, leading to improved focus at work and more patience with your family. Exercise didn't directly cause these changes, but it created the environment for them to flourish.</p>
-        
-        <p>Common examples of keystone habits include:</p>
-        <ul>
-            <li><strong>Regular Exercise:</strong> Boosts energy, improves mood, and encourages healthier eating.</li>
-            <li><strong>Making Your Bed Every Morning:</strong> Instills a sense of order and accomplishment, setting a productive tone for the day.</li>
-            <li><strong>Tracking Your Food Intake:</strong> Raises awareness about your diet, often leading to healthier choices without a strict "diet plan."</li>
-            <li><strong>Daily Meditation or Mindfulness:</strong> Reduces stress and increases emotional regulation, impacting how you react to challenges.</li>
-            <li><strong>Planning Your Day the Night Before:</strong> Reduces morning decision fatigue and creates immediate clarity and focus.</li>
-        </ul>
+                    <div class="article-body-content">
+                        <p>How you start your day often determines how you live your day. If you wake up and immediately grab your phone, scrolling through emails and social media, you start the day in a reactive mode, responding to others' agendas. A morning routine, however, allows you to start your day with intention, setting a proactive, positive tone for everything that follows.</p>
+                        
+                        <h2>Why a Morning Routine is So Powerful</h2>
+                        <p>An intentional morning routine gives you a sense of control over your day. It reduces stress by eliminating the need for rushed decisions in the morning. By dedicating the first part of your day to activities that align with your goals and well-being, you are making a powerful statement that you are in charge of your life.</p>
 
-        <h2>The Psychology Behind the Ripple Effect</h2>
-        <p>Why are these habits so powerful? It comes down to a few key psychological principles:</p>
-        <ol>
-            <li><strong>They Create Small Wins:</strong> Successfully executing a keystone habit provides a regular dose of accomplishment. This feeling of success builds momentum and self-efficacy—the belief in your ability to succeed—making you more likely to take on other challenges.</li>
-            <li><strong>They Shift Your Identity:</strong> When you consistently make your bed, you start to see yourself as an organized person. When you exercise daily, you become a "person who exercises." This identity shift is profound because it reframes future decisions. An organized person naturally tidies up their desk; a healthy person is more likely to choose a salad over fries.</li>
-            <li><strong>They Clarify Your Values:</strong> Committing to a keystone habit forces you to build structures and systems that support it. In doing so, you're building the very architecture of discipline that can be applied to other areas of your life.</li>
-        </ol>
-        
-        <blockquote>"Keystone habits say that success doesn’t depend on getting every single thing right, but instead relies on identifying a few key priorities and fashioning them into powerful levers." — Charles Duhigg</blockquote>
+                        <h2>Building Blocks of an Effective Morning Routine</h2>
+                        <p>There is no one-size-fits-all morning routine. The best routine is the one you'll actually stick with. However, many effective routines incorporate elements that nurture the mind, body, and spirit. Consider including a mix of the following:</p>
+                        <ul>
+                            <li><strong>Hydration:</strong> Drink a glass of water first thing to rehydrate your body after sleep.</li>
+                            <li><strong>Movement:</strong> This could be a few minutes of stretching, a short yoga session, or a brisk walk. The goal is to wake up your body.</li>
+                            <li><strong>Mindfulness or Meditation:</strong> Spend a few minutes in quiet reflection, meditation, or prayer to center your mind.</li>
+                            <li><strong>Journaling or Planning:</strong> Write down your thoughts, what you're grateful for, or the top 3 things you want to accomplish that day.</li>
+                            <li><strong>No Screens:</strong> Commit to keeping your phone off for the first 30-60 minutes of your day.</li>
+                        </ul>
+                        
+                        <blockquote>"Win the morning, win the day." — Tim Ferriss</blockquote>
+                        
+                        <h2>Start Small, Stay Consistent</h2>
+                        <p>You don't need to wake up at 5 a.m. and have a two-hour routine to see the benefits. Start by waking up just 15 minutes earlier than usual and incorporating one or two new habits. The key is consistency. By taking control of your mornings, you are taking the first step towards creating a more focused, productive, and fulfilling life, one day at a time.</p>
 
-        <h2>A Classic Case Study: The Alcoa Turnaround</h2>
-        <p>One of the most famous examples of a keystone habit in action comes from the corporate world. When Paul O'Neill became CEO of the aluminum company Alcoa, he didn't talk about profits or efficiency. In his first speech to investors, he announced his number one priority would be <strong>worker safety</strong>.</p>
-        <p>The audience was baffled, but O'Neill knew what he was doing. To achieve a zero-injury workplace, Alcoa had to understand *why* injuries were happening. This required overhauling communication systems so that managers could report issues immediately. It required examining and streamlining the manufacturing process to make it safer, which also made it more efficient. In focusing on the single keystone habit of safety, O'Neill transformed Alcoa's entire corporate culture, and in the process, its profits hit a record high.</p>
-        
-        <h2>How to Find Your Own Keystone Habit</h2>
-        <p>Identifying a potential keystone habit is a personal journey, but it's not a mystery. It's about strategic self-reflection. Follow these steps to find the habit that will create the most positive momentum for you.</p>
-        <ol>
-            <li><strong>Look for Pain Points and Aspirations:</strong> What area of your life causes the most stress or dissatisfaction? Conversely, what change would bring you the most pride and joy? Keystone habits often emerge from the intersection of what you want to fix and what you want to build.</li>
-            <li><strong>Brainstorm Potential Levers:</strong> For your chosen area, list a few small, consistent actions. If your goal is to reduce financial stress, potential habits could be "track my spending daily," "pack lunch for work," or "set aside $5 every day."</li>
-            <li><strong>Analyze for a Cascade Effect:</strong> Look at your list and ask, "Which of these habits, if done consistently, would naturally lead to other positive changes?" Tracking spending might make you more conscious of subscriptions, which might lead you to cook at home more, which might improve your diet. That's a strong candidate.</li>
-            <li><strong>Start Incredibly Small:</strong> The goal isn't to be perfect; it's to be consistent. Don't commit to a one-hour workout. Commit to putting on your workout clothes and exercising for five minutes. The key is to lower the barrier to entry so you can't say no.</li>
-        </ol>
-
-        <h2>Common Pitfalls to Avoid</h2>
-        <p>As you embark on this journey, be mindful of common traps that can derail your progress:</p>
-        <ul>
-            <li><strong>Choosing a Habit That's Too Big:</strong> Ambition is great, but starting with "write 1,000 words a day" is a recipe for burnout. Start with "write one sentence." Build the muscle of consistency first.</li>
-            <li><strong>Expecting an Overnight Transformation:</strong> The ripple effect takes time. Be patient and focus on celebrating the small win of completing the habit itself, day after day.</li>
-            <li><strong>Ignoring the Habit Loop:</strong> Every habit needs a cue (the trigger), a routine (the action), and a reward (the reason your brain wants to do it again). If your habit isn't sticking, make sure you have a clear cue and a satisfying reward.</li>
-        </ul>
-
-        <p>The true magic of a keystone habit is that it’s not about adding more to your plate. It's about choosing one strategic lever that lifts everything else with it. By nurturing that one practice, you're not just building a single habit; you're planting a seed for comprehensive personal evolution. Start today, start small, and watch the ripples spread.</p>
-
-        <a href="https://evolvivo.com/articles" class="back-to-articles-link"><i class="fas fa-arrow-left"></i> Back to All Articles</a>
-    </div>
-</div>
+                        <a href="https://evolvivo.com/articles" class="back-to-articles-link"><i class="fas fa-arrow-left"></i> Back to All Articles</a>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
     
-    <!-- Footer remains the same for consistency -->
-    <footer>
-        <p>© 2025 Evolvivo. All rights reserved.</p>
-        <p>Empowering your journey to personal evolution.</p>
-        <a href="/terms-of-service">Terms of Service</a> |
-        <a href="/privacy-policy">Privacy Policy</a> |
-        <a href="/disclaimer">Disclaimer</a>
-    </footer>
+    <!-- ============================================ -->
+    <!--              NEW FOOTER START                -->
+    <!-- ============================================ -->
+    <footer class="site-footer">
 
-    <!-- I noticed your script tag was malformed and outside the <body>. I have removed it as it was not functional and was causing validation errors. -->
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Column 1: Explore -->
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="./articles">Articles</a></li>
+                        <li><a href="./goals">Goals</a></li>
+                        <li><a href="./saved-articles">Saved Articles</a></li>
+                        <li><a href="./about-us">About Us</a></li>
+                    </ul>
+                </div>
+                <!-- Column 2: Support -->
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="./contact-&-support">Contact & Support</a></li>
+                        <li><a href="#">FAQ's</a></li>
+                    </ul>
+                </div>
+                <!-- Column 3: Legal -->
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="./terms-of-service">Terms of Service</a></li>
+                        <li><a href="./privacy-policy">Privacy Policy</a></li>
+                        <li><a href="./disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <!-- Column 4: Follow Us -->
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://twitter.com/Evolvivo" aria-label="Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/evolvivo-personal-evolution/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/evolvivo?igsh=NmRtYXU5aDFyYjE5" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Evolvivo. All rights reserved.</p>
+                <p>Empowering your journey to personal evolution.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ============================================ -->
+    <!--               NEW FOOTER END                 -->
+    <!-- ============================================ -->
+
+    <div id="toast-notification" class="toast hidden">
+        <span id="toast-message"></span>
+    </div>
+
+    <!-- CSS for the styled Cookie Consent Banner -->
+<style>
+  #cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em; 
+    flex-wrap: wrap; 
+    background: #ffffff;
+    color: #3a3a3a; 
+    padding: 1.25em 1em;
+    font-family: sans-serif; 
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08); 
+    text-align: center;
+  }
+  #cookie-banner a {
+    color: #036600; 
+    text-decoration: underline;
+    font-weight: 500;
+  }
+  #cookie-banner a:hover {
+    text-decoration: none;
+  }
+  #cookie-banner button {
+    background-color: #036600;
+    color: white;
+    border: none;
+    border-radius: 8px; 
+    padding: 0.75em 1.75em;
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  #cookie-banner button:hover {
+    background-color: #45a049; 
+  }
+</style>
+
+<!-- Styled Cookie Consent Banner HTML -->
+<div id="cookie-banner">
+  <span>This website uses cookies to improve your experience and analyze traffic. By using this site, you agree to our <a href="/privacy-policy.html">Privacy Policy</a>.</span>
+  <button onclick="acceptCookies()">Got it</button>
+</div>
+
+<!-- JavaScript to control the banner -->
+<script>
+  function acceptCookies() {
+    localStorage.setItem("cookiesAccepted", "true");
+    document.getElementById("cookie-banner").style.display = "none";
+  }
+  window.addEventListener("DOMContentLoaded", function () {
+    if (!localStorage.getItem("cookiesAccepted")) {
+      const banner = document.getElementById("cookie-banner");
+      if (banner) {
+        banner.style.display = "flex";
+      }
+    }
+  });
+</script>
+
+    <!-- Hamburger Menu & Ticker Slider Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Hamburger Menu Script ---
+            const navToggle = document.getElementById('nav-toggle');
+            const navLinksWrapper = document.getElementById('nav-links-wrapper');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
+
+            navToggle.addEventListener('click', () => {
+                navLinksWrapper.classList.add('active');
+            });
+            
+            closeMenuBtn.addEventListener('click', () => {
+                navLinksWrapper.classList.remove('active');
+            });
+
+            // --- Ticker Slider Script ---
+            const tickerContent = document.getElementById('ticker-content');
+            const nextButton = document.getElementById('ticker-next-btn');
+            
+            if (tickerContent && nextButton) {
+                const tickerItems = tickerContent.querySelectorAll('.ticker-item');
+                // We start by targeting the second item for the first click (index 1)
+                let targetIndex = 1; 
+
+                nextButton.addEventListener('click', () => {
+                    // Check if the target index is valid
+                    if (targetIndex < tickerItems.length) {
+                        const targetItem = tickerItems[targetIndex];
+                        
+                        // Scroll the container so the left edge of the target item is aligned with the start of the container
+                        tickerContent.scrollLeft = targetItem.offsetLeft;
+                        
+                        // Increment the index for the next click
+                        targetIndex++;
+                    } else {
+                        // If we've reached the end, loop back to the beginning
+                        tickerContent.scrollLeft = 0;
+                        // Reset the index to target the second item again
+                        targetIndex = 1; 
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
