@@ -184,7 +184,7 @@ main {
 .btn i { margin-right: 5px; }
 
 .btn-primary {
-    background-color: var(--primary-color);
+    background-color: #036600;
     color: white;
 }
 .btn-primary:hover {
@@ -771,3 +771,4 @@ footer p {
                 justify-content: center;
             }
         }
+
