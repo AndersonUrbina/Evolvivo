@@ -72,6 +72,23 @@
         .nav-toggle .fa-times {
             display: none; /* Hide the 'X' icon by default */
         }
+        
+        /* --- Styles for Centered Navigation (Desktop) --- */
+        @media (min-width: 993px) {
+            .header-content {
+                position: relative; /* Context for absolute positioning */
+            }
+            .nav-links-wrapper nav {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%); /* Center the element precisely */
+            }
+            .nav-links-wrapper {
+                width: 100%;
+                justify-content: flex-end; /* Pushes subscribe button to the far right */
+            }
+        }
 
         /* --- Mobile Styles --- */
         @media (max-width: 992px) {
