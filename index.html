@@ -3,59 +3,35 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Open iPhone Settings</title>
+  <title>iPhone Settings Test Links</title>
   <style>
     body { font-family: -apple-system, system-ui, Roboto, sans-serif; padding: 2rem; max-width: 680px; margin: auto; }
-    button { font-size: 1.1rem; padding: .8rem 1.2rem; border-radius: 10px; border: none; cursor: pointer; }
-    .note { color: #666; margin-top: 1rem; font-size: .9rem; }
+    h1 { font-size: 1.5rem; margin-bottom: 1rem; }
+    a, button {
+      display: block;
+      margin: 0.5rem 0;
+      padding: .8rem 1rem;
+      background: #007aff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .note { margin-top: 1rem; color: #666; font-size: .9rem; }
   </style>
 </head>
 <body>
-  <h1>Open iPhone Settings (test)</h1>
-  <p>Tap the button below to attempt to open the Settings app.</p>
+  <h1>Test Opening iPhone Settings</h1>
 
-  <button id="openSettings">Open Settings</button>
+  <a href="App-Prefs://">Main Settings (App-Prefs://)</a>
+  <a href="App-Prefs://prefs:root">Main Settings (prefs:root)</a>
+  <a href="App-Prefs://prefs:root=WIFI">Wi-Fi Settings (may work on older iOS)</a>
+  <a href="App-Prefs://prefs:root=Bluetooth">Bluetooth Settings (may work on older iOS)</a>
+  <a href="App-Prefs://prefs:root=General">General Settings (may work on older iOS)</a>
 
-  <p class="note">If it doesn't open, Safari/OS likely blocked the private URL scheme on your device or your iOS version doesn't support it.</p>
-
-  <script>
-    const openBtn = document.getElementById('openSettings');
-
-    // Two common variants used historically
-    const urlCandidates = [
-      'App-Prefs://prefs:root',       // often works to open Settings.app (undocumented)
-      'App-Prefs://',                 // alternative
-      'prefs:root'                    // older scheme (may be blocked)
-    ];
-
-    openBtn.addEventListener('click', function () {
-      // Try candidate URL schemes by setting window.location.
-      // Note: browsers may block or ignore unknown schemes.
-      (function tryNext(i) {
-        if (i >= urlCandidates.length) {
-          alert('Could not open Settings. This is expected on some iOS versions / browsers.');
-          return;
-        }
-        const url = urlCandidates[i];
-
-        // Attempt: navigation first (works in many cases)
-        window.location = url;
-
-        // As a fallback, open in an iframe (older trick, may be blocked)
-        setTimeout(function () {
-          const iframe = document.createElement('iframe');
-          iframe.style.display = 'none';
-          iframe.src = url;
-          document.body.appendChild(iframe);
-
-          // Remove iframe after a short delay and try next candidate if nothing happened
-          setTimeout(function () {
-            document.body.removeChild(iframe);
-            tryNext(i + 1);
-          }, 700);
-        }, 300);
-      })(0);
-    }, false);
-  </script>
+  <p class="note">
+    ⚠️ These links rely on private iOS URL schemes. On many devices they’ll simply do nothing — that’s normal.  
+    Apple can (and does) block them between iOS versions.
+  </p>
 </body>
 </html>
