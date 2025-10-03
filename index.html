@@ -1,37 +1,620 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>iPhone Settings Test Links</title>
-  <style>
-    body { font-family: -apple-system, system-ui, Roboto, sans-serif; padding: 2rem; max-width: 680px; margin: auto; }
-    h1 { font-size: 1.5rem; margin-bottom: 1rem; }
-    a, button {
-      display: block;
-      margin: 0.5rem 0;
-      padding: .8rem 1rem;
-      background: #007aff;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 10px;
-      text-align: center;
-    }
-    .note { margin-top: 1rem; color: #666; font-size: .9rem; }
-  </style>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport"><!-- Meta Description for SEO -->
+	<meta content="Evolvivo is your dedicated personal growth companion, empowering you with insightful articles, customizable goal-setting tools, and daily inspiration. Whether you're striving to develop essential life skills, build powerful habits, or reach your most ambitious personal goals, Evolvivo provides the guidance and motivation to help you evolve with intention and purpose every day." name="description"><!-- Meta Keywords (optional, not heavily used anymore) -->
+	<meta content="personal growth, self-improvement, goal setting, motivation, productivity, life skills, personal development, inspiration, Evolvivo, morning routine ideas, productive habits, build a routine, healthy habits, best morning routine, start a routine for productivity, consistent routine benefits, mental health habits, step-by-step routine guide, routine tips for busy professionals, daily ritual, self-care routine, wake up early guide, day planning, mindfulness, positive habits, time management, habit tracking, success habits, mental wellness, stress management, personal discipline, goal achievement, effective routines, morning meditation, energy boosting, productivity hacks, focus techniques, wellness, healthy lifestyle, work-life balance, motivation techniques, self-discipline, mental clarity, morning exercise, gratitude practice, habit formation, personal transformation, emotional intelligence, resilience building, mindfulness meditation, stress relief techniques, journaling for growth, affirmations for success, time blocking strategies, deep work techniques, morning visualization, healthy breakfast ideas, sleep hygiene tips, overcoming procrastination, building self-confidence, positive mindset, leadership skills development, emotional wellbeing, self-reflection practices, accountability methods, digital detox routines, relaxation exercises, breathing techniques, goal tracking apps, daily planning methods, self-motivation tips, mental focus exercises, energy management, habit stacking, productivity tools, morning stretching exercises, morning yoga, biohacking morning routines, holistic health habits, nutrition for productivity, personal empowerment, gratitude journaling, prioritization skills, effective goal planning, morning walk benefits, decluttering habits, positive affirmations, motivational quotes, habit consistency, overcoming burnout" name="keywords"><!-- Open Graph / Facebook -->
+	<meta content="website" property="og:type">
+	<meta content="https://www.evolvivo.com/" property="og:url">
+	<meta content="Evolvivo – Your Personal Growth Companion" property="og:title">
+	<meta content="Discover Evolvivo: your all-in-one personal growth platform with powerful tools, insightful content, and daily inspiration to help you build better habits and reach your full potential." property="og:description">
+	<meta content="https://raw.githubusercontent.com/AndersonUrbina/Evolvivo/refs/heads/main/Resources/sm-card.png" property="og:image"><!-- Replace with your actual image -->
+	<!-- Twitter -->
+	<meta content="summary_large_image" name="twitter:card">
+	<meta content="https://www.evolvivo.com/" name="twitter:url">
+	<meta content="Evolvivo – Your Personal Growth Companion" name="twitter:title">
+	<meta content="Evolvivo helps you cultivate essential skills, build habits, and achieve meaningful goals through curated articles, smart tools, and inspiring daily content." name="twitter:description">
+	<meta content="https://raw.githubusercontent.com/AndersonUrbina/Evolvivo/refs/heads/main/Resources/sm-card.png" name="twitter:image"><!-- Replace with your image -->
+	<title>Evolvivo | Personal Evolution</title><!--Preloaded font to optimize LCP-->
+	<link href="/Resources/favicon/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
+	<link href="/Resources/favicon/favicon.svg" rel="icon" type="image/svg+xml">
+	<link href="/Resources/favicon/favicon.ico" rel="shortcut icon">
+	<link href="/Resources/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+	<meta content="Evolvivo" name="apple-mobile-web-app-title">
+	<link href="/Resources/favicon/site.webmanifest" rel="manifest">
+	<link href="CSS/main.css" media="all" rel="stylesheet"><!-- Font Awesome CDN -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2064980807288479">
+	</script><!-- Google tag (gtag.js) -->
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-QTB83RBKB6">
+	</script>
+	<script>
+	    window.dataLayer = window.dataLayer || [];
+	    function gtag(){dataLayer.push(arguments);}
+	    gtag('js', new Date());
+
+	    gtag('config', 'G-QTB83RBKB6');
+	</script><!--
+      STYLES FOR THE HEADER AND NAVIGATION
+      (Normally, you would add these to your CSS/main.css file)
+    -->
+
+	<style>
+	          /* --- Styles for Header & Navigation --- */
+	          .header-content {
+	              display: flex;
+	              justify-content: space-between;
+	              align-items: center;
+	              position: relative; /* Set positioning context */
+	          }
+
+	          .nav-links-wrapper {
+	              display: flex;
+	              align-items: center;
+	              gap: 2rem;
+	          }
+
+	          nav {
+	              /* This will center the nav on desktop */
+	              position: absolute;
+	              left: 50%;
+	              transform: translateX(-50%);
+	          }
+
+	          nav ul {
+	              display: flex;
+	              align-items: center;
+	              gap: 1.5rem;
+	              list-style: none;
+	              margin: 0;
+	              padding: 0;
+	          }
+	          
+	          .hero-actions {
+	               margin-top: 0;
+	          }
+
+	          /* --- Hamburger Menu Styles --- */
+	          .nav-toggle {
+	              display: none;
+	              background: none;
+	              border: none;
+	              cursor: pointer;
+	              padding: 0;
+	              z-index: 1001;
+	          }
+
+	          .nav-toggle .fa-bars,
+	          .nav-toggle .fa-times {
+	              font-size: 1.75rem;
+	              color: #333;
+	          }
+
+	          .nav-toggle .fa-times {
+	              display: none;
+	          }
+
+	          /* --- Responsive Design for Header --- */
+	          @media (max-width: 1145px) {
+	              nav {
+	                  /* Reset positioning for mobile view */
+	                  position: static;
+	                  transform: none;
+	              }
+
+	              .nav-toggle {
+	                  display: block;
+	              }
+
+	              .nav-links-wrapper {
+	                  position: fixed;
+	                  top: 0;
+	                  right: -100%;
+	                  width: 55%;
+	                  max-width: 300px;
+	                  height: 100vh;
+	                  background-color: #f8f9fa;
+	                  flex-direction: column;
+	                  align-items: flex-start;
+	                  padding: 6rem 2rem 2rem;
+	                  box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+	                  transition: right 0.3s ease-in-out;
+	                  gap: 0;
+	              }
+
+	              .nav-links-wrapper.active {
+	                  right: 0;
+	              }
+	              
+	              nav ul {
+	                  flex-direction: column;
+	                  align-items: flex-start;
+	                  width: 100%;
+	                  gap: 1.5rem;
+	              }
+
+	              .nav-link {
+	                  font-size: 1.2rem;
+	              }
+	              
+	              .hero-actions {
+	                  margin-top: 2rem;
+	              }
+	          }
+	          
+	          /* --- [FIX] Styles for Mobile-Friendly Buttons --- */
+	          @media (max-width: 768px) {
+	              .hero-buttons, .cta-buttons {
+	                  display: flex;
+	                  flex-direction: column; /* Stack buttons vertically */
+	                  gap: 1rem; /* Add space between stacked buttons */
+	              }
+
+	              .hero-buttons .btn, .cta-buttons .btn {
+	                  width: 100%; /* Make buttons take full width */
+	                  text-align: center; /* Center text inside buttons */
+	                  box-sizing: border-box; /* Ensures padding is included in the width */
+	              }
+	          }
+	          
+	          /* --- [FIX] Responsive Article Cards --- */
+	          @media (max-width: 768px) {
+	              .articles-grid {
+	                  /* Change grid to a single column on smaller screens */
+	                  grid-template-columns: 1fr;
+	              }
+	          }
+
+	          /* --- Styles for Breaking News Ticker --- */
+	          .breaking-news-bar {
+	              border-bottom: 1px solid #e0e0e0;
+	              padding: 0.75rem 0;
+	              background-color: #fff;
+	          }
+
+	          .breaking-news-bar .container {
+	              display: flex;
+	              align-items: center;
+	              justify-content: space-between;
+	          }
+
+	          .ticker-content {
+	              display: flex;
+	              align-items: center;
+	              overflow: hidden;
+	              flex-grow: 1;
+	              /* UPDATED: Added for smooth scrolling */
+	              scroll-behavior: smooth;
+	              /* Hides the scrollbar */
+	              -ms-overflow-style: none;  /* IE and Edge */
+	              scrollbar-width: none;  /* Firefox */
+	          }
+	          
+	          .ticker-content::-webkit-scrollbar {
+	              display: none; /* Chrome, Safari, and Opera */
+	          }
+
+	          .ticker-item {
+	              padding: 0 1.5rem;
+	              border-right: 1px solid #e0e0e0;
+	              flex-shrink: 0; /* Prevents items from shrinking */
+	          }
+	          
+	          .ticker-item:last-child {
+	              border-right: none;
+	          }
+	          
+	          .ticker-item a {
+	              font-size: 0.9rem;
+	              font-weight: 500;
+	              color: #333;
+	              text-decoration: none;
+	              display: block;
+	          }
+	          
+	          .ticker-item a:hover {
+	              text-decoration: underline;
+	          }
+
+	          .ticker-timestamp {
+	              font-size: 0.8rem;
+	              color: #666;
+	              margin-bottom: 4px;
+	          }
+
+	          .ticker-item .breaking-tag {
+	              background-color: #d9534f;
+	              color: white;
+	              font-size: 0.7rem;
+	              font-weight: bold;
+	              padding: 3px 8px;
+	              border-radius: 4px;
+	              text-transform: uppercase;
+	              margin-bottom: 6px;
+	              display: inline-block;
+	          }
+	          
+	          .ticker-nav {
+	              padding-left: 1rem;
+	          }
+	          
+	          .ticker-nav-arrow {
+	              background-color: #f0f0f0;
+	              border-radius: 50%;
+	              width: 30px;
+	              height: 30px;
+	              display: flex;
+	              align-items: center;
+	              justify-content: center;
+	              color: #333;
+	              cursor: pointer;
+	              border: 1px solid #ddd;
+	          }
+
+	          /* --- Responsive Ticker --- */
+	          @media (max-width: 992px) {
+	              .ticker-item {
+	                  padding: 0 1rem;
+	              }
+	              .ticker-item:nth-child(n+5) { /* Hide items beyond the 4th on medium screens */
+	                  display: none;
+	              }
+	          }
+
+	          @media (max-width: 768px) {
+	              .breaking-news-bar .container {
+	                  position: relative;
+	              }
+	              .ticker-content {
+	                   /* Allows horizontal scrolling on mobile */
+	                  overflow-x: auto;
+	              }
+	              .ticker-item {
+	                  border-right: none; /* Remove dividers on mobile for cleaner scrolling */
+	                  padding: 0 1.2rem 0 0;
+	              }
+	              .ticker-item:nth-child(n+5) { /* Show all items again for scrolling */
+	                  display: block;
+	              }
+	              .ticker-nav {
+	                  display: none; /* Hide arrow on mobile where swipe is used */
+	              }
+	          }
+
+	          /* --- [FIX] Primary Button Hover Color --- */
+	          /* This ensures the button text doesn't turn blue on hover */
+	          .btn-primary {
+	              background-color: #036600; /* Base color for the button */
+	              transition: background-color 0.3s ease; /* Smooth transition */
+	          }
+
+	          .btn-primary:hover {
+	              background-color: #2e6b2e; /* A slightly darker green for the hover state */
+	              color: #ffffff; /* Explicitly keeps the text color white on hover */
+	          }
+	</style>
 </head>
 <body>
-  <h1>Test Opening iPhone Settings</h1>
+	<header>
+		<div class="container header-content">
+			<div class="logo">
+				<img alt="Evolvivo Leaf Icon" class="logo-icon" src="https://img.icons8.com/ios-filled/50/036600/leaf.png"> <a href="https://evolvivo.com/">Evolvivo</a>
+			</div><!-- Wrapper for Nav and Subscribe Button -->
+			<div class="nav-links-wrapper" id="nav-links-wrapper">
+				<nav>
+					<ul>
+						<li>
+							<a class="nav-link" href="/articles"><i class="fas fa-newspaper"></i> Articles</a>
+						</li>
+						<li>
+							<a class="nav-link" href="/goals"><i class="fas fa-bullseye"></i> Goals</a>
+						</li>
+						<li>
+							<a class="nav-link" href="./about-us"><i class=""></i> About Us</a>
+						</li>
+						<li>
+							<a class="nav-link" href="./saved-articles"><i class="fas fa-bookmark"></i> Saved</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="hero-actions">
+					<button class="btn btn-primary" onclick="Plato.openFormModal('frnpwajq697')"><i class="fas fa-user-plus"></i> Subscribe</button>
+					<div class="plato-form-widget" data-pf-display-mode="modal" data-pf-host="form.formcan.com/" data-pf-id="frnpwajq697"></div>
+					<script src="//static.formcan.com/assets/dist/formbuilder.js?v=20">
+					</script>
+				</div>
+			</div><!-- Hamburger Menu Button -->
+			<button aria-label="Toggle navigation" class="nav-toggle" id="nav-toggle"><i aria-hidden="true" class="fas fa-bars"></i> <i aria-hidden="true" class="fas fa-times"></i></button>
+		</div>
+	</header><!-- ============================================ -->
+	<!--          BREAKING NEWS BAR START             -->
+	<!-- ============================================ -->
+	<section class="breaking-news-bar">
+		<div class="container">
+			<!-- UPDATED: Added ID for JavaScript -->
+			<div class="ticker-content" id="ticker-content">
+				<!-- Breaking News Item -->
+				<div class="ticker-item">
+					<span class="breaking-tag">Breaking</span> <a href="https://evolvivo.com/2025/January/Culinary-Arts/Meal-Prep-Mastery-Healthy-Eating-Made-Easy/">Meal Prep Mastery: Healthy Eating Made...</a>
+				</div><!-- Other Ticker Items -->
+				<div class="ticker-item">
+					<div class="ticker-timestamp">
+						3 hours ago
+					</div><a href="https://evolvivo.com/2025/January/Personal-Skills/The-Art-of-Effective-Communication/">The Art of Effective...</a>
+				</div>
+				<div class="ticker-item">
+					<div class="ticker-timestamp">
+						3 hours ago
+					</div><a href="#">Brandon Blackstock, Kelly Clarkson’s Ex-Husband And...</a>
+				</div>
+				<div class="ticker-item">
+					<div class="ticker-timestamp">
+						4 hours ago
+					</div><a href="#">Oakley Billionaire James Jannard Lists $65 Million Beverly Hills...</a>
+				</div>
+				<div class="ticker-item">
+					<div class="ticker-timestamp">
+						4 hours ago
+					</div><a href="#">Eli Lilly Shares Plummet 14% Toward Worst Day In 25 Years—...</a>
+				</div>
+				<div class="ticker-item">
+					<div class="ticker-timestamp">
+						4 hours ago
+					</div><a href="#">Firefly Aerospace Jumps More Than 50% In IPO Before Settling</a>
+				</div>
+			</div>
+			<div class="ticker-nav">
+				<!-- UPDATED: Added ID for JavaScript -->
+				<div class="ticker-nav-arrow" id="ticker-next-btn">
+					<i class="fas fa-chevron-right"></i>
+				</div>
+			</div>
+		</div>
+	</section><!-- ============================================ -->
+	<!--           BREAKING NEWS BAR END              -->
+	<!-- ============================================ -->
+	<main>
+		<!-- Home Page Section -->
+		<section class="page-section" id="home-page">
+			<div class="hero-section">
+				<div class="container">
+					<h1>Welcome to Evolvivo</h1>
+					<p>Your companion in cultivating essential skills, building lasting habits, and achieving your most ambitious personal goals.</p>
+					<div class="hero-buttons">
+						<!-- UPDATED: This is now a link to the new articles page -->
+						<a class="btn btn-primary" href="./articles">Explore Articles</a> <a class="btn btn-secondary nav-link" href="./goals">Set Your Goals<i class="fas fa-arrow-right"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="daily-inspiration-section">
+				<div class="container">
+					<div class="inspiration-card">
+						<h2><i class="fas fa-quote-left"></i> Daily Inspiration</h2>
+						<p class="quote" id="daily-quote">"Success doesn't just find you. You have to go out and get it."</p>
+						<p class="attribution" id="quote-author">— Sparrow, Barclay</p>
+					</div><!--Icons to share the daily quote-->
+					<div class="share-icons">
+						<a aria-label="Share on Twitter" class="social-icon" href="#" id="share-twitter" rel="noopener noreferrer" target="_blank"><i class="fab fa-twitter"></i></a> <a aria-label="Share on Facebook" class="social-icon" href="#" id="share-facebook" rel="noopener noreferrer" target="_blank"><i class="fab fa-facebook"></i></a> <a aria-label="Share on LinkedIn" class="social-icon" href="#" id="share-linkedin" rel="noopener noreferrer" target="_blank"><i class="fab fa-linkedin"></i></a> <a aria-label="Share on WhatsApp" class="social-icon" href="#" id="share-whatsapp" rel="noopener noreferrer" target="_blank"><i class="fab fa-whatsapp"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="featured-articles-section">
+				<div class="container">
+					<div class="section-header">
+						<h2>Featured Articles</h2><!-- UPDATED: Link to the new articles.html page -->
+						<a class="view-all-link" href="./articles">View All <i class="fas fa-arrow-right"></i></a>
+					</div>
+					<div class="articles-grid" id="featured-articles-grid">
+						<!-- Featured articles will be dynamically inserted here -->
+					</div>
+				</div>
+			</div>
+			<div class="cta-section">
+				<div class="container">
+					<h2>“Achieve More with the Right Knowledge”</h2>
+					<p>Read articles that help you build habits, grow confidence, and set clear, actionable goals.</p>
+					<div class="cta-buttons">
+						<a class="nav-link" href="./articles"><button class="btn btn-accent nav-link">Read Inspiring Posts</button></a> <a class="nav-link" href="./goals"><button class="btn btn-outline nav-link">Set Your First Goal</button></a>
+					</div>
+				</div>
+			</div>
+		</section><!-- Goals Page Section -->
+		<section class="page-section hidden" id="goals-page">
+			<div class="container">
+				<div class="page-header">
+					<h1>Your Personal Goals</h1>
+					<p>Define, track, and achieve your aspirations.</p>
+				</div>
+				<div class="add-goal-form">
+					<input id="new-goal-input" placeholder="Enter a new personal goal..." type="text"> <input id="new-goal-date" type="date"> <button class="btn btn-primary" id="add-goal-btn"><i class="fas fa-plus"></i> Add Goal</button>
+				</div>
+				<div class="active-goals-container">
+					<h2>Active Goals (<span id="active-goals-count">0</span>)</h2>
+					<ul id="goals-list">
+						<!-- Goals will be dynamically inserted here -->
+					</ul>
+				</div>
+			</div>
+		</section>
+	</main>
+	<!-- ============================================ -->
+	<!--              NEW FOOTER START                -->
+	<!-- ============================================ -->
+	<footer class="site-footer">
+		<div class="footer-container">
+			<div class="footer-content">
+				<!-- Column 1: Explore -->
+				<div class="footer-column">
+					<h4>Explore</h4>
+					<ul>
+						<li>
+							<a href="./articles">Articles</a>
+						</li>
+						<li>
+							<a href="./goals">Goals</a>
+						</li>
+						<li>
+							<a href="./saved-articles">Saved Articles</a>
+						</li>
+						<li>
+							<a href="./about-us">About Us</a>
+						</li>
+					</ul>
+				</div><!-- Column 2: Support -->
+				<div class="footer-column">
+					<h4>Support</h4>
+					<ul>
+						<li>
+							<a href="./contact-&-support">Contact & Support</a>
+						</li>
+						<li>
+							<a href="#">FAQ's</a>
+						</li>
+					</ul>
+				</div><!-- Column 3: Legal -->
+				<div class="footer-column">
+					<h4>Legal</h4>
+					<ul>
+						<li>
+							<a href="./terms-of-service">Terms of Service</a>
+						</li>
+						<li>
+							<a href="./privacy-policy">Privacy Policy</a>
+						</li>
+						<li>
+							<a href="./disclaimer">Disclaimer</a>
+						</li>
+					</ul>
+				</div><!-- Column 4: Follow Us -->
+				<div class="footer-column">
+					<h4>Follow Us</h4>
+					<div class="social-links">
+						<a aria-label="Twitter" href="https://twitter.com/Evolvivo" rel="noopener noreferrer" target="_blank"><i class="fab fa-twitter"></i></a> <a aria-label="LinkedIn" href="https://www.linkedin.com/in/evolvivo-personal-evolution/" rel="noopener noreferrer" target="_blank"><i class="fab fa-linkedin-in"></i></a> <a aria-label="Instagram" href="https://www.instagram.com/evolvivo?igsh=NmRtYXU5aDFyYjE5" rel="noopener noreferrer" target="_blank"><i class="fab fa-instagram"></i></a> <a aria-label="Facebook" href="#" rel="noopener noreferrer" target="_blank"><i class="fab fa-facebook-f"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<p>© 2025 Evolvivo. All rights reserved.</p>
+				<p>Empowering your journey to personal evolution.</p>
+			</div>
+		</div>
+	</footer><!-- ============================================ -->
+	<!--               NEW FOOTER END                 -->
+	<!-- ============================================ -->
+	<div class="toast hidden" id="toast-notification">
+		<span id="toast-message"></span>
+	</div><!-- CSS for the styled Cookie Consent Banner -->
+	<style>
+	    #cookie-banner {
+	      position: fixed;
+	      bottom: 0;
+	      left: 0;
+	      right: 0;
+	      z-index: 9999;
+	      display: none; 
+	      justify-content: center;
+	      align-items: center;
+	      gap: 1.5em; 
+	      flex-wrap: wrap; 
+	      background: #ffffff;
+	      color: #3a3a3a; 
+	      padding: 1.25em 1em;
+	      font-family: sans-serif; 
+	      box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08); 
+	      text-align: center;
+	    }
+	    #cookie-banner a {
+	      color: #036600; 
+	      text-decoration: underline;
+	      font-weight: 500;
+	    }
+	    #cookie-banner a:hover {
+	      text-decoration: none;
+	    }
+	    #cookie-banner button {
+	      background-color: #036600;
+	      color: white;
+	      border: none;
+	      border-radius: 8px; 
+	      padding: 0.75em 1.75em;
+	      cursor: pointer;
+	      font-size: 0.95em;
+	      font-weight: 600;
+	      transition: background-color 0.3s ease;
+	    }
+	    #cookie-banner button:hover {
+	      background-color: #45a049; 
+	    }
+	</style><!-- Styled Cookie Consent Banner HTML -->
+	<div id="cookie-banner">
+		<span>This website uses cookies to improve your experience and analyze traffic. By using this site, you agree to our <a href="/privacy-policy.html">Privacy Policy</a>.</span> <button onclick="acceptCookies()">Got it</button>
+	</div><!-- JavaScript to control the banner -->
+	<script>
+	    function acceptCookies() {
+	      localStorage.setItem("cookiesAccepted", "true");
+	      document.getElementById("cookie-banner").style.display = "none";
+	    }
+	    window.addEventListener("DOMContentLoaded", function () {
+	      if (!localStorage.getItem("cookiesAccepted")) {
+	        const banner = document.getElementById("cookie-banner");
+	        if (banner) {
+	          banner.style.display = "flex";
+	        }
+	      }
+	    });
+	</script> <!-- Hamburger Menu & Ticker Slider Script -->
+	 
+	<script>
+	          document.addEventListener('DOMContentLoaded', () => {
+	              // --- Hamburger Menu Script ---
+	              const navToggle = document.getElementById('nav-toggle');
+	              const navLinksWrapper = document.getElementById('nav-links-wrapper');
+	              const openIcon = navToggle.querySelector('.fa-bars');
+	              const closeIcon = navToggle.querySelector('.fa-times');
 
-  <a href="App-Prefs://">Main Settings (App-Prefs://)</a>
-  <a href="App-Prefs://prefs:root">Main Settings (prefs:root)</a>
-  <a href="App-Prefs://prefs:root=WIFI">Wi-Fi Settings (may work on older iOS)</a>
-  <a href="App-Prefs://prefs:root=Bluetooth">Bluetooth Settings (may work on older iOS)</a>
-  <a href="App-Prefs://prefs:root=General">General Settings (may work on older iOS)</a>
+	              navToggle.addEventListener('click', () => {
+	                  navLinksWrapper.classList.toggle('active');
+	                  
+	                  const isActive = navLinksWrapper.classList.contains('active');
+	                  openIcon.style.display = isActive ? 'none' : 'block';
+	                  closeIcon.style.display = isActive ? 'block' : 'none';
+	              });
 
-  <p class="note">
-    ⚠️ These links rely on private iOS URL schemes. On many devices they’ll simply do nothing — that’s normal.  
-    Apple can (and does) block them between iOS versions.
-  </p>
+	              // --- Ticker Slider Script ---
+	              const tickerContent = document.getElementById('ticker-content');
+	              const nextButton = document.getElementById('ticker-next-btn');
+	              
+	              if (tickerContent && nextButton) {
+	                  const tickerItems = tickerContent.querySelectorAll('.ticker-item');
+	                  // We start by targeting the second item for the first click (index 1)
+	                  let targetIndex = 1; 
+
+	                  nextButton.addEventListener('click', () => {
+	                      // Check if the target index is valid
+	                      if (targetIndex < tickerItems.length) {
+	                          const targetItem = tickerItems[targetIndex];
+	                          
+	                          // Scroll the container so the left edge of the target item is aligned with the start of the container
+	                          tickerContent.scrollLeft = targetItem.offsetLeft;
+	                          
+	                          // Increment the index for the next click
+	                          targetIndex++;
+	                      } else {
+	                          // If we've reached the end, loop back to the beginning
+	                          tickerContent.scrollLeft = 0;
+	                          // Reset the index to target the second item again
+	                          targetIndex = 1; 
+	                      }
+	                  });
+	              }
+	          });
+	</script> 
+	<script defer src="script.js">
+	</script> 
+	<script defer src="quotes.js">
+	</script>
 </body>
 </html>

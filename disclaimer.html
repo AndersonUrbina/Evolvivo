@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disclaimer | Evolvivo</title>
+  <!-- Link to the main stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="https://img.icons8.com/ios-filled/50/036600/leaf.png">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+      /* --- Styles for Header & Navigation --- */
+      .header-content {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          position: relative; /* Set positioning context */
+      }
+
+      .nav-links-wrapper {
+          display: flex;
+          align-items: center;
+          gap: 2rem;
+      }
+
+      nav {
+          /* This will center the nav on desktop */
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+      }
+
+      nav ul {
+          display: flex;
+          align-items: center;
+          gap: 1.5rem;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+      }
+
+      .hero-actions {
+           margin-top: 0;
+      }
+
+      /* --- Hamburger Menu Styles --- */
+      .nav-toggle {
+          display: none;
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 0;
+          z-index: 1001;
+      }
+
+      .nav-toggle .fa-bars,
+      .nav-toggle .fa-times {
+          font-size: 1.75rem;
+          color: #333;
+      }
+
+      .nav-toggle .fa-times {
+          display: none;
+      }
+
+      /* --- Responsive Design for Header --- */
+      @media (max-width: 1145px) {
+          nav {
+              /* Reset positioning for mobile view */
+              position: static;
+              transform: none;
+          }
+
+          .nav-toggle {
+              display: block;
+          }
+
+          .nav-links-wrapper {
+              position: fixed;
+              top: 0;
+              right: -100%;
+              width: 55%;
+              max-width: 300px;
+              height: 100vh;
+              background-color: #f8f9fa;
+              flex-direction: column;
+              align-items: flex-start;
+              padding: 6rem 2rem 2rem;
+              box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+              transition: right 0.3s ease-in-out;
+              gap: 0;
+          }
+
+          .nav-links-wrapper.active {
+              right: 0;
+          }
+
+          nav ul {
+              flex-direction: column;
+              align-items: flex-start;
+              width: 100%;
+              gap: 1.5rem;
+          }
+
+          .nav-link {
+              font-size: 1.2rem;
+          }
+
+          .hero-actions {
+              margin-top: 2rem;
+          }
+      }
+  </style>
+</head>
+<body>
+  <!-- Full header with responsive structure -->
+  <header>
+      <div class="container header-content">
+          <div class="logo">
+              <img src="https://img.icons8.com/ios-filled/50/036600/leaf.png" alt="Evolvivo Leaf Icon" class="logo-icon"/>
+              <a href="/">Evolvivo</a>
+          </div>
+
+          <!-- Wrapper for Nav and Subscribe Button -->
+          <div class="nav-links-wrapper" id="nav-links-wrapper">
+              <nav>
+                <ul>
+                    <li><a href="/articles" class="nav-link"><i class="fas fa-newspaper"></i> Articles</a></li>
+                    <li><a href="/goals" class="nav-link"><i class="fas fa-bullseye"></i> Goals</a></li>
+                    <li><a href="./about-us" class="nav-link"><i class=""></i> About Us</a></li>
+                    <li><a href="./saved-articles" class="nav-link"><i class="fas fa-bookmark"></i> Saved</a></li>
+                </ul>
+                </nav>
+              <div class="hero-actions">
+                  <button class="btn btn-primary" onclick="Plato.openFormModal('frnpwajq697')"><i class="fas fa-user-plus"></i> Subscribe</button>
+                  <div class="plato-form-widget" data-pf-id="frnpwajq697" data-pf-host="form.formcan.com/" data-pf-display-mode="modal"></div>
+                  <script src="//static.formcan.com/assets/dist/formbuilder.js?v=20"></script>
+              </div>
+          </div>
+
+          <!-- Hamburger Menu Button -->
+          <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+              <i class="fas fa-bars" aria-hidden="true"></i>
+              <i class="fas fa-times" aria-hidden="true"></i>
+          </button>
+      </div>
+  </header>
+
+  <main>
+    <section class="page-section">
+      <div class="container">
+        <div class="about-content-section">
+          <h1>Disclaimer</h1>
+          <p><strong>Effective Date:</strong> <span id="effective-date"></span></p>
+
+          <p>The information provided by <strong>Evolvivo</strong> on <a href="https://evolvivo.com">https://evolvivo.com</a> is for general informational and inspirational purposes only. All content is provided in good faith, however, we make no warranty of any kind regarding the accuracy or completeness of any information.</p>
+
+          <h2>Not Professional Advice</h2>
+          <p>The articles and content on Evolvivo are not intended to be a substitute for professional advice. You should always seek the advice of a qualified professional before acting on any information found on this website.</p>
+
+          <h2>No Guarantees</h2>
+          <p>While we strive to provide accurate information, we do not guarantee that any information provided will be free of errors or omissions.</p>
+
+          <h2>Email Content</h2>
+          <p>Content sent to you via email subscription is for informational purposes only and does not constitute any form of professional advice.</p>
+
+          <h2>External Links</h2>
+          <p>The website may contain links to external websites not provided or maintained by Evolvivo. We do not guarantee the accuracy or reliability of any information offered by third-party sites.</p>
+
+          <h2>Contact</h2>
+          <p>If you have questions about this disclaimer, please contact us at <a href="mailto:evolvivo@evolvivo.com">evolvivo@evolvivo.com</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="saved-articles-page" class="page-section hidden">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Your Saved Articles</h1>
+                    <p>Revisit your favorite articles on personal growth and development.</p>
+                </div>
+                <div class="articles-grid" id="saved-articles-grid">
+                    <!-- Saved articles will be dynamically inserted here -->
+                    <!-- Placeholder message will be shown by JS if empty -->
+                </div>
+            </div>
+        </section>
+  </main>
+
+  <!-- ============================================ -->
+    <!--              NEW FOOTER START                -->
+    <!-- ============================================ -->
+    <footer class="site-footer">
+
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Column 1: Explore -->
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="./articles">Articles</a></li>
+                        <li><a href="./goals">Goals</a></li>
+                        <li><a href="./saved-articles">Saved Articles</a></li>
+                        <li><a href="./about-us">About Us</a></li>
+                    </ul>
+                </div>
+                <!-- Column 2: Support -->
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="./contact-&-support">Contact & Support</a></li>
+                        <li><a href="#">FAQ's</a></li>
+                    </ul>
+                </div>
+                <!-- Column 3: Legal -->
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="./terms-of-service">Terms of Service</a></li>
+                        <li><a href="./privacy-policy">Privacy Policy</a></li>
+                        <li><a href="./disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <!-- Column 4: Follow Us -->
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://twitter.com/Evolvivo" aria-label="Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/evolvivo-personal-evolution/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/evolvivo?igsh=NmRtYXU5aDFyYjE5" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Evolvivo. All rights reserved.</p>
+                <p>Empowering your journey to personal evolution.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ============================================ -->
+    <!--               NEW FOOTER END                 -->
+    <!-- ============================================ -->
+  <!-- Script to set the current date -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const dateElement = document.getElementById('effective-date');
+      if (dateElement) {
+        const today = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        dateElement.textContent = today.toLocaleDateString('en-US', options);
+      }
+    });
+  </script>
+
+  <!-- Hamburger Menu Script -->
+  <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          const navToggle = document.getElementById('nav-toggle');
+          const navLinksWrapper = document.getElementById('nav-links-wrapper');
+          const openIcon = navToggle.querySelector('.fa-bars');
+          const closeIcon = navToggle.querySelector('.fa-times');
+
+          navToggle.addEventListener('click', () => {
+              navLinksWrapper.classList.toggle('active');
+
+              const isActive = navLinksWrapper.classList.contains('active');
+              openIcon.style.display = isActive ? 'none' : 'block';
+              closeIcon.style.display = isActive ? 'block' : 'none';
+          });
+      });
+  </script>
+  <script src="auth.js" defer></script>
+</body>
+</html>
