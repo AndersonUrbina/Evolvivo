@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Personal Goals | Evolvivo</title>
+
+    <!-- SEO Meta Description -->
+    <meta name="description" content="Define, track, and achieve your personal aspirations with the Evolvivo goals tool. Set new goals, mark your progress, and stay motivated on your journey of self-improvement.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/ios-filled/50/036600/leaf.png">
+    <link rel="apple-touch-icon" href="https://img.icons8.com/ios-filled/50/036600/leaf.png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.evolvivo.com/goals"> <!-- Assuming this is the final URL -->
+    <meta property="og:title" content="Your Personal Goals | Evolvivo">
+    <meta property="og:description" content="Set, track, and achieve your personal goals. The Evolvivo goal tracker helps you stay focused and motivated on your path to personal evolution.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/AndersonUrbina/Evolvivo/refs/heads/main/Resources/sm-card.png"> <!-- Main brand image -->
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.evolvivo.com/goals"> <!-- Assuming this is the final URL -->
+    <meta name="twitter:title" content="Your Personal Goals | Evolvivo">
+    <meta name="twitter:description" content="Turn your aspirations into reality. Use the Evolvivo goal-setting tool to define and track your journey to success.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/AndersonUrbina/Evolvivo/refs/heads/main/Resources/sm-card.png"> <!-- Main brand image -->
+
+    <link rel="stylesheet" href="style.css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Styles for Hamburger Menu -->
+    <style>
+        /* --- Styles for Header & Navigation --- */
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative; /* Set positioning context */
+        }
+
+        .nav-links-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        nav {
+            /* This will center the nav on desktop */
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .hero-actions {
+             margin-top: 0;
+        }
+
+        /* --- Hamburger Menu Styles --- */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        }
+
+        .nav-toggle .fa-bars,
+        .nav-toggle .fa-times {
+            font-size: 1.75rem;
+            color: #333;
+        }
+
+        .nav-toggle .fa-times {
+            display: none;
+        }
+
+        /* --- Responsive Design for Header --- */
+        @media (max-width: 1145px) {
+            nav {
+                /* Reset positioning for mobile view */
+                position: static;
+                transform: none;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
+            .nav-links-wrapper {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 55%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: #f8f9fa;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 6rem 2rem 2rem;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                transition: right 0.3s ease-in-out;
+                gap: 0;
+            }
+
+            .nav-links-wrapper.active {
+                right: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+                gap: 1.5rem;
+            }
+
+            .nav-link {
+                font-size: 1.2rem;
+            }
+            
+            .hero-actions {
+                margin-top: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="https://img.icons8.com/ios-filled/50/036600/leaf.png" alt="Evolvivo Leaf Icon" class="logo-icon"/>
+                <a href="/">Evolvivo</a>
+            </div>
+
+            <!-- Wrapper for Nav and Subscribe Button -->
+            <div class="nav-links-wrapper" id="nav-links-wrapper">
+                <nav>
+                    <ul>
+                        <li><a href="/articles" class="nav-link"><i class="fas fa-newspaper"></i> Articles</a></li>
+                        <li><a href="/goals" class="nav-link"><i class="fas fa-bullseye"></i> Goals</a></li>
+                        <li><a href="./about-us" class="nav-link"><i class=""></i> About Us</a></li>
+                        <li><a href="./saved-articles" class="nav-link"><i class="fas fa-bookmark"></i> Saved</a></li>
+                    </ul>
+                </nav>
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="Plato.openFormModal('frnpwajq697')"><i class="fas fa-user-plus"></i> Subscribe</button>
+                    <div class="plato-form-widget" data-pf-id="frnpwajq697" data-pf-host="form.formcan.com/" data-pf-display-mode="modal"></div>
+                    <script src="//static.formcan.com/assets/dist/formbuilder.js?v=20"></script>
+                </div>
+            </div>
+
+            <!-- Hamburger Menu Button -->
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-section">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Your Personal Goals</h1>
+                    <p>Define, track, and achieve your aspirations.</p>
+                </div>
+                <div class="add-goal-form">
+                    <input type="text" id="new-goal-input" placeholder="Enter a new personal goal...">
+                    <input type="date" id="new-goal-date">
+                    <button id="add-goal-btn" class="btn btn-primary"><i class="fas fa-plus"></i> Add Goal</button>
+                </div>
+                <div class="active-goals-container">
+                    <h2>Active Goals (<span id="active-goals-count">0</span>)</h2>
+                    <ul id="goals-list"></ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================ -->
+    <!--              NEW FOOTER START                -->
+    <!-- ============================================ -->
+    <footer class="site-footer">
+
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Column 1: Explore -->
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="./articles">Articles</a></li>
+                        <li><a href="./goals">Goals</a></li>
+                        <li><a href="./saved-articles">Saved Articles</a></li>
+                        <li><a href="./about-us">About Us</a></li>
+                    </ul>
+                </div>
+                <!-- Column 2: Support -->
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="./contact-&-support">Contact & Support</a></li>
+                        <li><a href="#">FAQ's</a></li>
+                    </ul>
+                </div>
+                <!-- Column 3: Legal -->
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="./terms-of-service">Terms of Service</a></li>
+                        <li><a href="./privacy-policy">Privacy Policy</a></li>
+                        <li><a href="./disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <!-- Column 4: Follow Us -->
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://twitter.com/Evolvivo" aria-label="Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/evolvivo-personal-evolution/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/evolvivo?igsh=NmRtYXU5aDFyYjE5" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Evolvivo. All rights reserved.</p>
+                <p>Empowering your journey to personal evolution.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ============================================ -->
+    <!--               NEW FOOTER END                 -->
+    <!-- ============================================ -->
+
+    <div id="toast-notification" class="toast hidden">
+        <span id="toast-message"></span>
+    </div>
+
+<!-- CSS for the styled Cookie Consent Banner -->
+<style>
+  #cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em; 
+    flex-wrap: wrap; 
+    background: #ffffff;
+    color: #3a3a3a; 
+    padding: 1.25em 1em;
+    font-family: sans-serif; 
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08); 
+    text-align: center;
+  }
+  #cookie-banner a {
+    color: #4CAF50; 
+    text-decoration: underline;
+    font-weight: 500;
+  }
+  #cookie-banner a:hover {
+    text-decoration: none;
+  }
+  #cookie-banner button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px; 
+    padding: 0.75em 1.75em;
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  #cookie-banner button:hover {
+    background-color: #45a049; 
+  }
+</style>
+
+<!-- Styled Cookie Consent Banner HTML -->
+<div id="cookie-banner">
+  <span>This website uses cookies to improve your experience and analyze traffic. By using this site, you agree to our <a href="/privacy-policy.html">Privacy Policy</a>.</span>
+  <button onclick="acceptCookies()">Got it</button>
+</div>
+
+<!-- JavaScript to control the banner -->
+<script>
+  function acceptCookies() {
+    localStorage.setItem("cookiesAccepted", "true");
+    document.getElementById("cookie-banner").style.display = "none";
+  }
+  window.addEventListener("DOMContentLoaded", function () {
+    if (!localStorage.getItem("cookiesAccepted")) {
+      const banner = document.getElementById("cookie-banner");
+      if (banner) {
+        banner.style.display = "flex";
+      }
+    }
+  });
+</script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toastNotification = document.getElementById('toast-notification');
+            const toastMessage = document.getElementById('toast-message');
+            const newGoalInput = document.getElementById('new-goal-input');
+            const newGoalDateInput = document.getElementById('new-goal-date');
+            const addGoalBtn = document.getElementById('add-goal-btn');
+            const goalsList = document.getElementById('goals-list');
+            const activeGoalsCount = document.getElementById('active-goals-count');
+            let goals = [];
+
+            let toastTimeout;
+            function showToast(message, duration = 3000) {
+                if (toastMessage && toastNotification) {
+                    toastMessage.textContent = message;
+                    toastNotification.classList.add('show');
+                    toastNotification.classList.remove('hidden');
+                    clearTimeout(toastTimeout);
+                    toastTimeout = setTimeout(() => {
+                        toastNotification.classList.remove('show');
+                        setTimeout(() => toastNotification.classList.add('hidden'), 500);
+                    }, duration);
+                }
+            }
+
+            function loadGoals() {
+                const savedGoals = localStorage.getItem('evolvivoGoals');
+                goals = savedGoals ? JSON.parse(savedGoals) : [{ text: 'Add your first goal!', date: new Date().toISOString().split('T')[0], completed: false }];
+            }
+
+            function saveGoals() {
+                localStorage.setItem('evolvivoGoals', JSON.stringify(goals));
+            }
+
+            function renderGoals() {
+                if (!goalsList || !activeGoalsCount) return;
+                goalsList.innerHTML = '';
+                goals.forEach((goal, index) => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `
+                        <div class="goal-item-content">
+                            <input type="checkbox" id="goal-${index}" data-index="${index}" ${goal.completed ? 'checked' : ''}>
+                            <label for="goal-${index}" class="goal-text ${goal.completed ? 'completed' : ''}">${goal.text}</label>
+                        </div>
+                        <div class="goal-meta">
+                            ${goal.date ? `<span class="goal-date"><i class="fas fa-calendar-alt"></i> ${goal.date}</span>` : ''}
+                            <button class="delete-goal-btn" data-index="${index}" aria-label="Delete goal"><i class="fas fa-trash-alt"></i></button>
+                        </div>`;
+                    goalsList.appendChild(li);
+                });
+                activeGoalsCount.textContent = goals.filter(g => !g.completed).length;
+                saveGoals();
+            }
+
+            if (newGoalDateInput) {
+                newGoalDateInput.valueAsDate = new Date();
+            }
+
+            if (addGoalBtn) {
+                const addNewGoal = () => {
+                    const goalText = newGoalInput.value.trim();
+                    if (goalText) {
+                        goals.push({ text: goalText, date: newGoalDateInput.value, completed: false });
+                        newGoalInput.value = '';
+                        renderGoals();
+                        showToast(`Goal Added!`);
+                    } else {
+                        showToast('Please enter a goal description.');
+                    }
+                };
+                addGoalBtn.addEventListener('click', addNewGoal);
+                newGoalInput.addEventListener('keyup', (event) => {
+                    if (event.key === "Enter") addGoalBtn.click();
+                });
+            }
+
+            if (goalsList) {
+                goalsList.addEventListener('click', (e) => {
+                    const checkbox = e.target.closest('input[type="checkbox"]');
+                    const deleteBtn = e.target.closest('.delete-goal-btn');
+                    if (checkbox) {
+                        goals[checkbox.dataset.index].completed = checkbox.checked;
+                    } else if (deleteBtn) {
+                        goals.splice(deleteBtn.dataset.index, 1);
+                        showToast(`Goal Removed.`);
+                    }
+                    renderGoals();
+                });
+            }
+
+            function init() {
+                loadGoals();
+                renderGoals();
+            }
+            init();
+        });
+    </script>
+    
+    <!-- Hamburger Menu Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navToggle = document.getElementById('nav-toggle');
+            const navLinksWrapper = document.getElementById('nav-links-wrapper');
+            const openIcon = navToggle.querySelector('.fa-bars');
+            const closeIcon = navToggle.querySelector('.fa-times');
+
+            navToggle.addEventListener('click', () => {
+                navLinksWrapper.classList.toggle('active');
+                
+                const isActive = navLinksWrapper.classList.contains('active');
+                openIcon.style.display = isActive ? 'none' : 'block';
+                closeIcon.style.display = isActive ? 'block' : 'none';
+            });
+        });
+    </script>
+    <script src="auth.js" defer></script>
+</body>
+</html>
