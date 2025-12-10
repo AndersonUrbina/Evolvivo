@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Support | Evolvivo</title>
+
+    <!-- SEO Meta Description -->
+    <meta name="description" content="Get in touch with the Evolvivo team. Whether you have a question, feedback, or need support, find our contact information and send us a message directly.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://img.icons8.com/ios-filled/50/036600/leaf.png" type="image/png">
+    <link rel="apple-touch-icon" href="https://img.icons8.com/ios-filled/50/036600/leaf.png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.evolvivo.com/contact-support"> <!-- Assuming this is the final URL -->
+    <meta property="og:title" content="Contact & Support - Evolvivo">
+    <meta property="og:description" content="Have questions or feedback? Contact the Evolvivo team for support on your personal growth journey.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/AndersonUrbina/Evolvivo/refs/heads/main/Resources/sm-card.png"> <!-- Using your main brand image -->
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.evolvivo.com/contact-support"> <!-- Assuming this is the final URL -->
+    <meta name="twitter:title" content="Contact & Support - Evolvivo">
+    <meta name="twitter:description" content="Reach out to the Evolvivo team for help, feedback, or inquiries. We're here to support your personal evolution.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/AndersonUrbina/Evolvivo/refs/heads/main/Resources/sm-card.png"> <!-- Using your main brand image -->
+
+    <link rel="stylesheet" href="./style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* --- Styles for Header & Navigation --- */
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative; /* Set positioning context */
+        }
+
+        .nav-links-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        nav {
+            /* This will center the nav on desktop */
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .hero-actions {
+             margin-top: 0;
+        }
+
+        /* --- Hamburger Menu Styles --- */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        }
+
+        .nav-toggle .fa-bars,
+        .nav-toggle .fa-times {
+            font-size: 1.75rem;
+            color: #333;
+        }
+
+        .nav-toggle .fa-times {
+            display: none;
+        }
+
+        /* --- Responsive Design for Header --- */
+        @media (max-width: 1145px) {
+            nav {
+                /* Reset positioning for mobile view */
+                position: static;
+                transform: none;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
+            .nav-links-wrapper {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 55%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: #f8f9fa;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 6rem 2rem 2rem;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                transition: right 0.3s ease-in-out;
+                gap: 0;
+            }
+
+            .nav-links-wrapper.active {
+                right: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+                gap: 1.5rem;
+            }
+
+            .nav-link {
+                font-size: 1.2rem;
+            }
+            
+            .hero-actions {
+                margin-top: 2rem;
+            }
+        }
+    
+        /* --- Contact Section Specifics --- */
+        .contact-layout {
+            display: flex;
+            gap: 2.5rem; /* 40px */
+            align-items: flex-start;
+        }
+
+        .contact-form-wrapper,
+        .contact-info {
+            background: #ffffff;
+            padding: 2.5rem; /* 40px */
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e0e0e0;
+        }
+
+        .contact-form-wrapper {
+            flex: 2; /* Takes up more space */
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-form-wrapper h2,
+        .contact-info h3 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .contact-info h3 {
+            font-size: 1.25rem;
+        }
+
+        /* Form Styling */
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            font-family: inherit; /* Use the site's font */
+            font-size: 1rem;
+            box-sizing: border-box;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #aaa;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        /* Contact Info Item Styling */
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem; /* 16px */
+            margin-bottom: 1.25rem;
+        }
+
+        .info-item i {
+            font-size: 1.1rem;
+            color: #4CAF50; /* Primary Green */
+            margin-top: 4px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .info-item span {
+            color: #6c757d;
+            font-weight: 500;
+        }
+
+        /* --- Responsive Design for Contact Section --- */
+        @media (max-width: 992px) {
+            .contact-layout {
+                flex-direction: column;
+                align-items: center; /* This will center the items */
+            }
+            .contact-form-wrapper,
+            .contact-info {
+                width: 99%; /* Adjust width for smaller screens */
+                max-width: 600px; /* Optional: set a max-width */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="https://img.icons8.com/ios-filled/50/036600/leaf.png" alt="Evolvivo Leaf Icon" class="logo-icon"/>
+                <a href="/">Evolvivo</a>
+            </div>
+
+            <!-- Wrapper for Nav and Subscribe Button -->
+            <div class="nav-links-wrapper" id="nav-links-wrapper">
+                <nav>
+                <ul>
+                    <li><a href="/articles" class="nav-link"><i class="fas fa-newspaper"></i> Articles</a></li>
+                    <li><a href="/goals" class="nav-link"><i class="fas fa-bullseye"></i> Goals</a></li>
+                    <li><a href="./about-us" class="nav-link"><i class=""></i> About Us</a></li>
+                    <li><a href="./saved-articles" class="nav-link"><i class="fas fa-bookmark"></i> Saved</a></li>
+                </ul>
+                </nav>
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="Plato.openFormModal('frnpwajq697')"><i class="fas fa-user-plus"></i> Subscribe</button>
+                    <div class="plato-form-widget" data-pf-id="frnpwajq697" data-pf-host="form.formcan.com/" data-pf-display-mode="modal"></div>
+                    <script src="//static.formcan.com/assets/dist/formbuilder.js?v=20"></script>
+                </div>
+            </div>
+
+            <!-- Hamburger Menu Button -->
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="contact-page" class="page-section">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Get in Touch</h1>
+                    <p>We'd love to hear from you! Whether you have a question, feedback, or just want to say hello, our team is ready to help.</p>
+                </div>
+                <div class="contact-layout">
+                    <div class="contact-form-wrapper">
+                        <h2>Send us a Message</h2>
+                        <form action="https://formcarry.com/s/oRm7cWvwFB5" method="POST">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" placeholder="Jane Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="jane.doe@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" placeholder="Feedback about..." required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" name="message" placeholder="Your message here..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                    <aside class="contact-info">
+                        <h3>Contact Information</h3>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:evolvivo@evolvivo.com" target="_blank"><span>evolvivo@evolvivo.com</span></a>
+                        </div>
+                        <h3>Follow Us</h3>
+                        <div class="info-item">
+                        <a href="https://twitter.com/Evolvivo" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-twitter"></i>
+                            <span>@Evolvivo</span></a>
+                        </div>
+                        <div class="info-item">
+                            <a href="https://www.linkedin.com/in/evolvivo-personal-evolution/" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>Evolvivo on LinkedIn</span></a>
+                        </div>
+                        <div class="info-item">
+                        <i class="fab fa-instagram"></i>
+                            <a href="https://www.instagram.com/evolvivo?igsh=NmRtYXU5aDFyYjE5" target="_blank" ><span>@Evolvivo</span></a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================ -->
+    <!--              NEW FOOTER START                -->
+    <!-- ============================================ -->
+    <footer class="site-footer">
+
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Column 1: Explore -->
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="./articles">Articles</a></li>
+                        <li><a href="./goals">Goals</a></li>
+                        <li><a href="./saved-articles">Saved Articles</a></li>
+                        <li><a href="./about-us">About Us</a></li>
+                    </ul>
+                </div>
+                <!-- Column 2: Support -->
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="./contact-&-support">Contact & Support</a></li>
+                        <li><a href="#">FAQ's</a></li>
+                    </ul>
+                </div>
+                <!-- Column 3: Legal -->
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="./terms-of-service">Terms of Service</a></li>
+                        <li><a href="./privacy-policy">Privacy Policy</a></li>
+                        <li><a href="./disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <!-- Column 4: Follow Us -->
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://twitter.com/Evolvivo" aria-label="Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/evolvivo-personal-evolution/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/evolvivo?igsh=NmRtYXU5aDFyYjE5" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Evolvivo. All rights reserved.</p>
+                <p>Empowering your journey to personal evolution.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ============================================ -->
+    <!--               NEW FOOTER END                 -->
+    <!-- ============================================ -->
+
+    <!-- Hamburger Menu Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navToggle = document.getElementById('nav-toggle');
+            const navLinksWrapper = document.getElementById('nav-links-wrapper');
+            const openIcon = navToggle.querySelector('.fa-bars');
+            const closeIcon = navToggle.querySelector('.fa-times');
+
+            navToggle.addEventListener('click', () => {
+                navLinksWrapper.classList.toggle('active');
+                
+                const isActive = navLinksWrapper.classList.contains('active');
+                openIcon.style.display = isActive ? 'none' : 'block';
+                closeIcon.style.display = isActive ? 'block' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>
