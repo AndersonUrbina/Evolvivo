@@ -26,6 +26,11 @@
 	<link href="/Resources/favicon/site.webmanifest" rel="manifest">
 	<link href="CSS/main.css" media="all" rel="stylesheet">
 	<!-- Font Awesome CDN -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2064980807288479">
+	</script>
+	<!-- Google Fonts Preconnect and Stylesheet -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link class="playfair-display-font" href="https://fonts.googleapis.com/css2?family=Oranienbaum&family=Oswald:wght@200..700&family=Playfair+Display:wght@580&display=swap" rel="stylesheet">
@@ -42,9 +47,6 @@
 	<!--            NAVIGATION SIDEBAR                -->
 	<!-- ============================================ -->
 <header class="site-header">
-			<button id="open-sidebar-button" onclick="openSidebar()" aria-label="Open navigation menu" aria-expanded="false" aria-controls="false">
-				<svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" fill="#c9c9c9"><path d="M160-200v-80h640v80H160Zm0-240v-80h640v80H160Zm0-240v-80h640v80H160Z"/></svg>
-			</button>
 				<!-- Navigation Sidebar -->
 				 <div>
 				 <div class="top-header-container">
@@ -54,7 +56,9 @@
 				 </div>
 				 <div class="search-icons-container">
 					<img src="Resources/icons/search.png" alt="Search Icon" class="search-icon" onclick="openSearch()" aria-label="Open search bar">
-					<button onclick="openSidebar()"><img src="Resources/icons/hamburger_menu.png" alt="Menu Icon" class="menu-icon" aria-label="Open navigation menu"></button>
+					<button id="open-sidebar-button" onclick="openSidebar()" aria-label="Open navigation menu" aria-expanded="false" aria-controls="false">
+						<img src="Resources/icons/hamburger_menu.png" alt="hamburger menu icon" class="hamburger-icon">
+					</button>
 				 </div>
 				 </div>
 				<nav id="navbar" aria-expanded="false">
