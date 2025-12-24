@@ -47,38 +47,103 @@
 	<!--            NAVIGATION SIDEBAR                -->
 	<!-- ============================================ -->
 <header class="site-header">
-				<!-- Navigation Sidebar -->
-				 <div>
-				 <div class="top-header-container">
-				 <div class="nav-left-space"></div>
-				 <div class="logo-container">
-					<a class="active-link home-li" aria-current="page" href="https://evolvivo.com/"><img alt="Evolvivo Leaf Icon" class="logo-icon" src="Resources/logo.png"></a>
-				 </div>
-				 <div class="search-icons-container">
-					<img src="Resources/icons/search.png" alt="Search Icon" class="search-icon" onclick="openSearch()" aria-label="Open search bar">
-					<button id="open-sidebar-button" onclick="openSidebar()" aria-label="Open navigation menu" aria-expanded="false" aria-controls="false">
-						<img src="Resources/icons/hamburger_menu.png" alt="hamburger menu icon" class="hamburger-icon">
+	<!-- Top Header Bar with Logo, Search, and Hamburger -->
+	<div class="top-header-container">
+		<div class="nav-left-space"></div>
+		
+		<div class="logo-container">
+			<a class="active-link home-li" aria-current="page" href="https://evolvivo.com/">
+				<img alt="Evolvivo Leaf Icon" class="logo-icon" src="Resources/logo.png">
+			</a>
+		</div>
+		
+		<div class="search-icons-container">
+			<img src="Resources/icons/search.png" alt="Search Icon" class="search-icon" onclick="openSearch()" aria-label="Open search bar">
+			<button id="open-sidebar-button" onclick="openSidebar()" aria-label="Open navigation menu" aria-expanded="false">
+				<img src="Resources/icons/hamburger_menu.png" alt="hamburger menu icon" class="hamburger-icon">
+			</button>
+		</div>
+	</div>
+
+	<!-- Category Bar (Always Visible) -->
+	<div class="category-bar">
+		<a href="/wellbeing" class="category-link">Well-being</a>
+		<a href="/career-growth" class="category-link">Career & Growth</a>
+		<a href="/mindset" class="category-link">Mindset</a>
+		<span class="category-divider">|</span>
+		<a href="/new-articles" class="category-link">New Articles</a>
+		<a href="/about-us" class="category-link">About Us</a>
+		<a href="/saved-articles" class="category-link">Saved</a>
+	</div>
+
+	<!-- Sidebar Navigation (Opened by Hamburger) -->
+	<nav id="navbar" aria-expanded="false">
+		<ul>
+			<li class="close-btn-li">
+				<button id="close-sidebar-button" onclick="closeSidebar()" aria-label="Close navigation menu">
+					<svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" fill="#c9c9c9">
+						<path d="M256-224 224-256l224-224-224-224 32-32 224 224 224-224 32 32-224 224 224 224-32 32-224-224-224 224Z"/>
+					</svg>
+				</button>
+			</li>
+			<li>
+				<div class="nav-li">
+					<a href="/sites/well-being" style="display: flex; align-items: center; text-decoration: none; color: #333;">
+						<span style="margin-right: 8px;">Well-being</span>
+					</a>
+					<button style="background: none; border: none; padding: 0; cursor: pointer;">
+						<svg class="chevron-left-icon" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" fill="#666666">
+							<path d="M361-200 161-400l200-200 32 32-168 168 168 168-32 32Z"/>
+						</svg>
 					</button>
-				 </div>
-				 </div>
-				<nav id="navbar" aria-expanded="false">
-					<ul>
-						<li class="close-btn-li">
-							<button id="close-sidebar-button" onclick="closeSidebar()" aria-label="Close navigation menu">
-								<svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" fill="#c9c9c9"><path d="M256-224 224-256l224-224-224-224 32-32 224 224 224-224 32 32-224 224 224 224-32 32-224-224-224 224Z"/></svg>
-							</button>
-						<li><a class="" href="/articles"><span class="cross">Home</span></a></li>
-						<li><a class="" href="/goals">Well-being</a></li>
-						<li><a class="" href="./about-us">Career & Growth</a></li>
-						<li><a class="" href="./about-us">Mindset	</a></li>
-						<li><a class="divisor_bar" href="./about-us">|</a></li>
-						<li><a class="" href="./about-us">New Articles</a></li>
-						<li><a class="" href="./about-us">About Us</a></li>
-						<li><a class="accent-link" href="./saved-articles">Saved</a></li>
-					</ul>
-				</nav>
-				<div id="overlay" onclick="closeSidebar()" aria-hidden="true"></div>
-				<div>
+				</div>
+			</li>
+			<li>
+				<div class="nav-li" >
+					<a href="/career-growth" style="display: flex; align-items: center; text-decoration: none; color: #333;">
+						<span style="margin-right: 8px;">Career & Growth</span>
+					</a>
+					<button style="background: none; border: none; padding: 0; cursor: pointer;">
+						<svg class="chevron-left-icon" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" fill="#666666">
+							<path d="M361-200 161-400l200-200 32 32-168 168 168 168-32 32Z"/>
+						</svg>
+					</button>
+				</div>
+			</li>
+			<li>
+				<div class="nav-li" >
+					<a href="/mindset" style="display: flex; align-items: center; text-decoration: none; color: #333;">
+						<span style="margin-right: 8px;">Mindset</span>
+					</a>
+					<button style="background: none; border: none; padding: 0; cursor: pointer;">
+						<svg class="chevron-left-icon" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" fill="#666666">
+							<path d="M361-200 161-400l200-200 32 32-168 168 168 168-32 32Z"/>
+						</svg>
+					</button>
+				</div>
+			</li>
+			<li>
+				<div class="nav-li" >
+					<a href="/new-articles" style="display: flex; align-items: center; text-decoration: none; color: #333;">
+						<span style="margin-right: 8px;">New Articles</span>
+					</a>
+					<button style="background: none; border: none; padding: 0; cursor: pointer;">
+						<svg class="chevron-left-icon" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" fill="#666666">
+							<path d="M361-200 161-400l200-200 32 32-168 168 168 168-32 32Z"/>
+						</svg>
+					</button>
+				</div>
+			</li>
+			<li><a class="nav-li" href="/about-us">About Us</a></li>
+			<li><a class="nav-li accent-link" href="/saved-articles">Saved</a></li>
+			<li><a class="nav-li" href="/settings">Settings</a></li>
+			<li><a class="nav-li" href="/contact">Contact</a></li>
+			<li><a class="nav-li" href="/contact">Contact</a></li>
+			<li><a class="nav-li" href="/contact">Contact</a></li>
+		</ul>
+	</nav>
+
+	<div id="overlay" onclick="closeSidebar()" aria-hidden="true"></div>
 </header>
 	<!-- ============================================ -->
 	<!--          BREAKING NEWS BAR START             -->

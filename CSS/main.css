@@ -73,7 +73,7 @@ header {
 	display: flex;
 	align-items: center;
 	gap: 1em;
-	width: 7%;
+	width: 6em;
 }
 
 /* Logo and research icons Styling */
@@ -102,7 +102,7 @@ header {
 
 .hamburger-icon {
 	position: relative;
-	width: 3.3em;
+	width: 3.6em;
 	height: auto;
 	cursor: pointer;
 }
@@ -116,20 +116,23 @@ header {
 	margin-left: auto;
 }
 
-
-
-/*Navigation bar styling*/
+/* Navigation Sidebar - Hidden by default at ALL screen sizes */
 nav {
-	display: flex;
-	justify-content: center;
-	flex-direction: row;
+	position: fixed;
+	top: 0;
+	right: -100%;  /* Start off-screen */
+	height: 100vh;
+	width: min(300px, 80%);
+	z-index: 1000;
 	background-color: var(--card-bg);
-	border-bottom: 1px solid var(--text-color);
-	border-top: 1px solid var(--text-color);
-	align-items: center;
-	height: 2.5em;
+	border-left: 1px solid var(--hover-color);
+	transition: right 0.3s ease-out;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	padding: 4em 1em 0 1em;
 	overflow-x: auto;
-	overflow-y: hidden;
+	overflow-y: auto;
 
 /* Hide scrollbar - works in ALL browsers */
 	scrollbar-width: none; /* Firefox */
@@ -141,32 +144,96 @@ nav::-webkit-scrollbar {
 	display: none;
 }
 
+/* Show navigation when button is clicked */
+nav.show {
+	right: 0;  /* Slide in from right */
+}
+/* Show overlay when nav is open */
+nav.show ~ #overlay {
+	display: block;
+}
+
+/* Sidebar navigation styling */
 nav ul {
 	display: flex;
+	flex-direction: column;
 	list-style: none;
-	padding-left: 0;
-	flex-wrap: nowrap;
+	padding: 0;
+	margin: 0;
+	width: 100%;
 }
+
 nav li {
-	display: flex;
-	flex-shrink: 0;
+	width: 100%;
 }
-nav a {
+
+.nav-li {
+	display: block;
+	text-decoration: none;
+	color: var(--text-color);
+	padding: 1em 1em 1em 2em;
+	border-bottom: 1px solid var(--border-color);
+	transition: background-color 0.3s ease;
+}
+
+.nav-li:hover {
+	background-color: rgba(3, 102, 0, 0.1);
+}
+
+.chevron-left-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: 0;
+	height: 2em;
+}
+
+.nav-li {
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+}
+
+/* Category Bar - Always Visible */
+.category-bar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0;
+	background-color: var(--card-bg);
+	border-top: 1px solid var(--text-color);
+	border-bottom: 1px solid var(--text-color);
+	height: 2.5em;
+	overflow-x: auto;
+	overflow-y: hidden;
+	scrollbar-width: none;
+}
+
+.category-bar::-webkit-scrollbar {
+	display: none;
+}
+
+.category-link {
 	text-decoration: none;
 	color: var(--text-color);
 	padding: 0.5em 2em;
-	transition: background-color 0s ease;
 	white-space: nowrap;
 	flex-shrink: 0;
 	border-bottom: 2px solid transparent;
+	transition: border-bottom 0.4s ease-in-out;
 }
-nav a:hover {
-	border-bottom: 2px solid var(--hover-color);
-}
-nav a.active-link {
+
+.category-link:hover {
 	border-bottom: 2px solid var(--primary-color);
-	color: white;
 }
+
+.category-divider {
+	color: var(--text-color);
+	padding: 0 0.5em;
+}
+
+/** News Ticker Styles */
 
 .ticker-content {
 	display: none;
@@ -175,7 +242,7 @@ nav a.active-link {
 	margin-left: 15px;
 }
 
-/*Cross page nav bar style*/
+/*Cross Icon for link in sidebar*/
 .cross {
   position: relative;
   display: inline-block;
@@ -337,28 +404,28 @@ nav a.active-link {
   font-size: 0.85rem;
 }
 
+/* Hamburger button - always visible */
 #open-sidebar-button {
-	display: inline-block;
+	display: block;
 	background: none;
 	border: none;
 	cursor: pointer;
-	padding: 1em;
-	margin-left: auto;
+	padding: 0.5em;
 }
 
 #close-sidebar-button {
-	display: none;
 	background: none;
 	border: none;
 	cursor: pointer;
-	padding: 1em;
+	padding: 0.5em;
 }
 
+/* Overlay - shows when nav is open */
 #overlay {
 	background-color: rgba(0, 0, 0, 0.5);
 	position: fixed;
 	inset: 0;
-	z-index: 9;
+	z-index: 999;
 	display: none;
 }
 
@@ -509,16 +576,13 @@ footer p {
   .news-card {
     grid-template-columns: 1fr;
   }
-  nav {
+  .category-bar {
 	  justify-content: flex-start;
   }
 }
 
 /* Responsive adjustments for the grid */
 @media screen and (max-width: 768px) {
-	#close-sidebar-button {
-		display: block;
-	}
 
     .grid-container {
         /* On smaller screens, stack the main sections */
@@ -529,65 +593,6 @@ footer p {
             "box-3"; /* Then the sidebar articles */
     }
 
-    #main-article .section-image {
-        height: 250px; /* Adjust height for smaller screens */
-    }
-
-    #main-article h1 {
-        font-size: 1.8rem;
-    }
-
-    #main-article p {
-        font-size: 1em;
-    }
-	#main-article .grid-item {
-		padding-left: 15px;
-		padding-right: 15px;
-	}
-	
-    #two-articles .section-image {
-        height: 120px;
-    }
-	#two-articles #grid-item-1 {
-		padding-left: 15px;
-		padding-right: 5px;
-	}
-	#two-articles #grid-item-2 {
-		padding-right: 15px;
-	}
-	#sidebar-articles {
-		border-left: none;
-	}
-	nav {
-		position: fixed;
-		top: 0;
-		right: -100%;
-		height: 100vh;
-		width: min(15em, 100%);
-		z-index: 10;
-		border-left: 1px solid var(--hover-color);
-		transition: right 0.3s ease-out;
-	}
-	nav.show{
-		right: 0;
-	}
-	nav.show ~ #overlay{
-		display: block;
-	}
-	nav ul {
-		width: 100%;
-		flex-direction: column;
-	}
-	nav a {
-		width: 100%;
-		padding-left: 2.5em;
-	}
-	nav .home-li {
-		margin-right: unset;
-	}
-	#open-sidebar-button {
-		right: 0;
-	}
 	.logo-container {
 		height: 70px;
 	}
