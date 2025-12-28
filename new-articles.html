@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta content="Discover the latest articles on Evolvivo - fresh insights on personal growth, well-being, career development, and mindset transformation. Stay updated with new content published daily." name="description">
+	<meta content="new articles, latest posts, personal growth, self-improvement, recent articles, Evolvivo updates, new content, fresh insights" name="keywords">
+	<!-- Open Graph / Facebook -->
+	<meta content="website" property="og:type">
+	<meta content="https://www.evolvivo.com/new-articles" property="og:url">
+	<meta content="New Articles – Evolvivo" property="og:title">
+	<meta content="Stay up-to-date with the latest personal growth articles on Evolvivo. Fresh content to help you evolve every day." property="og:description">
+	<meta content="https://raw.githubusercontent.com/AndersonUrbina/Evolvivo/refs/heads/main/Resources/sm-card.png" property="og:image">
+	<!-- Twitter -->
+	<meta content="summary_large_image" name="twitter:card">
+	<meta content="https://www.evolvivo.com/new-articles" name="twitter:url">
+	<meta content="New Articles – Evolvivo" name="twitter:title">
+	<meta content="Stay up-to-date with the latest personal growth articles on Evolvivo." name="twitter:description">
+	<meta content="https://raw.githubusercontent.com/AndersonUrbina/Evolvivo/refs/heads/main/Resources/sm-card.png" name="twitter:image">
+	<title>New Articles | Evolvivo</title>
+	<!--Favicons-->
+	<link href="/Resources/favicon/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
+	<link href="/Resources/favicon/favicon.svg" rel="icon" type="image/svg+xml">
+	<link href="/Resources/favicon/favicon.ico" rel="shortcut icon">
+	<link href="/Resources/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+	<meta content="Evolvivo" name="apple-mobile-web-app-title">
+	<link href="/Resources/favicon/site.webmanifest" rel="manifest">
+	<link href="CSS/main.css" media="all" rel="stylesheet">
+	<link href="CSS/new-articles.css" media="all" rel="stylesheet">
+	<!-- Font Awesome CDN -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2064980807288479"></script>
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oranienbaum&family=Oswald:wght@200..700&family=Playfair+Display:wght@580&display=swap" rel="stylesheet">
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-QTB83RBKB6"></script>
+</head>
+<body>
+<!--Skip Link-->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ============================================ -->
+<!--                  HEADER                      -->
+<!-- ============================================ -->
+<header class="site-header">
+	<!-- Top Header Bar with Logo, Search, and Hamburger -->
+	<div class="top-header-container">
+		<div class="nav-left-space"></div>
+		
+		<div class="logo-container">
+			<a class="home-li" href="./index.html" aria-label="Evolvivo Home">
+				<img alt="Evolvivo Icon" class="logo-icon" src="./Resources/Logo.png">
+			</a>
+		</div>
+		
+		<div class="search-icons-container">
+			<div class="search-container">
+				<input type="text" class="search-input" placeholder="Search articles..." aria-label="Search">
+				<img src="Resources/icons/search.png" alt="Search Icon" class="search-icon" aria-label="Toggle search bar">
+			</div>
+			<button id="open-sidebar-button" onclick="openSidebar()" aria-label="Open navigation menu" aria-expanded="false">
+				<svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" fill="#333333" class="hamburger-icon">
+					<path d="M120-200v-60h720v60H120Zm0-190.00000000000003v-60h720v60H120Zm0-190v-60h720v60H120Z"/>
+				</svg>
+			</button>
+		</div>
+	</div>
+
+	<!-- Sidebar Navigation -->
+	<nav id="navbar" aria-expanded="false">
+		<ul>
+			<li class="close-btn-li">
+				<button id="close-sidebar-button" onclick="closeSidebar()" aria-label="Close navigation menu">
+					<svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" fill="#c9c9c9">
+						<path d="M256-224 224-256l224-224-224-224 32-32 224 224 224-224 32 32-224 224 224 224-32 32-224-224-224 224Z"/>
+					</svg>
+				</button>
+			</li>
+			<li>
+				<div class="nav-li">
+					<a href="/sites/well-being">
+						<span>Well-being</span>
+					</a>
+					<button>
+						<svg class="chevron-left-icon" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" fill="#666666">
+							<path d="M361-200 161-400l200-200 32 32-168 168 168 168-32 32Z"/>
+						</svg>
+					</button>
+				</div>
+			</li>
+			<li>
+				<div class="nav-li">
+					<a href="/career-growth">
+						<span>Career & Growth</span>
+					</a>
+					<button>
+						<svg class="chevron-left-icon" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" fill="#666666">
+							<path d="M361-200 161-400l200-200 32 32-168 168 168 168-32 32Z"/>
+						</svg>
+					</button>
+				</div>
+			</li>
+			<li>
+				<div class="nav-li">
+					<a href="/mindset">
+						<span>Mindset</span>
+					</a>
+					<button>
+						<svg class="chevron-left-icon" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" fill="#666666">
+							<path d="M361-200 161-400l200-200 32 32-168 168 168 168-32 32Z"/>
+						</svg>
+					</button>
+				</div>
+			</li>
+			<li>
+				<div class="nav-li">
+					<a href="/new-articles" class="active-link">
+						<span>New Articles</span>
+					</a>
+					<button>
+						<svg class="chevron-left-icon" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" fill="#666666">
+							<path d="M361-200 161-400l200-200 32 32-168 168 168 168-32 32Z"/>
+						</svg>
+					</button>
+				</div>
+			</li>
+			<li><a class="nav-li" href="/about-us">About Us</a></li>
+			<li><a class="nav-li accent-link" href="/saved-articles">Saved</a></li>
+			<li><a class="nav-li" href="/settings">Settings</a></li>
+			<li><a class="nav-li" href="/contact">Contact</a></li>
+		</ul>
+	</nav>
+
+	<div id="overlay" onclick="closeSidebar()" aria-hidden="true"></div>
+</header>
+
+<!-- ============================================ -->
+<!--              MAIN CONTENT                    -->
+<!-- ============================================ -->
+<main id="main-content">
+	<!-- Page Header -->
+	<section class="page-header">
+		<h1>
+			<i class="fas fa-newspaper"></i> New Articles
+		</h1>
+		<p>
+			Stay up-to-date with our latest insights on personal growth, well-being, and success strategies
+		</p>
+	</section>
+
+	<div class="container">
+		<!-- LEFT SIDEBAR -->
+		<aside class="sidebar">
+			<section class="left-sidebar">
+				<h2>Filter by Category</h2>
+				<ul class="category-filter-list">
+					<li>
+						<a href="#">
+							<i class="fas fa-heart"></i> Well-being
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fas fa-briefcase"></i> Career & Growth
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fas fa-brain"></i> Mindset
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fas fa-dumbbell"></i> Fitness
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fas fa-utensils"></i> Nutrition
+						</a>
+					</li>
+				</ul>
+			</section>
+
+			<section class="popular">
+				<h2>Trending Now</h2>
+				<ol>
+					<li>The 5-Minute Morning Routine That Changed My Life</li>
+					<li>How to Overcome Procrastination Forever</li>
+					<li>Building Emotional Intelligence in 30 Days</li>
+					<li>The Power of Deep Work in a Distracted World</li>
+				</ol>
+			</section>
+		</aside>
+
+		<!-- MAIN CONTENT -->
+		<main class="main-content">
+			<!-- Featured New Article -->
+			<article class="featured">
+				<img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=80" alt="Person writing in journal">
+				<h1>10 Journaling Techniques to Transform Your Personal Growth Journey</h1>
+				<p>Discover powerful journaling methods used by successful leaders, entrepreneurs, and thought leaders to achieve clarity, focus, and continuous self-improvement.</p>
+				<p class="author">By Sarah Mitchell, Wellness Coach | Published Today</p>
+			</article>
+
+			<!-- New Articles Grid -->
+			<section class="articles">
+				<article class="news-card">
+					<img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=400&q=80" alt="Morning sunrise">
+					<div>
+						<h3>Morning Rituals of Highly Productive People: What Science Says</h3>
+						<p class="author">By Dr. James Chen | 2 hours ago</p>
+					</div>
+				</article>
+
+				<article class="news-card">
+					<img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80" alt="Team collaboration">
+					<div>
+						<h3>Building Better Relationships: The Art of Active Listening</h3>
+						<p class="author">By Emma Rodriguez | 4 hours ago</p>
+					</div>
+				</article>
+
+				<article class="news-card">
+					<img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=400&q=80" alt="Fitness and health">
+					<div>
+						<h3>The 30-Day Fitness Challenge That Actually Works</h3>
+						<p class="author">By Marcus Johnson | 5 hours ago</p>
+					</div>
+				</article>
+
+				<article class="news-card">
+					<img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=400&q=80" alt="Healthy food">
+					<div>
+						<h3>Meal Prep Mastery: Save Time and Eat Healthier</h3>
+						<p class="author">By Chef Lisa Thompson | 6 hours ago</p>
+					</div>
+				</article>
+
+				<article class="news-card">
+					<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400&q=80" alt="Meditation space">
+					<div>
+						<h3>Meditation for Beginners: Your 7-Day Starter Guide</h3>
+						<p class="author">By Zen Master Wei | 8 hours ago</p>
+					</div>
+				</article>
+
+				<article class="news-card">
+					<img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80" alt="Business meeting">
+					<div>
+						<h3>Career Advancement: Negotiating Your Dream Salary</h3>
+						<p class="author">By Amanda Foster | 10 hours ago</p>
+					</div>
+				</article>
+
+				<article class="news-card">
+					<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Technology and learning">
+					<div>
+						<h3>Top 10 Skills to Learn in 2025 for Career Success</h3>
+						<p class="author">By Tech Innovator Alex Kim | 12 hours ago</p>
+					</div>
+				</article>
+
+				<article class="news-card">
+					<img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=400&q=80" alt="Peaceful nature">
+					<div>
+						<h3>Stress Management: 5 Science-Backed Techniques</h3>
+						<p class="author">By Dr. Patricia Williams | 14 hours ago</p>
+					</div>
+				</article>
+			</section>
+
+			<!-- Load More Button -->
+			<div class="load-more-container">
+				<button class="btn btn-primary">
+					<i class="fas fa-sync-alt"></i> Load More Articles
+				</button>
+			</div>
+		</main>
+
+		<!-- RIGHT SIDEBAR -->
+		<aside class="rightbar">
+			<h3 class="hot-topics-title">
+				<i class="fas fa-fire"></i> Hot Topics
+			</h3>
+
+			<article>
+				<img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=400&q=60" alt="Study desk">
+				<h3>The Pomodoro Technique: Boost Your Productivity by 40%</h3>
+				<p class="author">By Time Management Expert Tom Brady</p>
+			</article>
+
+			<article>
+				<img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400&q=60" alt="Happy person">
+				<h3>Positive Psychology: 7 Habits to Cultivate Lasting Happiness</h3>
+				<p class="author">By Dr. Emily Stone</p>
+			</article>
+
+			<article>
+				<img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=60" alt="Team success">
+				<h3>Leadership in the Modern Workplace: Essential Skills</h3>
+				<p class="author">By Leadership Coach Ryan Moore</p>
+			</article>
+
+			<!-- Newsletter Signup -->
+			<div class="newsletter-box">
+				<h3>
+					<i class="fas fa-envelope"></i> Daily Inspiration
+				</h3>
+				<p>Get fresh articles delivered to your inbox every morning</p>
+				<input type="email" placeholder="Enter your email" aria-label="Email address">
+				<button>Subscribe</button>
+			</div>
+		</aside>
+	</div>
+</main>
+
+<!-- ============================================ -->
+<!--                  FOOTER                      -->
+<!-- ============================================ -->
+<footer class="site-footer">
+	<div class="footer-container">
+		<div class="footer-content">
+			<div class="footer-column">
+				<h4>Explore</h4>
+				<ul>
+					<li><a href="./articles">Articles</a></li>
+					<li><a href="./goals">Goals</a></li>
+					<li><a href="./saved-articles">Saved Articles</a></li>
+					<li><a href="./about-us">About Us</a></li>
+				</ul>
+			</div>
+			<div class="footer-column">
+				<h4>Support</h4>
+				<ul>
+					<li><a href="./contact-&-support">Contact & Support</a></li>
+					<li><a href="#">FAQ's</a></li>
+				</ul>
+			</div>
+			<div class="footer-column">
+				<h4>Legal</h4>
+				<ul>
+					<li><a href="./terms-of-service">Terms of Service</a></li>
+					<li><a href="./privacy-policy">Privacy Policy</a></li>
+					<li><a href="./disclaimer">Disclaimer</a></li>
+				</ul>
+			</div>
+			<div class="footer-column">
+				<h4>Follow Us</h4>
+				<div class="social-links">
+					<a aria-label="Twitter" href="https://twitter.com/Evolvivo" rel="noopener noreferrer" target="_blank">
+						<i class="fab fa-twitter"></i>
+					</a>
+					<a aria-label="LinkedIn" href="https://www.linkedin.com/in/evolvivo-personal-evolution/" rel="noopener noreferrer" target="_blank">
+						<i class="fab fa-linkedin-in"></i>
+					</a>
+					<a aria-label="Instagram" href="https://www.instagram.com/evolvivo" rel="noopener noreferrer" target="_blank">
+						<i class="fab fa-instagram"></i>
+					</a>
+					<a aria-label="Facebook" href="#" rel="noopener noreferrer" target="_blank">
+						<i class="fab fa-facebook-f"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<p>© 2025 Evolvivo. All rights reserved.</p>
+			<p>Empowering your journey to personal evolution.</p>
+		</div>
+	</div>
+</footer>
+
+<!-- Toast Notification -->
+<div class="toast hidden" id="toast-notification">
+	<span id="toast-message"></span>
+</div>
+
+<!-- Cookie Banner -->
+<div id="cookie-banner">
+	<span>This website uses cookies to improve your experience and analyze traffic. By using this site, you agree to our <a href="/privacy-policy.html">Privacy Policy</a>.</span>
+	<button onclick="acceptCookies()">Got it</button>
+</div>
+
+<script>
+	function acceptCookies() {
+		localStorage.setItem("cookiesAccepted", "true");
+		document.getElementById("cookie-banner").style.display = "none";
+	}
+	window.addEventListener("DOMContentLoaded", function () {
+		if (!localStorage.getItem("cookiesAccepted")) {
+			const banner = document.getElementById("cookie-banner");
+			if (banner) {
+				banner.style.display = "flex";
+			}
+		}
+	});
+</script>
+<script src="JS/script.js" defer></script>
+</body>
+</html>

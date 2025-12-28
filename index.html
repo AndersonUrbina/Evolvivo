@@ -52,15 +52,22 @@
 		<div class="nav-left-space"></div>
 		
 		<div class="logo-container">
-			<a class="active-link home-li" aria-current="page" href="https://evolvivo.com/">
-				<img alt="Evolvivo Leaf Icon" class="logo-icon" src="./Resources/logo.png">
+			<a class="active-link home-li" aria-current="page" href="./index.html" aria-label="Evolvivo Home">
+				<img alt="Evolvivo Icon" class="logo-icon" src="./Resources/Logo.png">
 			</a>
 		</div>
 		
 		<div class="search-icons-container">
-			<img src="Resources/icons/search.png" alt="Search Icon" class="search-icon" onclick="openSearch()" aria-label="Open search bar">
+			<div class="search-container">
+				<input type="text" class="search-input" placeholder="Search articles..." aria-label="Search">
+				<img src="Resources/icons/search.png" alt="Search Icon" class="search-icon" aria-label="Toggle search bar">
+			</div>
+			<!-- Hamburger Menu Button -->
+			<!-- UPDATED: Added aria-expanded for accessibility -->
 			<button id="open-sidebar-button" onclick="openSidebar()" aria-label="Open navigation menu" aria-expanded="false">
-				<img src="Resources/icons/hamburger_menu.png" alt="hamburger menu icon" class="hamburger-icon">
+				<svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" fill="#333333" class="hamburger-icon">
+					<path d="M120-200v-60h720v60H120Zm0-190.00000000000003v-60h720v60H120Zm0-190v-60h720v60H120Z"/>
+				</svg>
 			</button>
 		</div>
 	</div>
@@ -71,7 +78,7 @@
 		<a href="/career-growth" class="category-link">Career & Growth</a>
 		<a href="/mindset" class="category-link">Mindset</a>
 		<span class="category-divider">|</span>
-		<a href="/new-articles" class="category-link">New Articles</a>
+		<a href="/new-articles.html" class="category-link">New Articles</a>
 		<a href="/about-us" class="category-link">About Us</a>
 		<a href="/saved-articles" class="category-link">Saved</a>
 	</div>
@@ -88,10 +95,10 @@
 			</li>
 			<li>
 				<div class="nav-li">
-					<a href="/sites/well-being" style="display: flex; align-items: center; text-decoration: none; color: #333;">
+					<a href="/sites/well-being">
 						<span style="margin-right: 8px;">Well-being</span>
 					</a>
-					<button style="background: none; border: none; padding: 0; cursor: pointer;">
+					<button>
 						<svg class="chevron-left-icon" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" fill="#666666">
 							<path d="M361-200 161-400l200-200 32 32-168 168 168 168-32 32Z"/>
 						</svg>
@@ -100,10 +107,10 @@
 			</li>
 			<li>
 				<div class="nav-li" >
-					<a href="/career-growth" style="display: flex; align-items: center; text-decoration: none; color: #333;">
+					<a href="/career-growth">
 						<span style="margin-right: 8px;">Career & Growth</span>
 					</a>
-					<button style="background: none; border: none; padding: 0; cursor: pointer;">
+					<button>
 						<svg class="chevron-left-icon" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" fill="#666666">
 							<path d="M361-200 161-400l200-200 32 32-168 168 168 168-32 32Z"/>
 						</svg>
@@ -112,10 +119,10 @@
 			</li>
 			<li>
 				<div class="nav-li" >
-					<a href="/mindset" style="display: flex; align-items: center; text-decoration: none; color: #333;">
+					<a href="/mindset">
 						<span style="margin-right: 8px;">Mindset</span>
 					</a>
-					<button style="background: none; border: none; padding: 0; cursor: pointer;">
+					<button>
 						<svg class="chevron-left-icon" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" fill="#666666">
 							<path d="M361-200 161-400l200-200 32 32-168 168 168 168-32 32Z"/>
 						</svg>
@@ -124,10 +131,10 @@
 			</li>
 			<li>
 				<div class="nav-li" >
-					<a href="/new-articles" style="display: flex; align-items: center; text-decoration: none; color: #333;">
+					<a href="/new-articles.html">
 						<span style="margin-right: 8px;">New Articles</span>
 					</a>
-					<button style="background: none; border: none; padding: 0; cursor: pointer;">
+					<button>
 						<svg class="chevron-left-icon" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" fill="#666666">
 							<path d="M361-200 161-400l200-200 32 32-168 168 168 168-32 32Z"/>
 						</svg>
@@ -145,54 +152,49 @@
 
 	<div id="overlay" onclick="closeSidebar()" aria-hidden="true"></div>
 </header>
-	<!-- ============================================ -->
-	<!--          BREAKING NEWS BAR START             -->
-	<!-- ============================================ -->
-	<section class="breaking-news-bar">
-		<div class="breaking-news-container">
-			<!-- UPDATED: Added ID for JavaScript -->
-			<div class="ticker-content" id="ticker-content">
-				<!-- Breaking News Item -->
-				<div class="ticker-item">
-					<span class="breaking-tag">Breaking</span> <a href="https://evolvivo.com/2025/January/Culinary-Arts/Meal-Prep-Mastery-Healthy-Eating-Made-Easy/">Meal Prep Mastery: Healthy Eating Made...</a>
-				</div><!-- Other Ticker Items -->
-				<div class="ticker-item">
-					<div class="ticker-timestamp">
-						3 hours ago
-					</div><a href="https://evolvivo.com/2025/January/Personal-Skills/The-Art-of-Effective-Communication/">The Art of Effective...</a>
-				</div>
-				<div class="ticker-item">
-					<div class="ticker-timestamp">
-						3 hours ago
-					</div><a href="#">Brandon Blackstock, Kelly Clarkson’s Ex-Husband And...</a>
-				</div>
-				<div class="ticker-item">
-					<div class="ticker-timestamp">
-						4 hours ago
-					</div><a href="#">Oakley Billionaire James Jannard Lists $65 Million Beverly Hills...</a>
-				</div>
-				<div class="ticker-item">
-					<div class="ticker-timestamp">
-						4 hours ago
-					</div><a href="#">Eli Lilly Shares Plummet 14% Toward Worst Day In 25 Years—...</a>
-				</div>
-				<div class="ticker-item">
-					<div class="ticker-timestamp">
-						4 hours ago
-					</div><a href="#">Firefly Aerospace Jumps More Than 50% In IPO Before Settling</a>
-				</div>
-			</div>
-			<div class="ticker-nav">
-				<!-- UPDATED: Added ID for JavaScript -->
-				<div class="ticker-nav-arrow" id="ticker-next-btn">
-					<i class="fas fa-chevron-right"></i>
-				</div>
+
+<!-- ============================================ -->
+<!--          TRENDING ARTICLES TICKER            -->
+<!-- ============================================ -->
+<section class="trending-ticker">
+	<div class="trending-ticker-wrapper">
+		<div class="trending-label"><span>TRENDING</span>
+			<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+				<path d="M3 17L9 11L13 15L21 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 7L17 7M21 7L21 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		</div>
+		<div class="trending-content">
+			<div class="trending-track">
+				<!-- First set of items -->
+				<a href="#" class="trending-item">Morning Rituals of Highly Productive People</a>
+				<span class="trending-separator">•</span>
+				<a href="#" class="trending-item">The 30-Day Fitness Challenge That Actually Works</a>
+				<span class="trending-separator">•</span>
+				<a href="#" class="trending-item">Building Better Relationships: Active Listening</a>
+				<span class="trending-separator">•</span>
+				<a href="#" class="trending-item">Meditation for Beginners: 7-Day Starter Guide</a>
+				<span class="trending-separator">•</span>
+				<a href="#" class="trending-item">Career Advancement: Negotiating Your Dream Salary</a>
+				<span class="trending-separator">•</span>
+				<a href="#" class="trending-item">Top 10 Skills to Learn in 2025</a>
+				<span class="trending-separator">•</span>
+				<!-- Duplicate set for seamless loop -->
+				<a href="#" class="trending-item">Morning Rituals of Highly Productive People</a>
+				<span class="trending-separator">•</span>
+				<a href="#" class="trending-item">The 30-Day Fitness Challenge That Actually Works</a>
+				<span class="trending-separator">•</span>
+				<a href="#" class="trending-item">Building Better Relationships: Active Listening</a>
+				<span class="trending-separator">•</span>
+				<a href="#" class="trending-item">Meditation for Beginners: 7-Day Starter Guide</a>
+				<span class="trending-separator">•</span>
+				<a href="#" class="trending-item">Career Advancement: Negotiating Your Dream Salary</a>
+				<span class="trending-separator">•</span>
+				<a href="#" class="trending-item">Top 10 Skills to Learn in 2025</a>
 			</div>
 		</div>
-	</section>
-	<!-- ============================================ -->
-	<!--           BREAKING NEWS BAR END              -->
-	<!-- ============================================ -->
+	</div>
+</section>
+
 	<!-- Home Page Section -->
 		<div class="container">
 		
@@ -359,4 +361,3 @@
 	<script src="JS/quotes.js" defer></script>
 </body>
 </html>
-
