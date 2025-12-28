@@ -170,6 +170,7 @@ h1 i, h2 i, h3 i {
 @media screen and (max-width: 1200px) {
     .page-header {
         flex-direction: column;
+		padding: 2rem 1rem;
     }
     
 }
