@@ -1,0 +1,208 @@
+/* ============================================ */
+/*       NEW ARTICLES PAGE - ADDITIONAL CSS     */
+/* ============================================ */
+
+
+/*Top Header Container Styling*/
+.top-header-container {
+    height: 60px;
+}
+.logo-container {
+    height: 55px;
+}
+.logo-icon {
+    width: 11.5em;
+}
+
+/* Page Header Section */
+.page-header {
+    display: flex;
+	text-align: center;
+	padding: 2rem 1rem 2rem 4em;
+	background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+    justify-content: center;
+    align-items: center;
+}
+
+.page-header h1 {
+	font-size: 2.5rem;
+	color: var(--primary-color);
+}
+
+.page-header p {
+	font-size: 1.1rem;
+	color: var(--text-light);
+	max-width: 700px;
+	margin: 0 auto;
+}
+
+
+/* Category Filter List */
+.category-filter-list {
+	list-style: none;
+	padding: 0;
+}
+
+.category-filter-list li {
+	padding: 0.75em 0;
+	border-bottom: 1px solid var(--border-color);
+}
+
+.category-filter-list li a {
+	text-decoration: none;
+	color: var(--text-color);
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+	transition: color 0.3s ease;
+}
+
+.category-filter-list li a:hover {
+	color: var(--primary-color);
+}
+
+.category-filter-list li a i {
+	color: var(--primary-color);
+}
+
+/* Trending Section */
+.popular {
+	margin-top: 2rem;
+}
+
+/* Hot Topics Title */
+.hot-topics-title {
+	margin-bottom: 1.5rem;
+	color: var(--primary-color);
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+/* Load More Button Container */
+.load-more-container {
+	text-align: center;
+	margin: 3rem 0;
+}
+
+.load-more-container .btn {
+	padding: 1rem 3rem;
+	font-size: 1.1rem;
+}
+
+/* Newsletter Signup Box */
+.newsletter-box {
+	background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-dark) 100%);
+	padding: 2rem;
+	border-radius: 10px;
+	color: white;
+	margin-top: 2rem;
+}
+
+.newsletter-box h3 {
+	color: white;
+	margin-bottom: 1rem;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.newsletter-box p {
+	margin-bottom: 1rem;
+	font-size: 0.95rem;
+	color: rgba(255, 255, 255, 0.95);
+}
+
+.newsletter-box input[type="email"] {
+	width: 100%;
+	padding: 0.75rem;
+	border: none;
+	border-radius: 5px;
+	margin-bottom: 1rem;
+	font-size: 1rem;
+	outline: none;
+    box-sizing: border-box;
+}
+
+.newsletter-box input[type="email"]:focus {
+	box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.newsletter-box button {
+	width: 100%;
+	background: white;
+	color: var(--primary-color);
+	font-weight: 600;
+	border: none;
+	padding: 0.75rem;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.newsletter-box button:hover {
+	background-color: #f0f0f0;
+	transform: translateY(-2px);
+}
+
+/* Article Timestamp Styling */
+.article-timestamp {
+	color: var(--text-light);
+	font-size: 0.85rem;
+	font-style: italic;
+}
+
+/* Featured Article Author with Timestamp */
+.featured .author-timestamp {
+	color: #666;
+	font-size: 0.9rem;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+}
+
+/* Icon Spacing in Headings */
+h1 i, h2 i, h3 i {
+	margin-right: 0.5rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .page-header {
+        flex-direction: column;
+    }
+    
+}
+/* Responsive Adjustments for New Articles Page */
+@media screen and (max-width: 768px) {
+	.page-header h1 {
+		font-size: 2rem;
+	}
+
+    .page-header-divider {
+        display: none;
+    }
+
+	.page-header p {
+		font-size: 1rem;
+	}
+
+	.newsletter-box {
+		padding: 1.5rem;
+	}
+
+	.load-more-container .btn {
+		padding: 0.75rem 2rem;
+		font-size: 1rem;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.page-header h1 {
+		font-size: 1.75rem;
+	}
+
+	.newsletter-box h3 {
+		font-size: 1.1rem;
+	}
+}
