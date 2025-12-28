@@ -311,3 +311,42 @@ window.dataLayer = window.dataLayer || [];
 	    gtag('js', new Date());
 
 	    gtag('config', 'G-QTB83RBKB6');
+
+// Toggle search bar on click
+const searchIcon = document.querySelector('.search-icon');
+const searchInput = document.querySelector('.search-input');
+
+if (searchIcon && searchInput) {
+	// Toggle active class on click
+	searchIcon.addEventListener('click', function(e) {
+		e.stopPropagation(); // Prevent click from closing immediately
+		searchInput.classList.toggle('active');
+		
+		// Focus input when activated
+		if (searchInput.classList.contains('active')) {
+			searchInput.focus();
+		}
+	});
+
+	// Keep search open when clicking inside the input
+	searchInput.addEventListener('click', function(e) {
+		e.stopPropagation();
+	});
+
+	// Close search when clicking outside
+	document.addEventListener('click', function(e) {
+		if (!searchIcon.contains(e.target) && !searchInput.contains(e.target)) {
+			searchInput.classList.remove('active');
+		}
+	});
+
+	// Optional: Handle search on Enter key
+	searchInput.addEventListener('keypress', function(e) {
+		if (e.key === 'Enter') {
+			const searchQuery = searchInput.value;
+			console.log('Searching for:', searchQuery);
+			// Add your search logic here
+			// window.location.href = `/search?q=${encodeURIComponent(searchQuery)}`;
+		}
+	});
+}
